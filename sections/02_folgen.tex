@@ -1,29 +1,40 @@
+% ------------------------------
 \subsection{Definition}
 \definition{Folge}: (unendliche) Liste von Zahlen, wobei jeder Eintrag ein \textbf{Glied der Folge} genannt wird.\\
 Kann auch als Funktion/Abbildung $f:\mathbb{N}_0 \rightarrow \mathbb{R}$ (oder $f:\mathbb{N} \rightarrow \mathbb{R}$) aufgefasst werden.
-\newline
 
 \definition{Bilder} $a(n)=a_n$ sind Elemente der Folge.
 
+% ------------------------------
 \subsection{Darstellung}
 \definition{direkt}: explizit angeben, wie ein beliebiges Folgenglied berechnet werden kann
 $a_n = f(n)$
-\newline
 
 \definition{rekursiv}: Konstruktion eines Folgenglieds aus den vorangehenden
 $a_n=g(a_{n-1}, a_{n_2},...)$
-\newline
-$f$ und $g$ nennt man \textbf{Bildungsgesetz}
-\newline
 
+$f$ und $g$ nennt man \textbf{Bildungsgesetz}
+
+
+% ------------------------------
 \subsection{Konvergenz / Divergenz}
+
 Eine Folge ist \definition{konvergent} falls ein $L \in \mathbb{R}$ existiert, so dass $\forall \epsilon > 0 \exists N > 0$ so dass $\forall n > N : |a_n -L| < \epsilon$.
-\newline
+
 Eine konvergente Folge besitzt\\ \theorem{genau einen eindeutigen Grenzwert}.
-\newline
 
 $L$ ist der \definition{Grenzwert} $\lim_{n \rightarrow \infty} a_n = L$.
-\newline
 
 Falls kein $L$ existiert, nennt man die Folge \definition{divergent}.
-\newline
+
+
+\subsubsection{Spezialfälle divergenter Folgen}
+$\lim_{n\rightarrow \infty} a_n = \infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n > M$
+\par
+$\lim_{n\rightarrow \infty} a_n = -\infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n <- M$
+
+% ------------------------------
+\subsection{Teilfolgen}
+\definition{Teilfolge} ist Folge $(a_{n_k})_{k\in \mathbb{N}_0}$, wobei $(n_k)_{k\in \mathbb{N}_0}$ Folge nicht-negativer ganzer Zahlen ist mit $\forall k\in \mathbb{N}_0: n_{k+1}>n_k$.
+
+Für konvergente Folge konvergiert jede Teilfolge \lemma{gegen den gleichen Grenzwert $L$}.
