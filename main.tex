@@ -1,0 +1,165 @@
+\documentclass[8pt]{extarticle}
+\usepackage{fix-cm}
+
+% Packages
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{soul}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{subfiles}
+
+%%%% Smaller Spacing
+% --- FONT SIZE OVERRIDE ---
+\usepackage{scrextend}
+\changefontsizes{5pt} 
+
+\linespread{0.6} % Very tight line spacing
+
+% make itemize use less space
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+% Remove titlespacing
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{1.2ex}{0.8ex}
+
+\titlespacing*{\subsection}
+{0pt}{1.0ex}{0.6ex}
+
+\titlespacing*{\subsubsection}
+{0pt}{2.0ex}{0.4ex}
+
+%--------------------------------------------------------
+%
+\titleformat{\section}
+  {\fontsize{9pt}{11pt}\selectfont\bfseries\color{teal}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\fontsize{8pt}{10pt}\selectfont\bfseries\color{red}}
+  {\thesubsection}{1em}{}
+
+% Layout
+\geometry{a4paper, landscape, margin=6.67mm}
+\setlength{\columnsep}{6.67mm}
+\setlength{\columnseprule}{.33pt}
+\setlength{\parindent}{0pt}
+% Images
+\graphicspath{ {./images/} }
+% Commands
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+
+
+\title{Linare Algebra: Cheat Sheet}
+\author{Cedric Bolleter}
+\date{January 2026}
+
+\begin{document}
+\begin{multicols*}{4}
+
+
+\newtcbox{\yellowBox}{
+    on line,
+    colback=yellow!100,
+    colframe=yellow!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\orangeBox}{
+    on line,
+    colback=orange!55,
+    colframe=orange!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\blueBox}{
+    on line,
+    colback=blue!45,
+    colframe=blue!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\lightBlueBox}{
+    on line,
+    colback=blue!25,
+    colframe=blue!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\greenBox}{
+    on line,
+    colback=green!55,
+    colframe=green!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\redBox}{
+    on line,
+    colback=red!55,
+    colframe=red!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+
+\newcommand{\definition}[1]{
+    \orangeBox{\textbf{#1}}
+}
+
+\newcommand{\lemma}[1]{
+    \blueBox{\textbf{#1}}
+}
+
+\newcommand{\theorem}[1]{
+    \yellowBox{\textbf{#1}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Logik, Mengen, Zahlen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subfile{sections/01_logik_mengen_zahlen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vectors and Matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subfile{sections/99_vektoren_matrizen}
+
+\end{multicols*}
+
+\newpage
+
+\begin{multicols*}{5}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trigonometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\includegraphics[width=1\columnwidth]{unitCircle}
+\includegraphics[width=1\columnwidth]{sincostan} 
+
+
+\end{multicols*}
+\end{document}
