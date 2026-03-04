@@ -1,61 +1,166 @@
 \subsection{Logik}
-hallooo
+\definition{Aussage} wohlformulierte mathematische Behauptung, die entweder wahr oder falsch ist.
+
+\definition{Prädikat $A(x,y)$} Aussage, die von einer oder mehreren Variablen (Argumente, Inputs) abhängt.
+
+\definition{Quantoren} $\forall, \exists, \exists!, \nexists$ \textit{(Reihenfolge wichtig)}
+
+\greenBox{Satz} $\lnot (\forall x A(x)) \Leftrightarrow \exists x \lnot A(x)$, 
+$\lnot (\exists x A(x)) \Leftrightarrow \forall x \lnot A(x)$,
+$\forall x (A(x) \land B(x)) \Leftrightarrow (\forall x A(x)) \land (\forall x B(x))$,
+$\exists x (A(x) \lor B(x)) \Leftrightarrow (\exists x A(x)) \lor (\exists x B(x))$,
+
+\definition{Grundverknüpfungen} $\land, \lor, \implies (\lnot A \lor B), \Leftrightarrow$
+
+$A \implies B$: A \definition{hinreichend}, B \definition{notwendig}
+
+\lemma{$A \implies B \equiv \lnot B \implies \lnot A$}
 
 \subsection{Mengen}
+Ansammlung/Zusammenfassung von (endlich oder unendlich vielen) Elementen. Aufgelistet oder charakterisiert.
 
-\subsection{Zahlen}
+\definition{$\subset$ oder $\subseteq$} $\forall x \in X : x \in X \implies x \in Y$
+
+\definition{$\subsetneq$} $(X \subset Y) \land (X \neq Y)$
+
+\definition{Komplement} Falls $X \subset Y$, dann $X^c := \{y |y \in Y \land y \notin X \}$ 
+
+\definition{Operationen} $\cup, \cap, \backslash, \times$
+
+\subsection{Zahlen} 
+
 \subsubsection{Zahlenmengen}
+
+$\mathbb{N} (0 \notin \mathbb{N}, 0 \in \mathbb{N}_0), \mathbb{Z}, \mathbb{Q} = \{x = \frac{p}{q} | p,q \in \mathbb{Z}\}, \mathbb{R} = (-\infty, \infty), \mathbb{C}$
+
+$\mathbb{R}^+ = (0, \infty), \mathbb{R}^+_0 = [0, \infty), \mathbb{R}^- = (-\infty, 0), \mathbb{R}^-_0 = (-\infty, 0]$
 
 \subsubsection{Intervalle}
 
+\definition{offenes Intervall} $(a,b)=\{x \in \mathbb{R} | a<x<b\}$
+
+\definition{abgeschlossenes Intervall} $[a,b]=\{x \in \mathbb{R} | a \leq x \leq b\}$
+
+\definition{halboffenes Intervall} $[a,b)$ oder $(a,b]$ 
+
+\definition{beschränktes Intervall} falls $a$ und $b$ endlich sind
+
+\definition{kompaktes Intervall} beschränkt und abgeschlossen
+
 \subsubsection{Max. / Min. / Inf. / Sup.}
+\definition{Obere (untere) Schranke} $\forall x \in X : x \leq y (x \geq y)$
+
+\definition{Maximum (Minimum)} $x_0 \in X$, $\forall x \in X : x \leq x_0 (x \geq x_0)$
+
+eindeutig bestimmt (falls sie existieren)
+
+\definition{Supremum (Infimum)} kleinste obere (grösste untere) Schranke
+
+Jede nicht leere, nach oben (unten) beschränkte Teilmenge hat ein eindeutiges Supremum (Infimum).
+
+$(\forall x \in X : x \leq S) \land (\forall \epsilon > 0 \exists x \in X : x>S-\epsilon)$
+
+$\sup(\emptyset) = - \infty$ (Konvention)
 
 \subsubsection{Axiome von $\mathbb{R}$}
 
+\includegraphics[width=0.7\columnwidth]{axiome_r.png}
+
+\includegraphics[width=0.7\columnwidth]{axiome_r2.png}
+Auch $\mathbb{Q}$ erfüllt Ordnungsaxiome.
+
+\includegraphics[width=0.7\columnwidth]{axiome_r3.png}
+
+\theorem{$\mathbb{R}$ ist geordneter, vollständiger Körper.}
+
+\begin{enumerate}
+    \item Additive und multiplikative Inverse eindeutig
+    \item $\forall x \in \mathbb{R} : 0 * x = 0$
+    \item $\forall x \in \mathbb{R} : (-1) * x = -x$
+    \item $\forall y \in \mathbb{R} : y \geq 0 = -y \leq 0$
+    \item $\forall y \in \mathbb{R} : y^2 \geq 0$
+    \item Aus $x \leq y$ und $u \leq v$ folgt $x + u \leq y + v$
+    \item Falls gilt $0 \leq x \leq y$ und $u \geq 0$, dann $xu \leq yu$
+\end{enumerate}
+
+\greenBox{\textbf{Archimedisches Prinzip}}
+\begin{enumerate}
+    \item Für $x \in \mathbb{R}$ und $y > 0$ existiert $n \in \mathbb{N}$ mit $ny > x$
+    \item Für jedes $\epsilon > 0$ existiert $n \in \mathbb{N}$ mit $\frac{1}{n} < \epsilon$
+\end{enumerate}
 
 \subsubsection{Absolutbetrag}
+$|x| := \max\{x, -x\}$
 
+\begin{enumerate}
+    \item $|x| \geq 0$
+    \item $|x+y| \leq |x| + |y|$ (Dreiecksungleichung)
+    \item $|x + y| \geq ||x|-|y||$
+\end{enumerate}
+
+\greenBox{Youngsche Ungleichung} Für jedes $\epsilon > 0$ und alle $x, y \in \mathbb{R}$ gilt: $2|xy| \leq \epsilon x^2 + \frac{1}{\epsilon}y^2$
 
 \subsection{Vektorräume}
-\definition{Skalarprodukt}
-\newline
 
-\definition{Euklidische Norm}
-\newline
+\definition{Skalarprodukt} $x \cdot y = <x, y> = [x,y] := \sum_{i=1}^{n}x_iy_i$
 
-\definition{Euklidischer Abstand}
-\newline
+\definition{Euklidische Norm} $||x|| := \sqrt{\sum_{i=1}^{n} x_i^2}$
 
-\lemma{Dreiecksungleichung}
-\newline
+\definition{Euklidischer Abstand} $d(x,y):=\sqrt{\sum_{i=1}^{n}(x_i - y_i)^2}=||x-y||$
+
+\lemma{Dreiecksungleichung} Für alle $x,y,z \in \mathbb{R}^n$: $||x-z||\leq ||x-y|| + ||y-z||$
 
 \subsection{Komplexe Zahlen $\mathbb{C}$}
 
-\definition{Betrag}
-\newline
+$i^2=-1$
+
+\definition{Betrag} Abstand zum Ursprung $|z|=\sqrt{a^2 + b^2}$
+\textit{(Dreiecksungleichung gilt)}
+
+\definition{Abstand zwischen $z_1$ und $z_2$} $d = |z_2 - z_1| = |z_1 - z_2|$
+
 
 
 \subsubsection{Normalform}
 
+$z=a+ib$, $a = Re(z), b=Im(z)$
+
+\definition{Komplex Konjugierte} $\overline{z} = \overline{x + iy} = x - iy$
+
+\includegraphics[width=0.5\columnwidth]{conjugate.png}
+
 \subsubsection{Polarform}
 
+$z=r*e^{i\varphi}$, $r = |z|$, $\varphi \in (-\pi,\pi]$, $\varphi = \arg(z)=\operatorname{arc}(z)$
+
+Herleitung: $|z|e^{i\varphi} = |z|(\cos(\varphi)+i \sin(\varphi)) = \cos(\varphi)|z| + i \sin(\varphi)|z|=a+ib=z$
 
 \definition{Gaussche Zahlenebene}
-\newline
+Graphische Darstellung.
 
-\definition{Abstand}
-\newline
-
-\definition{Winkel}
-\newline
+\definition{Winkel $\varphi$} Zwischen reeller Achse und Vektor.
 
 \subsubsection{Eulersche Formel}
 
+Für $x=it$ gilt: $e^{it}=\cos(t)+i \sin(t)$, $t\in \mathbb{R}$ 
+
+% TODO
+
 \subsubsection{Umwandeln von Normal- in Polarform}
+
+$r = |z| = \sqrt{x^2 + y ^2}$ (Betrag)
+\begin{itemize}
+    \item $\varphi = \arctan(\frac{y}{x})$ falls $x > 0$
+    \item $\varphi = \arctan(\frac{y}{x}) + \pi$ falls $x < 0$ und $y \geq 0$ (2. Quadrant)
+    \item $\varphi = \arctan(\frac{y}{x}) - \pi$ falls $x < 0$ und $y < 0$ (3. Quadrant)
+
+\end{itemize}
 
 
 \subsubsection{Umwandeln von Polar- in Normalform}
 
-
+$x=r \cos(\varphi)$, $y = r \sin(\varphi)$
 
 \subsubsection{Rechenregeln}
+
+% TODO!
