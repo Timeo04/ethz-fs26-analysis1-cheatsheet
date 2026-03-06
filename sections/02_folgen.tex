@@ -27,16 +27,27 @@ $L$ ist der \definition{Grenzwert} $\lim_{n \rightarrow \infty} a_n = L$.
 
 Falls kein $L$ existiert, nennt man die Folge \definition{divergent}.
 
+$A \in \mathbb{R}$ ist \definition{Häufungspunkt} einer Folge $(a_n)_n\in\mathbb{N}_0$, falls $\forall \epsilon > 0 \forall N \in \mathbb{N}_0 \exists n \geq N$ so dass $|a_n - A | < \epsilon$.
+\textit{Jedes Intervall der Form $(A- \epsilon, A+ \epsilon)$ enthält $a_n$ für unendlich viele $n$.}
+
+$A\in \mathbb{R}$ ist Häufungspunkt von $(a_n)_n\in\mathbb{N}_0$ \lemma{$\Leftrightarrow$} es existiert eine konvergente Teilfolge mit $\lim_{k \rightarrow \infty} a_{n_k} = A$.
+
+\greenBox{Konvergente Folge hat genau einen Häufungspunkt} (ist identisch mit Grenzwert).
+
+
 
 \subsubsection{Spezialfälle divergenter Folgen}
 $\lim_{n\rightarrow \infty} a_n = \infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n > M$
 \par
 $\lim_{n\rightarrow \infty} a_n = -\infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n <- M$
 
-\definition{Häufungspunkt}
+\subsubsection{Beispiele}
+$a_n = x^n$: falls $|x|<1$ konvergent gegen null, falls $|x|>1$ divergent
+
+$b_n = n ^{-p}$: konvergiert für $p>0$, divergiert für $p<0$
 
 % ------------------------------
 \subsection{Teilfolgen}
 \definition{Teilfolge} ist Folge $(a_{n_k})_{k\in \mathbb{N}_0}$, wobei $(n_k)_{k\in \mathbb{N}_0}$ Folge nicht-negativer ganzer Zahlen ist mit $\forall k\in \mathbb{N}_0: n_{k+1}>n_k$.
 
-Für konvergente Folge konvergiert jede Teilfolge \lemma{gegen den gleichen Grenzwert $L$}.
+Für konvergente Folge $(a_n)_{n \in \mathbb{N}_0}$ \textbf{mit Grenzwert $L$} konvergiert jede Teilfolge \lemma{gegen den gleichen Grenzwert $L$}.
