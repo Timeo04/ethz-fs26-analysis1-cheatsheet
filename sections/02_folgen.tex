@@ -34,8 +34,6 @@ $A\in \mathbb{R}$ ist Häufungspunkt von $(a_n)_n\in\mathbb{N}_0$ \lemma{$\Leftr
 
 \greenBox{Konvergente Folge hat genau einen Häufungspunkt} (ist identisch mit Grenzwert).
 
-
-
 \subsubsection{Spezialfälle divergenter Folgen}
 $\lim_{n\rightarrow \infty} a_n = \infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n > M$
 \par
@@ -45,6 +43,21 @@ $\lim_{n\rightarrow \infty} a_n = -\infty$ falls $\forall M > 0 \exists N>0 \tex
 $a_n = x^n$: falls $|x|<1$ konvergent gegen null, falls $|x|>1$ divergent
 
 $b_n = n ^{-p}$: konvergiert für $p>0$, divergiert für $p<0$
+
+\subsubsection{Rechenregeln}
+Falls $\lim_{n \rightarrow \infty} a_n = K ( \neq \pm \infty)$, $\lim_{n \rightarrow \infty} b_n = L ( \neq \pm \infty)$ und $C$ beliebige feste Zahl.
+
+\includegraphics[width=0.85\columnwidth]{02_folgen/grenzwert_rechenregeln.png}
+
+\subsubsection{Wichtige Grenzwerte}
+
+\begin{enumerate}
+    \item $lim_{n \rightarrow \infty} \frac{\log n}{n} = 0 = \lim_{n \rightarrow \infty} \frac{\ln n}{n}$
+    \item $\lim_{n \rightarrow \infty} n^{1/n} = 1$
+    \item $\lim_{n \rightarrow \infty} x^{1/n} = 1, x>0$
+    \item $\forall x \in \mathbb{R}: \lim_{n \rightarrow \infty}(1+\frac{x}{n})^n = e^x$
+    \item $\forall x \in \mathbb{R}: \lim_{n \rightarrow \infty}\frac{x^n}{n!} = 0$
+\end{enumerate}
 
 % ------------------------------
 \subsection{Teilfolgen}
