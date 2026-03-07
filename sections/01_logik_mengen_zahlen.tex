@@ -70,7 +70,7 @@ $\sup(\emptyset) = - \infty$ (Konvention)
 
 Auch $\mathbb{Q}$ erfüllt Ordnungsaxiome.
 
-\includegraphics[width=0.7\columnwidth]{axiome_r3.png}
+\includegraphics[width=0.6\columnwidth]{axiome_r3.png}
 
 \theorem{$\mathbb{R}$ ist geordneter, vollständiger Körper.}
 
@@ -139,12 +139,27 @@ Herleitung: $|z|e^{i\varphi} = |z|(\cos(\varphi)+i \sin(\varphi)) = \cos(\varphi
 \definition{Gaussche Zahlenebene}
 Graphische Darstellung.
 
+\textit{Multiplikation komplexer Zahlen lässt sich geometrisch interpretieren als:
+\begin{itemize}
+    \item Stauchung/Streckung um $|z|$ und
+    \item Rotation um $\varphi$
+\end{itemize}
+}
+
 \definition{Winkel $\varphi$} Zwischen reeller Achse und Vektor.
 
 \subsubsection{Eulersche Formel}
 
-Für $x=it$ gilt: $e^{it}=\cos(t)+i \sin(t)$, $t\in \mathbb{R}$ 
+$e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!} + \cdots = \sum_{k=0}^{\infty} \frac{1}{k!} x^k$ \textit{(auch für $x \in \mathbb{C}$)}
 
+Für $x=it$ gilt: $e^{it}=\cos(t)+i \sin(t)$, $t\in \mathbb{R}$ 
+\begin{align*}
+e^{it} &= 1 + it - \frac{1}{2}t^2 - i\frac{1}{3!}t^3 + \frac{1}{4!}t^4 + i\frac{1}{5!}t^5 - \cdots \\[6pt]
+       &= \left(1 - \frac{1}{2}t^2 + \frac{1}{4!}t^4 - \cdots\right) + i\left(t - \frac{1}{3!}t^3 + \frac{1}{5!}t^5 - \cdots\right) \\[6pt]
+       &= \cos(t) + i \cdot \sin(t)
+\end{align*}
+
+Daraus folgt: $\cos(t)=\frac{e^{it}+e^{-it}}{2}$ und $\sin(t)=\frac{e^{it}-e^{-it}}{2i}$
 % TODO
 
 \subsubsection{Umwandeln von Normal- in Polarform}
@@ -157,6 +172,14 @@ $r = |z| = \sqrt{x^2 + y ^2}$ (Betrag)
 
 \end{itemize}
 
+\textbf{Achtung:} 
+\begin{itemize}
+    \item $x=y=0$ ausgeschlossen (gibt keine eindeutige Polarform)
+    \item für $x=0$ und $y \neq 0$ (rein imaginär): $$\arg(iy) = \begin{cases}
+        \pi / 2, y>0 \\
+        - \pi / 2, y<0
+    \end{cases}$$
+\end{itemize}
 
 \subsubsection{Umwandeln von Polar- in Normalform}
 
@@ -164,4 +187,47 @@ $x=r \cos(\varphi)$, $y = r \sin(\varphi)$
 
 \subsubsection{Rechenregeln}
 
-% TODO!
+Für zwei komplexe Zahlen $z_1 = x_1 + iy_1$ und $z_2 = x_2 + iy_2$:
+
+\begin{itemize}
+    \item $z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)$
+    \item $z_1 - z_2 = (x_1 - x_2) + i(y_1 - y_2)$
+    \item $z_1 \cdot z_2 = x_1 x_2 - y_1 y_2 + i(x_1 y_2 + y_1 x_2)$
+    \item $z_1 \cdot z_2 = r_1 e^{i\varphi_1} \cdot r_2 e^{i\varphi_2} = r_1 \cdot r_2 \, e^{i(\varphi_1 + \varphi_2)}$
+    \item $z_1 / z_2 = r_1 e^{i\varphi_1} / r_2 e^{i\varphi_2} = \frac{r_1}{r_2} \, e^{i(\varphi_1 - \varphi_2)}$
+    \item $z^n = r^n e^{ni\varphi}$
+\end{itemize}
+
+$z,w \in \mathbb{C}$:
+
+$z/w = \frac{z \cdot \overline{w}}{w \cdot \overline{w}}=\frac{z \cdot \overline{w}}{|w|^2}$, 
+$\overline{z/w}=\overline{z}/\overline{w}$
+
+$e^{z+w} = e^z \cdot e^w$, $e^z = e^{a + ib} = e^{a} \cdot e^{ib} = e^a (\cos(b) + i \sin(b))$
+
+$e^{z + i 2 \pi} = e^z \cdot e^{i 2 \pi} = e^z (\cos(2 \pi) + i \sin (2 \pi)) = e^z$
+
+
+\subsubsection{Wurzeln ziehen}
+
+\greenBox{Quadratwurzel} $z^2 = a+ib = r e^{i\varphi}$
+
+$z=\rho e^{i \alpha}$
+$\implies$ $\rho^2 = r$, $2\alpha = \varphi$ $\implies$ $\rho = \sqrt{r}=r^{\frac{1}{2}}$, $\alpha = \varphi / 2$
+
+Zweite Lösung: 
+$z^2 = re^{i\varphi} = re^{i(\varphi + 2 \pi)}$
+$\implies \alpha = \varphi / 2+ \pi$
+
+\textit{Es gilt: $z_1 = -z_2$. Wieso?}
+
+\greenBox{$n$te Wurzel} Für $n \in \mathbb{N}$: $z^n = re^{i \varphi}$: 
+
+$n$ Lösungen $z_k = r^{1/n} e^{i(\varphi / n + k2 \pi / n)}$, $k=0,..., n-1$
+
+\subsubsection{Quadratische Gleichungen $az^2 + bz + c = 0$ lösen}
+
+$z_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, 
+
+\textit{$\pm \sqrt{b^2 - 4ac}$ meint beide Lösungen von $w^2 = b^2 - 4ac$}
+
