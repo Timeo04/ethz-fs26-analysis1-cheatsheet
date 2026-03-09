@@ -15,6 +15,16 @@ $a_n=g(a_{n-1}, a_{n_2},...)$
 
 $f$ und $g$ nennt man \textbf{Bildungsgesetz}
 
+% -----------------------------
+\subsection{Eigenschaften}
+
+Eine Folge $(a_n)_{n \in \mathbb{N}_0}$ ist \definition{nach unten/oben beschränkt} falls $M=\{a_N | n \in \mathbb{N}_0\}$ eine untere/obere Schranke besitzt.
+
+Eine nach oben und nach unten beschränkte Folge ist \definition{beschränkt}.
+
+Eine Folge ist \definition{(streng) monoton fallend} falls gilt $\forall n, m \in \mathbb{N}_0 : m > n \implies a_m \leq (<) a_n$
+
+Eine Folge ist \definition{(streng) monoton wachsend} falls gilt $\forall n, m \in \mathbb{N}_0 : m > n \implies a_m \geq (>) a_n$
 
 % ------------------------------
 \subsection{Konvergenz / Divergenz}
@@ -33,6 +43,16 @@ $A \in \mathbb{R}$ ist \definition{Häufungspunkt} einer Folge $(a_n)_n\in\mathb
 $A\in \mathbb{R}$ ist Häufungspunkt von $(a_n)_n\in\mathbb{N}_0$ \lemma{$\Leftrightarrow$} es existiert eine konvergente Teilfolge mit $\lim_{k \rightarrow \infty} a_{n_k} = A$.
 
 \greenBox{Konvergente Folge hat genau einen Häufungspunkt} (ist identisch mit Grenzwert).
+
+\greenBox{Jede beschränkte und monotone Folge konvergiert.}
+
+\lemma{Jede konvergente Folge ist beschränkt.}
+
+\begin{enumerate}
+    \item Eine monotone Folge reeller Zahlen $(a_n)_{n \in \mathbb{N}_0}$ konvergiert genau dann, wenn sie beschränkt ist.
+    \item Falls $(a_n)_{n \in \mathbb{N}_0}$ monoton wachsend ist, gilt $\lim_{n \rightarrow \infty} a_n = \sup\{a_n | n \in \mathbb{N}_0\}$
+    \item Falls $(a_n)_{n \in \mathbb{N}_0}$ monoton fallen ist, gilt $\lim_{n \rightarrow \infty} a_n = \inf\{a_n | n \in \mathbb{N}_0\}$
+\end{enumerate}
 
 \subsubsection{Spezialfälle divergenter Folgen}
 $\lim_{n\rightarrow \infty} a_n = \infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n > M$
@@ -60,7 +80,8 @@ Falls $\lim_{n \rightarrow \infty} a_n = K ( \neq \pm \infty)$, $\lim_{n \righta
 \end{enumerate}
 
 \theorem{Sandwich-Theorem} $(a_n)_{n\in\mathbb{N}_0}$ und $(c_n)_{n\in\mathbb{N}_0}$ mit $\lim_{n \rightarrow \infty} a_n = L$ und $\lim_{n \rightarrow \infty} c_n = L$ und $(b_n)_{n \in \mathbb{N}_0}$ mit der Eigenschaft,
-dass $\exists N_0 \in \mathbb{N}$ mit $a_n \leq b_n \leq c_n \forall n \geq N_0$. $\implies \lim_{n \rightarrow \infty} b_n = L$
+dass $\exists N_0 \in \mathbb{N}$ mit $a_n \leq b_n \leq c_n \forall n \geq N_0$. $\implies$ $(b_n)_{n \in \mathbb{N}_0}$ ist konvergent und $\lim_{n \rightarrow \infty} b_n = L$
+
 
 % ------------------------------
 \subsection{Teilfolgen}
