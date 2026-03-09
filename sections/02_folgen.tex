@@ -82,6 +82,23 @@ Falls $\lim_{n \rightarrow \infty} a_n = K ( \neq \pm \infty)$, $\lim_{n \righta
 \theorem{Sandwich-Theorem} $(a_n)_{n\in\mathbb{N}_0}$ und $(c_n)_{n\in\mathbb{N}_0}$ mit $\lim_{n \rightarrow \infty} a_n = L$ und $\lim_{n \rightarrow \infty} c_n = L$ und $(b_n)_{n \in \mathbb{N}_0}$ mit der Eigenschaft,
 dass $\exists N_0 \in \mathbb{N}$ mit $a_n \leq b_n \leq c_n \forall n \geq N_0$. $\implies$ $(b_n)_{n \in \mathbb{N}_0}$ ist konvergent und $\lim_{n \rightarrow \infty} b_n = L$
 
+% ------------------------------
+\subsection{Limes superior / inferior}
+\definition{Limes superior} von $a_n$: $\limsup_{n \rightarrow \infty} a_n = \overline{\lim_{n \rightarrow \infty}}a_n=\lim_{n \rightarrow \infty} \overbrace{\sup\{a_k | k \geq n\}}^{=s_n}$
+\textit{$(s_n)_{n\in \mathbb{N}_0}$ ist monoton fallend.}
+
+\definition{Limes superior} von $a_n$: $\liminf_{n \rightarrow \infty} a_n = \underline{\lim_{n \rightarrow \infty}}a_n=\lim_{n \rightarrow \infty} \inf\{a_k | k \geq n\}$
+
+\greenBox{Häufungspunkt und limes superior} Sei $A=\limsup_{n \rightarrow \infty} a_n$. Dann ist $A$ Häufungspunkt und $\forall \epsilon > 0$ gilt:
+\begin{enumerate}
+    \item es nur unendlich viele $a_n$ gibt mit $a_n \geq A + \epsilon$
+    \item für unendlich viele $a_n$ gilt $A- \epsilon < a_n < A + \epsilon$fk
+\end{enumerate}
+
+\lemma{Eigenschaften}
+
+\includegraphics[width=0.75\columnwidth]{02_folgen/lim_sup_inf.png}
+
 
 % ------------------------------
 \subsection{Teilfolgen}
