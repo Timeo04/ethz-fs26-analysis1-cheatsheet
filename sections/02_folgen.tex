@@ -87,13 +87,18 @@ dass $\exists N_0 \in \mathbb{N}$ mit $a_n \leq b_n \leq c_n \forall n \geq N_0$
 \definition{Limes superior} von $a_n$: $\limsup_{n \rightarrow \infty} a_n = \overline{\lim_{n \rightarrow \infty}}a_n=\lim_{n \rightarrow \infty} \overbrace{\sup\{a_k | k \geq n\}}^{=s_n}$
 \textit{$(s_n)_{n\in \mathbb{N}_0}$ ist monoton fallend.}
 
-\definition{Limes superior} von $a_n$: $\liminf_{n \rightarrow \infty} a_n = \underline{\lim_{n \rightarrow \infty}}a_n=\lim_{n \rightarrow \infty} \inf\{a_k | k \geq n\}$
+\definition{Limes inferior} von $a_n$: $\liminf_{n \rightarrow \infty} a_n = \underline{\lim_{n \rightarrow \infty}}a_n=\lim_{n \rightarrow \infty} \inf\{a_k | k \geq n\}$
 
 \greenBox{Häufungspunkt und limes superior} Sei $A=\limsup_{n \rightarrow \infty} a_n$. Dann ist $A$ Häufungspunkt und $\forall \epsilon > 0$ gilt:
 \begin{enumerate}
     \item es nur unendlich viele $a_n$ gibt mit $a_n \geq A + \epsilon$
     \item für unendlich viele $a_n$ gilt $A- \epsilon < a_n < A + \epsilon$fk
 \end{enumerate}
+
+Limes superior (inferior) gibt den grössten (kleinsten) möglichen Häufungspunkt an.
+
+\greenBox{Jede beschränkte Folge hat mindestens einen Häufungspunkt.} (reelle Zahlen)
+\textit{Konvergenz hier über den gewohnten Abstand/Absolutbetrag definiert.}
 
 \lemma{Eigenschaften}
 
@@ -105,3 +110,10 @@ dass $\exists N_0 \in \mathbb{N}$ mit $a_n \leq b_n \leq c_n \forall n \geq N_0$
 \definition{Teilfolge} ist Folge $(a_{n_k})_{k\in \mathbb{N}_0}$, wobei $(n_k)_{k\in \mathbb{N}_0}$ Folge nicht-negativer ganzer Zahlen ist mit $\forall k\in \mathbb{N}_0: n_{k+1}>n_k$.
 
 Für konvergente Folge $(a_n)_{n \in \mathbb{N}_0}$ \textbf{mit Grenzwert $L$} konvergiert jede Teilfolge \lemma{gegen den gleichen Grenzwert $L$}.
+
+% ------------------------------
+\subsection{Cauchy-Folgen}
+$(a_n)_{n \in \mathbb{N}_0 \subset \mathbb{R}}$ heisst \definition{Cauchy-Folge}, falls $\forall \epsilon >0$ ein $N \in \mathbb{N}$ existiert, so dass gilt $\forall m, n \geq N |a_n - a_m| < \epsilon$.
+
+\lemma{Jede Cauchy-Folge ist beschränkt.}
+
