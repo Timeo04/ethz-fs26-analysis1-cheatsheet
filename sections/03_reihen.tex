@@ -19,3 +19,28 @@ Seien $\sum_{n=0}^{\infty} a_n$ und $\sum_{n=0}^{\infty}b_n$ konvergente Reihen.
     \item $\sum_{n=0}^{\infty} (a_n + b_n) = \sum_{n=0}^{\infty} a_n +  \sum_{n=0}^{\infty} b_n$
     \item $\sum_{n=0}^{\infty} C \cdot = C \sum_{n=0}^{\infty} a_n$ ($C \in \mathbb{R}$)
 \end{itemize}
+
+Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe \textbf{nicht-negativer} Elemente. 
+Dann ist die Folge der Partialsummen $s_n = \sum_{k=0}{n} a_k$ monoton wachsend.
+Falls die Folge $(s_n)_{n\in\mathbb{N}_0}$ beschränkt ist, konvergiert die Reihe $\sum_{n=0}^{\infty} a_n$, andernfalls divergiert sie.
+
+\theorem{Vergleichskriterium} Seien $\sum_{n=0}^{\infty} a_n$, $\sum_{n=0}^{\infty} b_n$ und $\sum_{n=0}^{\infty} c_n$ Reihen mit nicht-negativen Gliedern und für $N \in \mathbb{N}$ gilt: $c_n \leq b_n \leq a_n \forall n \geq N$
+Dann gilt:
+\begin{itemize}
+    \item Falls $\sum_{n=0}^{\infty} a_n$ knovergiert, konvergiert auch $\sum_{n=0}^{\infty} b_n$ (Majorantenkriterium)
+    \item Falls $\sum_{n=0}^{\infty} c_n$ divergiert, divergiert auch $\sum_{n=0}^{\infty} b_n$ (Minorantenkriterium)
+\end{itemize}
+
+\textit{Bew.-Idee: Wir wissen $\forall n \geq N$ gilt $b_n \leq a_n$ $\implies$ $\sum_{k=N}^{m} b_k \leq \sum_{k=N}^{m} a_n \forall m > N$ und $\lim_{m \rightarrow \infty} \sum_{k=N}^{m} b_k = \sum_{k=N}^{\infty} b_k = \sup \{ \sum_{k=N}^{l} b_k | l > N\} \leq \sup \{\sum_{k=N}^{l} | (l>N)\} = \sum_{k=N}^{\infty} a_k = \infty$}
+
+\subsection{Spezielle Reihen}
+
+\definition{Geometrische Reihen:} $a \sum_{n=0}^{\infty} q^n$
+\begin{itemize}
+    \item $q \neq 0$ und $q \neq 1$: $s_n = a + aq + aq^2+...+aq^{n-1} = a \cdot \frac{1-q^n}{1-q}$
+    \item Falls $|q|<1$: $a=\lim_{n \rightarrow \infty} s_n = a \sum_{n=0}^{\infty} q^n = a \cdot \dfrac{1}{1-q}$
+\end{itemize}
+
+\definition{Verallgemeinerte harmonische Reihen:} $\sum_{k=1}^{\infty} \frac{1}{k^s} = \sum_{k=1}^{\infty} k^{-s}$: konvergiert für $s > 1$ und divergiert für $s \leq 1$
+
+Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe. Für $N \in \mathbb{N}_0$ ist $\sum_{n=N}^{\infty} a_n$ \lemma{genau dann konvergent} wenn $\sum_{n=0}^{\infty} a_n$ konvergiert, und dann gilt: $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N -1} a_n + \sum_{n=N}^{\infty} a_n$.
