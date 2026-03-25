@@ -88,3 +88,17 @@ Taylor-Reihe: $\sum_{n=0}^{\infty} \frac{1}{n!} f^{(n)}(x_0)(x-x_0)^n$
 \subsubsection{Potenzreihen}
 
 \definition{Potenzreihe:} Reihe der Form $c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + ... = \sum_{k=0}^{\infty} c_k (x-a)^k$ um \definition{Entwicklungspunkt} $a$ mit \definition{Koeffizienten} $c_0, c_1, c_2, ...$ und \definition{Argument} $x$.
+
+\greenBox{Es gilt folgendes:}
+\begin{enumerate}
+    \item Jede Potenzreihe besitzt einen \textbf{Konvergenzradius} $R$, sodass gilt:
+    Die Reise konvergiert für $x$ mit $|x-a|<R$ und die Reihe divergiert für $x$ mit $|x-a|>R$.
+    \item Das Intervall $(a-R,a+R)$ heisst \textbf{Konvergenzintervall}.
+    \item Der Konvergenzradius $R$ lässt sich mit der folgenden Formel berechnen: Es sei $\rho = \limsup_{n \rightarrow \infty} |c_n|^{1/n}$.
+    Dann ist $R$ gegeben durch $R = \begin{cases}
+        0, & \text{falls } \rho = \infty\\
+        \rho^{-1}, & \text{falls } 0 < \rho < \infty\\
+        \infty, & \text{falls } \rho = 0 
+    \end{cases}$.
+\end{enumerate}
+\textit{Folgt aus Wurzelkriterium für allgemeine Reihen.}
