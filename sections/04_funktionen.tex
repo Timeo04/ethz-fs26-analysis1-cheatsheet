@@ -1,0 +1,30 @@
+\subsection{Definition}
+
+Eine \definition{Funktion} (Abbildung) ist eine Zuordnungsvorschrift, welche jedem zulässigen Input \textbf{genau einen} Output aus dem \textbf{Zielbereich} (range) zuordnet.
+
+Die Menge aller möglichen Inputs heisst \definition{Definitionsbereich} bezeichnet als $\operatorname{domain}(f)$ oder $\mathbb{D}$.
+
+Die Menge aller tatsächlich angenommener/realiserter Outputs heisst \definition{Wertebereich (Bildmenge)} bezeichnet mit $\operatorname{image}(f)$ oder $\mathbb{W}$.
+
+$f : \operatorname{domain}(f) \rightarrow \operatorname{range}(f)\\
+x \mapsto y = f(x)$
+
+Der Input heisst \definition{unabhängige Variable (Argument)}.
+Der Output heisst \definition{abhängige Variable}.
+
+Es sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$ mit $\mathbb{D}(f) \neq \emptyset$ und es sei weiters $D' \subset \mathbb{D}(f)$.
+Dann kann man die \definition{Einschränkung/Restriktion} von $f$ auf $D'$ betrachten, die Funktion $f|_{D'} : D' \rightarrow \mathbb{R}$ mit $f|_{D'}(x)=f(x) \forall x \in D'$
+\textit{($f$ und $f|_{D'}$ sind zwei verschiedene Funktionen.)}
+
+Es seien $\overbrace{f : X \rightarrow Y}^{\text{\small{innere Funktion}}}$ und $\overbrace{g: Y \rightarrow Z}^{\text{\small{äussere Funktion}}}$ zwei Funktionen. Dann ist die \definition{Verknüpfung} von $f$ und $g$ die Funktion $g \circ f : X \rightarrow Z$ mit $g \circ f(x) = g(f(x)) \forall x \in X$
+
+Sei $X$ eine beliebige (nicht leere) Menge. Dann ist die \definition{Identitätsfunktion / Identität} $id_x (x) = x \forall x \in X$.
+
+Falls $f: X \rightarrow Y$ bijektiv ist, gibt es eine eindutige Funktion (Abbildung) $g: Y \rightarrow X$ mit den Eigenschaften $g \circ f = id_X$ und $f \circ g = id_Y$. $g$ nennt man die \definition{Inverse} (Umkehrfunktion / inverse Funktion / inverse Abbildung) und wird mit $f^{-1}$ bezeichnet.
+
+$f: X \rightarrow Y$ ist
+\begin{itemize}
+    \item \definition{injektiv} falls gilt: $\forall x_1, x_2 \in X (f(x_1) = f(x_2) \implies x_1 = x_2)$\\ \textit{("verschiedene Argumente generieren verschiedene Outputs")}
+    \item \definition{surjektiv} falls gilt: $\forall y \in Y \exists x \in X : f(x) = y$\\ \textit{("Zielbereich = Wertebereich")}
+    \item \definition{bijektiv} falls sie injektiv und surjektiv ist.
+\end{itemize}
