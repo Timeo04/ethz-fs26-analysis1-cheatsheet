@@ -1,3 +1,4 @@
+% -----------------------------------
 \subsection{Definition}
 
 Eine \definition{Funktion} (Abbildung) ist eine Zuordnungsvorschrift, welche jedem zulässigen Input \textbf{genau einen} Output aus dem \textbf{Zielbereich} (range) zuordnet.
@@ -21,6 +22,7 @@ Es seien $\overbrace{f : X \rightarrow Y}^{\text{\small{innere Funktion}}}$ und 
 Sei $X$ eine beliebige (nicht leere) Menge. Dann ist die \definition{Identitätsfunktion / Identität} $id_x (x) = x \forall x \in X$.
 
 Falls $f: X \rightarrow Y$ bijektiv ist, gibt es eine eindutige Funktion (Abbildung) $g: Y \rightarrow X$ mit den Eigenschaften $g \circ f = id_X$ und $f \circ g = id_Y$. $g$ nennt man die \definition{Inverse} (Umkehrfunktion / inverse Funktion / inverse Abbildung) und wird mit $f^{-1}$ bezeichnet.
+\textit{(Zu jedem $y \in Y$ ordnen wir das eindeutige Element $x \in X$ zu, sodass gilt $f(x)=y$; möglich, da $f$ surjektiv; eindeutig, da $f$ injektiv.)}
 
 $f: X \rightarrow Y$ ist
 \begin{itemize}
@@ -28,3 +30,37 @@ $f: X \rightarrow Y$ ist
     \item \definition{surjektiv} falls gilt: $\forall y \in Y \exists x \in X : f(x) = y$\\ \textit{("Zielbereich = Wertebereich")}
     \item \definition{bijektiv} falls sie injektiv und surjektiv ist.
 \end{itemize}
+
+Sei $f : \mathbb{D}(f) \rightarrow \mathbb{R}$ mit $\mathbb{D}(f) \neq \emptyset$. Dann
+\begin{itemize}
+    \item nennen wir $f$ \definition{nach oben beschränkt}, falls $M \in \mathbb{R}$ existiert mit $f(x) \leq M \forall x \in \mathbb{D}(f)$
+    \item nennen wir $f$ \definition{nach unten beschränkt}, falls $M \in \mathbb{R}$ existiert mit $f(x) \geq M \forall x \in \mathbb{D}(f)$
+    \item nennen wir $f$ \definition{beschränkt}, falls $M \in \mathbb{R}$ existiert mit $|f(x)|\leq M \forall x \in \mathbb{D}(f)$\\
+    \textit{(Falls nach oben und nach unten beschänkt)}
+\end{itemize}
+
+Wir betrachten $f: X = \mathbb{D}(f) \subset \mathbb{R} \rightarrow \mathbb{R}$. Diese Funktion nennen wir
+\begin{itemize}
+    \item \definition{(streng) monoton wachsend}, falls gilt $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1) (<) \leq f(x_2))$
+    \item \definition{(streng) monoton fallend}, falls gilt $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1) (>) \geq f(x_2))$
+    \item \definition{(streng) monoton}, falls $f$ (streng) monoton wachsend oder (streng) monoton fallend ist.
+\end{itemize}
+
+\greenBox{Jede streng monotone Funktion ist injektiv.}
+\textit{(Widerspruchsbeweis: Funktion streng monoton aber nicht injektiv $\implies$ $\exists x_1 \neq x_2$ mit $f(x_1) = f(x_2)$ oBdA $x_1 < x_2$ $\implies$ Wiederspruch.)}
+
+$f:\mathbb{R}\rightarrow \mathbb{R}$ nennen wir
+\begin{itemize}
+    \item \definition{ungerade}, falls gilt $\forall x \in \mathbb{R} f(-x) = -f(x)$\\
+    \textit{z.B. ungerade Potenzen von x}
+    \item \definition{gerade}, falls gilt $\forall x \in \mathbb{R} f(-x) = f(x)$\\
+    \textit{z.B. gerade Potenzen von x}
+\end{itemize}
+
+Der \textbf{Graph} einer Funktion (Menge aller Punkte der From $(x, f(x))$) heisst \definition{linksgekrümmt (konvex)} / \definition{rechtsgekrümmt (konkav)}, falls der Graph beim Durchlaufen von links nach rechts eine Linkskurve \textit{(z.B. $f(x)=x^2$)} / Rechtskurve \textit{(z.B. $f(x)=-x^2$)} vollführt.
+
+\textit{Kann mit Vergleichssekante überprüft werden. Eine Funktion kann in gewissen Abschnitten konvex und in anderen konkav sein.}
+
+% -----------------------------------
+\subsection{Grenzwerte}
+
