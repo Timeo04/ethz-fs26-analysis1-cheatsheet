@@ -72,9 +72,29 @@ Existenz eines Grenzwertes impliziert nicht, dass $f$ an der Stelle $x_0$ defini
 
 Wenn der Funktionswert $f(x_0)$ existiert, muss er gleich dem Grenzwert $L$ sein (nach unserer Definition).
 
-Grenzwerte im Unendlichen
+Sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$. Dann gilt $\lim_{x \rightarrow x_0} f(x)= L$ genau dann, wenn \greenBox{für jede konvergente Folge} $(x_n)_{n \in \mathbb{N}_0}$, welche gegen $x_0$ konvergiert, gilt $\lim_{n \rightarrow \infty} f(x_n) = L$.
 
-Uneigentliche Grenzwerte
+% TODO!!
 
-Einseitige Grenzwerte
+\subsubsection{Einseitige Grenzwerte}
+
+\subsubsection{Grenzwerte im Unendlichen}
+
+\subsubsection{Uneigentliche Grenzwerte}
+
+% -------------------------------------
+\subsection{Stetigkeit}
+
+Eine Funktion $f : \mathbb{D} \rightarrow \mathbb{R}$ heisst \definition{an der Stelle $x_0$ stetig} falls gilt $\forall \epsilon > 0 \exists \delta > 0 s.t. \forall x \in I (|x - x_0| < \delta \implies |f(x) - f(x_0)| < \epsilon)$.
+
+Die Funktion nennen wir \definition{stetig} falls sie in jedem Punkt des Definitionsbereichs stetig ist.
+
+\textit{Falls $f$ an der Stelle $x_0$ nicht definiert ist, können wir auch nicht nach der Stetigkeit an dieser Stelle fragen.}
+
+\textit{\definition{Stetige Fortsetzung} "Dieselbe Funktion mit Lücke eingesetzt"}
+
+Sei $f: D \subset \mathbb{D}(f) \subset \mathbb{R}$ eine Funktion und $x_0 \in D$. Dann ist $f$ an der Stelle $x_0$ \greenBox{genau dann stetig, wenn} für jede Folge $(x_n)_{n \in \mathbb{N}_0}$ mit $x_n \rightarrow x_0$ die Folge $(f(x_n))_{n \in \mathbb{N}_0}$ gegen $f(x_0)$ konvergiert (Folgenstetigkeit).
+
+\textit{Alternativ kann Stetigkeit auch so definiert werden: $f: \mathbb{D} (f) \rightarrow \mathbb{R}$. Dann ist $f$ genau dann stetig, wenn die Urbilder $f^{-1}(A)$ von offenen Mengen ebenfalls wieder offen sind.\\
+$f^{-1}(A)= \{x \in \mathbb{D}(f)|f(x) \in A\}$}
 
