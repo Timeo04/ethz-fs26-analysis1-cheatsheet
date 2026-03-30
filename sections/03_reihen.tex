@@ -44,6 +44,10 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
 
 \theorem{Umordnungssatz für absolut konvergente Reihen:} Es sei $\sum_{n=0}^{\infty} a_n$ eine absolut konvergente Reihe reeller Summaneden und es sei $\varphi : \mathbb{N}_0 \rightarrow \mathbb{N}_0$ eine Bijektion. Dann konvergiert $\sum_{n=0}^{\infty} a_{\varphi (n)}$ absolut, und es gilt $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{\infty}a_{\varphi (n)}$. \textit{(Jede mögliche Umordnung liefert eine neue Reihe, welche ebenfalls zum gleichen Wert konvergiert.)}
 
+\textit{Falls $\sum_{n=1}^{\infty}a_n$ absolut konvergent. Jede Umordnung der Reihe konvergiert. Jede Umordnung ergibt denselben Grenzwert.}
+
+\textit{Falls $\sum_{n=1}^{\infty}a_n$ \textbf{nicht} absolut konvergent, gillt dies nicht mehr und man kann jeden beliebigen Wert erhalten.}
+
 \subsubsection{Kriterien für Konvergenz}
 
 \theorem{Leibnitz Kriterium:} Sei $(a_n)_{n \in \mathbb{N}_0}$ monoton fallende Folge nicht-negativer reller Zahlen, welche gegen null konvergiert. Dann konvergiert die \textbf{alternierende Reihe} $\sum_{n=0}^{\infty} (-1)^n a_n$ und es gilt $\sum_{n=0}^{2m+1}(-1)^na_n \leq \sum_{n=0}^{\infty}(-1)^n a_n \leq \sum_{n=0}^{2m} (-1)^n a_n \forall m \in \mathbb{N}_0$.
@@ -103,3 +107,9 @@ Reihe der Form $c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + ... = \sum_{k=0}^{\in
     \end{cases}$.
 \end{enumerate}
 \textit{Folgt aus Wurzelkriterium für allgemeine Reihen.}
+
+\textit{$R:= \frac{1}{\limsup_{k \rightarrow \infty}\sqrt[k]{|c_k|}} = \frac{1}{\lim_{k \rightarrow \infty} |\frac{c_{k+1}}{c_k}|}=\lim_{k \rightarrow \infty}|\frac{c_k}{c_{k+1}}|$}
+
+\textit{\textbf{Cauchy-Produkt} Für $\sum_{i=0}^{\infty}a_i$, $\sum_{j=0}^{\infty}b_j$ absolut konvergent $\implies (\sum_{i=0}^{\infty} a_k)(\sum_{j=0}^{\infty}b_j)=\sum_{n=0}^{\infty}\sum_{j=0}^{n}a_{n-j}b_j$}
+
+$e^x = \sum_{n=0}^{\infty} \frac{1}{n!}x^n$
