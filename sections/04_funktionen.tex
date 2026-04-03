@@ -78,9 +78,25 @@ Sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$. Dann gilt $\lim_{x \rightarrow x_
 
 \subsubsection{Einseitige Grenzwerte}
 
+Wir nehmen an es gelte $\mathbb{D}(f) \cap [x_0, x_0 + \delta) \neq \emptyset \forall \delta > 0$.
+
+Falls gilt $\forall \epsilon > 0 \exists \delta > 0$ so dass$ x \in \mathbb{D}(f) \cap [x_0, x_0 + \delta) \implies|f(x)-L| < \epsilon$ hat $f$ in $x_0$ den \definition{rechtsseitigen Grenzwert} $L$, d.h. $\lim_{x\geq x_0\; x \rightarrow x_0} f(x) = L$
+
+Respektive falls gilt $\forall \epsilon > 0 \exists \delta > 0$ so dass $x \in \mathbb{D}(f) \cap (x_0, x_0+\delta) \implies |f(x)-L| < \epsilon$ hat $f$ in $x_0$ den \definition{rechtsseitigen Grenzwert} $L$, d.h. $\lim_{x > x_0\; x \rightarrow x_0} f(x) = L$
+
 \subsubsection{Grenzwerte im Unendlichen}
 
+Es sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$ und es gelte $\mathbb{D}(f) \cap (R, \infty) \neq \emptyset \forall R > 0$.
+
+Falls gilt $\forall \epsilon > 0 \exists M > 0$ so dass $x \in \mathbb{D}(f) \cap (M, \infty) \implies |f(x) - L| < \epsilon$ hat $f$ \definition{für $x$ gegen unendlich} den Grenzwert $L$, d.h. $lim_{x \rightarrow \infty} f(x)=L$.
+
+Es sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$ und es gelte $\mathbb{D}(f) \cap (- \infty, -R) \neq \emptyset \forall R > 0$.
+
+Falls gilt $\forall \epsilon > 0 \exists M > 0$ so dass $x \in \mathbb{D}(f) \cap (-\infty, -M) \implies |f(x) - L| < \epsilon$ hat $f$ \definition{für $x$ gegen $- \infty$} den Grenzwert $L$, d.h. $lim_{x \rightarrow - \infty} f(x)=L$.
+
 \subsubsection{Uneigentliche Grenzwerte}
+
+Falls gilt $\forall N > 0 \exists \delta > 0$ so dass $x \in \mathbb{D}(f) \cap (x_0 - \delta, x_0 + \delta) \implies f(x) \geq N$ hat $f$ in $x_0$ den \definition{uneigentlichen Grenzwert} $\infty$ (divergiert $f$ gegen unendlich), d.h. $\lim_{x \rightarrow x_0} f(x) = \infty$.
 
 % -------------------------------------
 \subsection{Stetigkeit}
