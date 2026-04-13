@@ -119,13 +119,17 @@ $f^{-1}(A)= \{x \in \mathbb{D}(f)|f(x) \in A\}$}
 
 \theorem{Stetigkeit der Umkehrfunktion:} Es sei $I$ ein Intervall und es sei $f:I \rightarrow J$ eine stetige und bijektive Funktion. Dann ist auch $J$ ein Intervall und die Umkehrfunktion $f^{-1}:J \rightarrow I$ ist stetig.
 
-\theorem{Zwischenwertsatz:} Es sei $f: [a,b] \rightarrow \mathbb{R}$ eine stetige Funktion und es sei $c$ eine Zahl zwischen $f(a)$ und $f(b)$. Dann gibt es ein $x \in [a,b]$ mit $f(x)=c$.
+\textit{\textbf{Bew.-Idee.:} $f$ streng monoton - $J$ ist auch Intervall - Stetigkeit}
+
+\theorem{Zwischenwertsatz:} Es sei $f: [a,b] \rightarrow \mathbb{R}$ eine stetige Funktion und es sei $c$ eine Zahl zwischen $f(a)$ und $f(b)$. Dann gibt es \textit{(mindestens)} ein $x \in [a,b]$ mit $f(x)=c$.
 
 \textit{\textbf{Spezialfall:} Es sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ eine stetige Funktion und es seien $a,b \in I$ mit $f(a) < 0$ und $f(b)>0$. Dann hat $f$ mindestens eine Nullstelle zwischen $a$ und $b$.}
 
 Ein beschränktes und abgeschlossenes Intervall nennt man \definition{kompakt}.
 
 Es sei $[a,b]$ ein kompaktes Intervall und es sei $(x_n)_{n\in \mathbb{N}_0}$ in $[a,b]$. Dann \lemma{existiert eine Teilfolge} $(s_{n_k})_{k \in \mathbb{N}_0}$ mit $\lim_{k \rightarrow\infty} x_{n_k} = x_0$ mit $x_0 \in [a,b]$.
+
+\greenBox{Stetige Funktion auf kompaktem Intervall:} Sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ stetige Funktion und $I$ kompakt. Dann ist $f$ beschränkt und $f$ nimmt sein Maximum und Minimum auf $I$ an, d.h. es gibt ein $x_{min} \in I$ und ein $x_{max} \in I$ mit $\forall x \in I : f(x_{min}) \leq f(x) \leq f(x_{max})$.
 
 \subsubsection{Rechenregeln}
 \includegraphics[width=0.8\columnwidth]{04_funktionen/rechenregeln_stetigkeit}
