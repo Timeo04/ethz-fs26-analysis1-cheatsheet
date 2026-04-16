@@ -143,3 +143,81 @@ Es sei $[a,b]$ ein kompaktes Intervall und es sei $(x_n)_{n\in \mathbb{N}_0}$ in
     Genauer: Es seien $f: I \subset \mathbb{R} \rightarrow \operatorname{image}(f)$ und $g : \operatorname{image}(f) \rightarrow \operatorname{image}(g)$ zwei stetige Funktionen. Dann ist die Verknüpfung $g(f(x))= g \circ f (x)$ ebenfalls stetig und es gilt $\lim_{x \rightarrow x_0}g(f(x))= g(\lim_{x \rightarrow c}(f(x_0)))$
 \end{enumerate}
 
+% -----------------------------------------
+\subsection{Elementare Funktionen}
+% TODO
+
+% ----------- ------------------------------
+\subsection{Ableitung}
+
+\definition{Mittlere (durchschnittliche) Änderungsrate} von $f$ im Definitionsbereich zwischen $a$ und $a+h$: $\frac{\delta y}{\delta x} = \frac{f(a+h) - f(a)}{h}$ \definition{= Differenzenquotient}
+\textit{(Sekantensteigung)}
+
+\definition{Ableitung / Differentialquotient} \textbf{an der Stelle} $a$ ist gegeben durch (sofern der Grenzwert existiert):
+$$\lim_{h \rightarrow 0}\frac{f(a+h) - f(a)}{h} = \lim_{b \rightarrow a}\frac{f(b)-f(a)}{b-a} = \frac{dy}{dx}|_{x=a}=\frac{df}{dx}|_{x=a}=f'(a)$$
+\textit{\textbf{momentante} Änderungsrate / Tangentensteigung / Vorzeichen: Zu- oder Abnahme}
+
+Ausgehend von einer gegebenen Funktion $f: domain(f) \rightarrow \mathbb{R}, x \mapsto y = f(x)$ ist die \definition{Ableitungsfunktion} definiert durch $a \mapsto f'(a) = \frac{dy}{dx}|_{x=a}$.
+\textit{Es gilt auf jeden Fall $\mathbb{D}(f) \supseteq \mathbb{D}(f')$.}
+
+\textit{Bsp.: $f(x)=|x|$. Für $x=0$ existiert keine Ableitung (Knickstelle). \textbf{Punkte, an welchen keine Ableitung erwartet werden kann:} Definitionslücken / Unstetigkeitstellen, insb. Sprungstellen / Knickstellen.}
+
+\subsubsection{Differenzierbarkeit}
+
+Falls für Funktion $f$ die Ableitung $f'(x)$ an der Stelle $x$ existiert, nennen wir $f$ \definition{an der Stelle $x$ differenzierbar.}
+
+Falls $f$ für alle Argumente $x$ des Definitionsbereichs differenzierbar ist, nennen wir $f$ \definition{differenzierbar.}
+
+Ist $f$ an der Stelle $x_0$ differenzierbar, so ist $f$ \lemma{an dieser Stelle insbesondere stetig.}
+
+\subsubsection{Einsetige Ableitungen}
+
+Falls der Grenzwert 
+$$\lim_{h>0\; h \rightarrow 0}\frac{f(a+h)-f(a)}{h}$$
+existiert, nennt man diesen die \definition{rechtsseitige Ableitung,} respektive $f$ an der Stelle $a$ \textbf{von rechts differenzierbar.}
+
+Analog ist die Ableitung von links definiert.
+
+\subsubsection{Höhere Ableitungen}
+
+Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine Funktion. Iterativ definieren wir \definition{höhere Ableitungen} für $n \in \mathbb{N}_0$:
+$$f^{(0)}=f, f^{(1)} = f', f^{(2)}=f'', f^{(n+1)}=(f^{(n)})'$$
+
+Falls $f^{(n)}$ existiert, nennt man $f$ \definition{$n$-fach differenzierbar.}
+
+Falls die $n$-ten Ableitungen auch noch stetige Funktionen sind, nnen wir $f$ \definition{$n$-fach stetig differenzierbar.}
+
+Die Menge aller $n$-fach stetig differenzierbarer Funktionen auf $D$ bezeichnen wir mit $C^n(D)$.
+
+Ausserdem setzen wir $C^\infty (D) := \cap_{n=0}^\infty C^n(D)$ und nennen Funktionen in $C^\infty (D)$ \definition{glatte Funktionen.}
+
+\subsubsection{Ableitungsregeln}
+
+\greenBox{Potenzfunktionen $f(x)=ax^p$:} $f'(x)=a \cdot p \cdot x^{p-1}$   $p \neq 0$
+
+\greenBox{Exponentialfunktionen $f(x)=a^x$ ($a>0$):} $f'(x) = \ln(a) \cdot a^x$
+
+\greenBox{Trigonometrische Funktionen (Bogenmass):}
+\begin{itemize}
+    \item $\sin'(x)= \cos(x)$
+    \item $\cos'(x)=-\sin(x)$
+    \item $\tan'(x) = \frac{1}{\cos ^2 (x)}= 1 + \tan ^2(x)$
+\end{itemize}
+
+\greenBox{Hyperbolische Funktionen:}
+\begin{itemize}
+    \item $\sinh'(x)= \cosh(x)$
+    \item $\cosh'(x)= \sinh(x)$
+\end{itemize}
+$\sinh (x) = \frac{1}{2} (e^x  - e^{-x}), \cosh (x) = \frac{1}{2}(e^x + e^{-x})$
+
+\greenBox{Umkehrfunktionen:}
+\begin{itemize}
+    \item $\ln'(x)= \frac{1}{x}$
+    \item $\arcsin'(x)=\frac{1}{\sqrt{1-x^2}}$
+    \item $\arccos'(x)=\frac{-1}{\sqrt{1-x^2}}$
+    \item $\arctan'(x)=\frac{1}{1+x^2}$
+\end{itemize}
+
+\textbf{Beweis:} $(e^x)'(x)=e^x$. $e^x=\sum_{k=0}^{\infty} \frac{1}{k!}x^k$ und "Potenzreihen dürfen termweise abgeleitet werden": $(e^x)'(x)=\frac{d}{dx}(\sum_{k=0}^{\infty}\frac{1}{k!}x^k)=\sum_{k=0}^{\infty}\frac{d}{dx} \frac{1}{k!}x^k = 0 + 1 + x^1 + \frac{1}{2!}x^2 + ... = \sum_{s=0}^{\infty}\frac{1}{s!}x^s$.
+
