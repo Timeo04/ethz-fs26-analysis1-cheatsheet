@@ -145,7 +145,77 @@ Es sei $[a,b]$ ein kompaktes Intervall und es sei $(x_n)_{n\in \mathbb{N}_0}$ in
 
 % -----------------------------------------
 \subsection{Elementare Funktionen}
+
+\subsubsection{\definition{Lineare Funktion}}
+$$y=f(x)=mx+1\text{, resp. }x \mapsto mx + q$$
+\textit{Graph ist eine Gerade mit Steigung $m$ und y-Achsenabschnitt $q$.}
+
+Änderungsrate (Verhältnis der Differenz im Wertebereich zur Definition im Definitionsbereich) ist konstant. $\frac{f(x+y)-f(x)}{x+y-x}=\frac{mx+my+q-mx-q}{y}=\frac{my}{y}=m$
+
+\definition{Proportionalitäten:} Falls zwischen $y$ und $x$ eine Bezieung der Form $y=a \cdot x$ ($a$ eine konstante reelle Zahl) gilt, so heisst $y$ (direkt) \definition{proportional} zu $x$. $a$ nennt man \definition{Proportionalitätskonstante.}
+
+\subsubsection{\definition{Exponentialfunktion $exp:\mathbb{R}\rightarrow\mathbb{R}^+$}}
+$$\exp(x)=e^x=\lim_{n\rightarrow\infty}(1+\dfrac{x}{n})^n$$
+\greenBox{$\exp$ ist bijektiv, streng monoton wachsend und stetig.}
+
+$\exp(0)=1$, 
+$\exp(-x)=(\exp(x))^{-1} \forall x \in \mathbb{R}$, 
+$\exp(x+y)=\exp(x) \exp(y) \forall x,y \in \mathbb{R}$
+
+\definition{Exponentialfunktion (Verallgemeinerung):}
+$$z=f(t)=z_0 \cdot a^t = z_0 e^{kt}$$
+mit $z_0 > 0$ heisst Exponentialfunktion mit \definition{Anfangswert} $z_0 = z(0)$ und \definition{Wachstungsfaktor / Basis} $a$.
+
+\greenBox{Relative Zunahme ist konstant:} $\frac{z(t+s)}{z(t)}=\frac{z_0 a^{t+1}}{z_0 a^t}=a^s$
+
+\subsubsection{\definition{Logarithmus}}
+Die eindeutig definierte Inverse zur Exponentialfunktion heisst (natürlicher) Logarithmus
+$\log(x) : \mathbb{R}^+ \rightarrow \mathbb{R}$.
+
+Der Logarithmus \greenBox{$\log$ ist bijektiv, streng monoton wachsend} und \greenBox{stetig.}
+
+$\log(1)=0$, 
+$\log(x^-1)=-\log(x) \forall x \in \mathbb{R}^+$, 
+$\log(xy) = \log(x) + \log(y) \forall x,y \in \mathbb{R^+}$
+
+\subsubsection{Verknüpfung von Funktionen}
+$g(x) = k \cdot f(x)$: 
+\begin{itemize}
+    \item $k>1$: Graph wird in $y$-Richtung von $x$-Achse weg gestreckt
+    \item $0 < k < 1$: Graph wird in $y$-Richtung zur $x$-Achse hin gestaucht
+    \item $k<0$: Graph wird zusätzlich an der $x$-Achse gespiegelt
+\end{itemize}
+
+$g(x)=k+f(x)$: Verschiebung in vertikaler Richtung um $k$ Einheiten.
+
+$g(x)=f(x+k)$: ($= f(h(x))$ mit $h(x)=x+k$)
+\begin{itemize}
+    \item $k<0$: Verschiebung in \textbf{positiver} horizontaler Richtung um $k$ Einheiten
+    \item $k>0$: Verschiebung in \textbf{negativer} horizontaler Richtung um $k$ Einheiten
+\end{itemize}
+
+\definition{Verknüpfung zweier Funktionen:}
+
+$g(x)=s(u(x)) = s \circ u(x)$ heisst \definition{zusammengesetze} \definition{Funktion}; $s$ ($u$) nennt man \definition{äussere (innere) Funktion}
+
+\subsubsection{\definition{Umkehrfunktion}}
+
+Wenn wir Rollen von abhäniger und unabhängiger Variable tauschen können, so schreiben wir $t=f^{-1}(s)$ und $f^{-1}$ nennen wir \definition{Umkehrfunktion oder Inverse.}
+
+Eine Funktion \greenBox{hat genau dann eine Inverse,} wenn ihr Graph von jeder Parallele zur $x$-Achse höchstens einmal geschnitten wird.
+
+Geometrisch findet man den Graphen der Inversen durch Spiegelung an der Geraden $y=x$.
+
+\subsubsection{\definition{Trigonometrische Funktionen}}
 % TODO
+
+\subsubsection{Potenzen, Polynome und rationale Funktionen}
+
+$y=f(x)=k\cdot x^p$ mit $k,p \in \mathbb{R}$ heisst \definition{Potenzfunktion.}
+
+$$y=f(x)=a_nx^n + a_{n-1}x^{n-1}+...+a_1x+a_0 = \sum_{s=0}^{n}a_sx^s$$ mit $n \in \mathbb{N}$, $a_n \neq 0$, $a_s \in \mathbb{R}$ heisst \definition{Polynom} (ganzrationale Funktion). Die Konstanten $a_s$ heissen \definition{Koeffizienten.} $n$ heisst der \definition{Grad} des Polynoms.
+
+$y=f(x)=\frac{p(x)}{q(x)}$ wobei $p(x)$ und $q(x)$ Polynome sind, heisst \definition{rationale Funktion.}
 
 % ----------- ------------------------------
 \subsection{Ableitung}
