@@ -295,3 +295,54 @@ $\sinh (x) = \frac{1}{2} (e^x  - e^{-x}), \cosh (x) = \frac{1}{2}(e^x + e^{-x})$
 
 \textbf{Beweis:} $(e^x)'(x)=e^x$. $e^x=\sum_{k=0}^{\infty} \frac{1}{k!}x^k$ und "Potenzreihen dürfen termweise abgeleitet werden": $(e^x)'(x)=\frac{d}{dx}(\sum_{k=0}^{\infty}\frac{1}{k!}x^k)=\sum_{k=0}^{\infty}\frac{d}{dx} \frac{1}{k!}x^k = 0 + 1 + x^1 + \frac{1}{2!}x^2 + ... = \sum_{s=0}^{\infty}\frac{1}{s!}x^s$.
 
+\greenBox{\textbf{Summenregel:}}
+Seien $f,g: D \rightarrow \mathbb{R}$ zwei an der Stelle $x_0$ $n$-fach differenzierbare Funktionen. Dann ist $f+g$ an der Stelle $x_0$ ebenfalls $n$-fach differenzierbar und es gilt
+$$(f+g)^{(n)}(x_0)=f^{(n)}(x_0)+g^{(n)}(x_0)$$
+\textit{Beweis: Für $n=1$: $(f+g)'(x)=\lim_{h \rightarrow 0}\frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}=\lim_{h \rightarrow 0}\frac{f(x+h)-f(x)}{h}+\lim_{h \rightarrow 0}\frac{g(x+h)-g(x)}{h}=f'(x)+g'(x)$, dann Induktion über $n$.}
+
+\greenBox{\textbf{Produkteregel:}}
+Seien $f,g: D \rightarrow \mathbb{R}$ zwei an der Stelle $x_0$ $n$-fach differenzierbare Funktionen. Dann ist $f\cdot g$ an der Stelle $x_0$ ebenfalls $n$-fach differenzierbar und es gilt
+$$(f \cdot g)^{(n)}(x_0)=\sum_{k=0}^{n} {n \choose k} f^{(k)} (x_0) g^{(n-k)}(x_0)$$
+
+${n \choose k}=\frac{n!}{k!(n-k)!}$.
+\textit{Beweis: Für $n=1$: $(f \cdot g)'(x)= \lim_{h \rightarrow 0}\frac{f(x+h)\cdot g(x+h) - f(x) \cdot g(x)}{h}=\lim_{h \rightarrow 0}\frac{f(x+h) \cdot g(x+h) -f(x+h) \cdot g(x) + f(x+h) \cdot g(x) - f(x) \cdot g(x)}{h} = \lim_{h \rightarrow 0}f(x+h) \frac{g(x+h)-g(x)}{h}+ \lim_{h \rightarrow 0} g(x) \frac{f(x+h)-f(x)}{h}=f(x) \cdot g'(x) + g(x) \cdot f'(x)$, allgemeines $n$ via Induktion.}
+
+\greenBox{\textbf{Kettenregel:}}
+Es sei $f: D \rightarrow E$ differenzierbar an der Stelle $x_0$ und es sei $g: E \rightarrow \mathbb{R}$ differenzierbar an der Stelle $y_0=f(x_0)$.
+Dann ist $g \circ f : D \rightarrow \mathbb{R}$ an der Stelle $x_0$ differenzierbar und es gilt
+$$(g \circ f)'(x_0) = \underbrace{g'(f(x_0))f'(x_0)}_{\text{\small{"äussere Ableitung mal innere Ableitung"}}}$$
+
+\textit{Beweis: $g(y)=\underbrace{g(y_0)+g'(y_0)(y-y_0)}_{\text{\small{Tangente}}} + g(y)-g(y_0) - g'(y_0)(y-y_0)=g(y_0)+g'(y_0)(y-y_0) + \underbrace{[\frac{g(y)-g(y_0)}{y-y_0} - g'(y_0)]}_{=: \epsilon(y) \text{ mit }  \epsilon(y_0):=0}(y-y_0)$. 
+Damit $(g \circ f)'(x_0)=\lim_{x \rightarrow x_0} \frac{g(f(x))-g(f(x_0))}{x - x_0} = \lim_{x \rightarrow x_0} (g(f(x_0))+g'(f(x_0))[f(x)-f(x_0)]+\epsilon(f(x))[f(x)-f(x_0)]-g(f(x_0)))\frac{1}{x-x_0}=g'(y_0) \cdot f'(x_0) + 0$}
+
+\greenBox{\textbf{Quotientenregel:}}
+Seien $f,g : D \rightarrow \mathbb{R}$ differenzierbar an der Stelle $x_0$. Falls $g(x_0) \neq 0$, ist auch $\frac{f}{g}$ differenzierbar an der Stelle $x_0$ und es gilt:
+$$(\frac{f}{g})'(x_0) = \frac{f'(x_0)g(x_0)-f(x_0)g'(x_0)}{g(x_0)^2}$$
+
+\textit{Basiert auf Produkteregel und Kettenregel mit $\frac{1}{x}$.}
+
+\greenBox{Ableitung der \textbf{Umkehrfunktion}:}
+Sei $f: D \rightarrow E \subset \mathbb{R}$ eine stetige, bijektive Funktion, derein Umkehrfunktion $f^{-1} : E \rightarrow D$ ebenfalls stetig ist. Ausserdem sei $s_0 \in \mathbb{D}$ ein Häufungspunkt von $D \backslash \{x_0\}$, und sei $f$ an der Stelle $x_0$ differenzierbar mit $f'(x_0) \neq 0$.
+Dann ist $f^{-1}$ an der Stelle $y_0=f(x_0)$ differenzierbar, und es gilt
+$$(f^{-1})'(y_0)=\frac{1}{f'(x_0)}$$
+
+\textit{Bemerkung: $(f^{-1}\circ f)(x)=x$ ableiten auf beiden Seiten (mit Kettenregel) ergibt, dass $(f^{-1})'(f(x))\cdot f'(x)=1$.}
+
+\subsubsection{Extremalstellen}
+
+\greenBox{Lokale Extremalstellen und erste Ableitung:}
+Es sei $f: D \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ sei an der lokalen Extremalstelle \small{(lokales Maximum oder Minimum)} $x_0 \in D$ differenzierbar, und $x_0$ sei sowohl ein Häufungspunkt von $D \cap (x_0, \infty)$ als auch von $D \cap (-\infty, x_0)$. Dann gilt $f'(x_0)=0$.
+
+\textit{Aber nicht beide Richtungen sind äquivalent. "$\implies$" hält, aber $f'(x_0)=0$ kann bspw. auch konstant oder Sattelstelle sein.}
+
+\greenBox{Lokale Extremalstellen auf einem Intervall:}
+Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und es sei $x_0$ eine lokale Extremalstelle von $f$. Dann ist mindestens eine der folgenden Tatsachen zutreffend:
+\begin{enumerate}
+    \item $x_0 \in I$ ist ein Endpunkt des Intervalls $I$
+    \item $f$ ist an der Stelle $x_0$ nicht differenzierbar
+    \item $f$ ist an der Stelle $x_0$ differenzierbar und es gilt $f'(x_0)=0$
+\end{enumerate}
+
+\textit{Aus der Tatsage, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
+
+\textit{D.h. Bedingung $f'(x_0)=0$ liefert \textbf{Kandidaten} für Extremalstellen.}
