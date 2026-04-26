@@ -346,3 +346,58 @@ Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und 
 \textit{Aus der Tatsage, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
 
 \textit{D.h. Bedingung $f'(x_0)=0$ liefert \textbf{Kandidaten} für Extremalstellen.}
+
+\greenBox{beschränktes und abgeschlossenes Intervall} $\implies$ $f$ nimmt Maximum/Minimum an.
+\textit{für offenes Intervall würde es nicht gelten.}
+
+\theorem{Satz von Rolle}
+Falls $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, auf $(a,b)$ differenzierbar, $f(a)=f(b)$, dann $\exists \xi \in (a,b)$ mit $f'(\xi)=0$.
+\textit{(nicht zwingend eindeutig)}
+
+\textit{\textbf{Beweis:}\\
+Fall 1: $\exists \xi \in (a,b): f(\xi)= \max_{[a,b]} f$ oder $\min_{[a,b]} f $. Dann $f(\xi)=0$.\\
+Fall 2: $\nexists \xi \in (a,b):$ Dann $f(a)=f(b)= \max_{[a,b]}f=\min_{[a,b]}f$. $\implies$ $f$ konstant. Fall tritt nicht ein.}
+
+\theorem{Mittelwertsatz}
+Seien $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, $f$ differenzierbar auf $(a,b)$. Dann $\exists \xi \in (a,b): f'(\xi)=\frac{f(b)-f(a)}{b-a}$.
+\textit{(Es gibt einen Punkt im Intervall, wo die Ableitung die Steigung der Sekante ist.; nicht zwingend eindeutiger Punkt.)}
+
+\textit{\textbf{Beweis:}
+Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Erfüllt Bedingungen von Rolle. $g(a)=g(b)$. $\implies \exists \xi \in (a,b): 0=g'(\xi)=f'(\xi)-\frac{f(b)-f(a)}{b-a} \cdot 1 \implies f'(\xi)=\frac{f(b)-f(a)}{b-a}.$ }
+
+\theorem{Regel von Bernoulli - de L'Hospital}
+\textbf{Version 1: ($a \in \mathbb{R}, \frac{0}{0}$)}
+Seien $a<b, f,g:(a,b) \rightarrow \mathbb{R}$ differenzierbar, sodass:
+\begin{enumerate}
+    \item $g(x) \neq 0$, $g'(x) \neq 0 \forall x\in (a,b)$
+    \item $\lim_{x>0, x \rightarrow a} f(x)= \lim_{x>0, x \rightarrow a} g(x)=0$ und analog für $b$. ($\frac{0}{0}$)
+    \item $L:= \lim_{x>0, x \rightarrow a} \frac{f'(x)}{g'(x)}$ existiert.
+\end{enumerate}
+
+Dann $\exists \lim_{x>a, x \rightarrow a} \frac{f(x)}{g(x)}$ und $=L$.
+
+\textit{\textbf{Beweis} verwendet den Mittelwertsatz.}
+
+\textbf{Version 2: ($a \in \mathbb{R}, \frac{\infty}{\infty}$)}
+Seien $f,g:(a,b) \rightarrow \mathbb{R}$ differenzierbar:
+\begin{enumerate}
+    \item $g(x) \neq 0$, $g'(x) \neq 0$, $\forall x$
+    \item $lim_{x > a, x \rightarrow a}|f(x)| = \lim_{x>a, x \rightarrow a}|g(x)| = \infty$ (oder $- \infty$)
+    \item $\exists L:=\lim_{x>a, x \rightarrow \infty}\frac{f'(x)}{g'(x)}$
+\end{enumerate}
+
+Dann $\exists \lim_{x>a, x \rightarrow a} \frac{f(x)}{g(x)}$ und $=L$.
+
+\textbf{Version 3: ($b:= \infty, \frac{0}{0}, \frac{\infty}{\infty}$)}
+Seien $R>0, f,g:(R,\infty) \rightarrow \mathbb{R}$ differenzierbar:
+\begin{enumerate}
+    \item $g(x) \neq 0, g'(x) \neq 0 \forall x$
+    \item entweder $\lim_{x \rightarrow \infty} f(x) = \lim_{x \rightarrow \infty} g(x) = 0$ ($\frac{0}{0}$)
+        oder $\lim_{x \rightarrow \infty} f(x) = \lim_{x \rightarrow \infty} = \infty$ ($\frac{\infty}{\infty}$)
+    \item $\exists L:= \lim_{x \rightarrow \infty} \frac{f'(x)}{g'(x)}$.
+\end{enumerate}
+
+Dann $\exists \lim_{x \rightarrow \infty} \frac{f(x)}{g(x)}$ und $=L$.
+
+\textit{\textbf{Beweis:} Folgt aus Version 1 + 2 für $x \mapsto f(\frac{1}{x}), x \rightarrow g(\frac{1}{x})$.}
+
