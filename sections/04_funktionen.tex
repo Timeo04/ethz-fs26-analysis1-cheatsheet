@@ -401,3 +401,37 @@ Dann $\exists \lim_{x \rightarrow \infty} \frac{f(x)}{g(x)}$ und $=L$.
 
 \textit{\textbf{Beweis:} Folgt aus Version 1 + 2 für $x \mapsto f(\frac{1}{x}), x \rightarrow g(\frac{1}{x})$.}
 
+\subsubsection{Monotonie, Konvexität}
+
+Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$ differenzierbar. Dann gilt:
+
+\lemma{$f$ ist wachsend} $\Leftrightarrow f'\geq 0$, d.h. $f'(x) \geq 0 \forall x \in I$.
+
+\textit{\textbf{Beweis $"\implies"$:} Sei $x \in I$. Fall $x \in (a,b)$: Sei $h\neq 0:x+h \in I$. Falls $h>0: f$ wachsend $\implies \frac{f(x+h)-f(x)}{h}\geq0$. Falls $h<0:\frac{f(x+h)-f(x)}{h}\geq 0$. $\implies f'(x)= \lim_{h \rightarrow 0, h \neq 0}\frac{f(x+h)-f(x)}{h}\geq 0$. (Andere Richtung braucht Mittelwertsatz.)}
+
+Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$: \greenBox{$f$ ist konstant $\Leftrightarrow$$f$ differenzierbar} \greenBox{ und $f'(x)=0$.}
+
+\textit{\textbf{Beweis:} "$\implies$" offensichtlich, "$\Leftarrow$": Dann $f'\geq 0$. $\implies$ $f$ wachsend. Dasselbe mit $(-f)'=-f' \geq 0$ $\implies$ $f$ fallend. $\implies$ $f$ konstant.}
+
+
+$f: I \rightarrow \mathbb{R}$ \definition{konvex (linksgekrümmt)} $\Leftrightarrow \forall a,b \in I$ mit $a<b, t \in (0,1): f((1-t)a+tb)\leq (1-t)f(a)+tf(b)$ \textit{(Graph ist unterhalb Verbindungsgerade; konstante Funktion ist auch konvex.)}
+
+Falls $f$ differenzierbar, dann \greenBox{$f$ auf $I$ konvex $\Leftrightarrow$ $f'$ auf $I$ wachsend.}
+
+\textit{\textbf{Beweis "$\impliedby$":} Ann. $f'$ wachsend. Seien $a,b \in I$, $x \in (a,b)$. Mittelwertsatz $\implies \exists \xi \in (a,x): f'(\xi) = \frac{f(x) -f(a)}{x-a}$. $\exists \zeta \in (x,b): f'(\zeta)=\frac{f(b)-f(x)}{b-x}: f'$ wachsend. $\implies$ $f'(\xi) \leq f'(\zeta)$. Gem. Hilfssatz ist $f$ konvex:}
+
+\textit{$f:[a,b] \rightarrow \mathbb{R}$. $f$ konvex $\iff \forall x \in (a,b): \frac{f(x)-f(a)}{x-a}\leq \frac{f(b)-f(x)}{b-x}$}
+
+Falls $f$ 2mal differenzierbar, dann \greenBox{$f$ auf $I$ konvex $\iff$ $f''\geq 0$}
+
+\textit{\textbf{Beweis "$\impliedby$":} Resultat von oben und: $F'\geq 0 \iff F$ wachsend ($F:=f'$)}
+
+$f:I \rightarrow \mathbb{R}$ \definition{konkav (rechtsgekrümmt)} wenn $-f$ konvex ist.
+
+Folgerung aus Konvexität (Jensen): 
+$$\underbrace{\sqrt[n]{\sum_{i=1}^{n}x_i}}_{\text{\small{geometrisches Mittel}}}\leq \underbrace{\frac{1}{n}\sum_{i=1}^{n}x_i}_{\text{\small{arithmentisches Mittel}}}, x_i \geq 0$$
+
+Folgerung aus Konvexität (Legendre-Transformation): Youngsche Ungleichung:
+$$\forall p \in (1,\infty), x,y \in (0,\infty); xy \leq \frac{|x|^p}{p}+\frac{|y|^{p'}}{p'}, \frac{1}{p}+\frac{1}{p'}=1$$
+
+Eine konvexe Funktion hat höchstens eine Minimalstelle. (Relevant für konvexe Optimierung.)
