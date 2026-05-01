@@ -435,3 +435,55 @@ Folgerung aus Konvexität (Legendre-Transformation): Youngsche Ungleichung:
 $$\forall p \in (1,\infty), x,y \in (0,\infty); xy \leq \frac{|x|^p}{p}+\frac{|y|^{p'}}{p'}, \frac{1}{p}+\frac{1}{p'}=1$$
 
 Eine konvexe Funktion hat höchstens eine Minimalstelle. (Relevant für konvexe Optimierung.)
+
+\subsubsection{Lokale Approximation durch Polynome}
+
+In einer genügend kleinen Umgebung eines betrachteten Punktes $x_0$ verhalten sich der Graph einer gegebenen Funktion $f$ und die Tangente an $f$ im Pumkt $x_0$ fast gleich.
+
+$\implies$ Wir können die Funktion mit Hifle der Tangente lokal approximieren.
+
+Falls $f$ an der Stelle $x_0$ differenzierbar ist, so gilt \definition{lineare Approximation} / \definition{Tangentenapproximation} / \definition{1. Taylor Approximation}
+$$f(x) \approx f(x_0) + f'(x_0)(x-x_0)=P_1(x)$$
+
+$f(x_0)+f'(x_0)(x-x_0)$ wird auch \definition{Linearisierung} oder \definition{1. Taylorpolynom von $f$ an der Stelle $x_0$} genannt.
+
+\textit{Bsp.: Für $f_1(x)=x^2, f_2(x)=x^3, f_3(x)=-x^2$ ist Tangente im Ursprung horizontal.}
+
+\textbf{Verbesserungsidee:} Polynom 2. Grades verwenden: $P_2(x)=A(x-x_0)^2 + B(x-x_0)+C$.
+Es soll gelten: 
+\begin{itemize}
+    \item $P_2(x_0)=f(x_0) \implies C=f(x_0)$
+    \item $P'_2(x_0)=f'(x_0) \implies B=f'(x_0)$
+    \item $P''_2(x_0)=f''(x_0)\implies 2A=f''(x_0)\implies A=\frac{1}{2}f''(x_0)$
+\end{itemize}
+
+
+$\implies f(x) \approx f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2$
+
+\theorem{Satz von Taylor}
+\textit{Bessere Approximation, beliebiges $x_0$}
+
+Wir nehmen an, dass $f$ auf dem offenen Intervall $I$ (mit $x_0 \in I$) Ableitung beliebig hoher Ordnung besitzt. Dann gilt für jedes beliebige Argument $x\in I$
+
+\begin{align*}
+    f(x)&=f(x_0)+f'(x_0)(x-x_0)+...+\frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n \\
+    &\quad{\color{gray}  +\frac{1}{(n+1)!}f^{(n+1)}(c)(x-x_0)^{n+1}} \\
+    &=\sum_{k=0}^{n}f^{(k)}(x_0)\frac{1}{k!}(x-x_0)^k {\color{gray}  + \frac{1}{(n+1)!}f^{n+1}(c)(x-x_0)^{n+1} } \\
+    &=P_n(x){\color{gray} +R_n(x) }
+\end{align*}
+
+für ein $c$ zwischen $x_0$ und $x$.
+$P_n$ heisst \definition{$n.$-tes Taylorpolynom.}
+
+\textbf{Bemerkungen:}
+\begin{itemize}
+    \item Der Grad von $P_n(x)$ ist $\leq n$. \textit{Kann einen Grad $<n$ haben (falls $f^{(n)}=0$).}
+    \item Für Polynom $f(x)=P(x)$ vom Grad $m$ gibt das $m$.-te Taylorpolynom die Funktion exakt wider.
+    \item Es gibt noch andere Beschreibungen des Restterms $R_n(x)$.
+\end{itemize}
+
+Für gegebene Funktion $f$ heisst die Reihe
+$$f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2+...= \sum_{k=0}^{\infty}f^{(k)}(a) \frac{1}{k!}(x-a)^k$$
+\definition{Taylorreihe / Taylorentwicklung} der Funktion $f$ (um den Punkt $a$).
+
+
