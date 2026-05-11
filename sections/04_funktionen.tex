@@ -539,6 +539,7 @@ Diese Konvergenzeigenschaft von $p_n$ gegen $p$ nennt man auch gleichmässige Ko
 Aus der Stetigkeit der Polynome $p_n(x)$ folgt: \greenBox{Alle Potenzreihen (insb. Taylorreihen) sind stetig} (innerhalb des Konvergenzradius).
 
 \subsection{Differentialgleichungen}
+\textit{Gleichung, wo die gesuchte Grösse eine Funktion ist. Ableitung der gesuchten Funktion kann vorkommen.}
 
 \subsubsection{Aufstellen von Differentialgleichungen}
 
@@ -580,6 +581,8 @@ Falls alle Funktionen $a_i(x)$ in der Differentialgleichung konstante Funktionen
 \theorem{Superpositionsprinzip}
 Sind $y_1(x)$ und $y_2(x)$ Lösungen einer linearen, homogenen Differentialgleichung, so ist auch $y(x)=C_1y_1(x)+C_2y_2(x), C_1, C_2 \in \mathbb{R}$ eine Lösung derselben Differentialgleichung.
 
+\textit{Geht nur für homogene Differentialgleichungen (weil falls $C_1=C_2=0$)}
+
 \theorem{Fundamentallösungen}
 Eine lineare, homogene Differentialgleichung der Ordnung $n$ besitzt $n$ Lösungen $y_1(x), \dots, y_n(x)$, so ist die allgemeine Lösung dieser Gleichung gegeben durch $y(x)=C_1y_1(x)+\dots+C_ny_n(x), C_1, \dots, C_n \in \mathbb{R}$.
 Diese Lösungen werden \definition{Fundamentallösungen} genannt.
@@ -594,6 +597,12 @@ $$a_n u^{(n)}(x) + a_{n-1} u^{(n-1)}(x) \dots + a_1 u'(x) + a_0 u(x) = 0$$
 
 \definition{Charakteristisches Polynom} $p(\lambda) = a_n \lambda^n + a_{n-1} \lambda^{n-1}+ \dots + a_1 \lambda + a_0$.
 
+\textit{
+    Jede einfache relle Nullstelle $\lambda$ des charakteristischen Polynoms erzeugt die Fundamentallösung $u(x)=e^{\lambda x}$\\
+    Jede Paar zweier zueinande komplex konjugierter Nullstellen $\lambda_{1,2}=a\pm ib$ erzeugt die beiden Fundamentallösungen $u_1(x)=e^{ax}\sin(bx)$, $u_2(x)=e^{ax}\cos(bx)$\\
+    Jede Nullstelle $\lambda$ mit Multiplizität $s$ erzeugt die $s$ Fundamentallösungen $x^ke^{\lambda x}, k=0,...,s-1$
+}
+
 \greenBox{Allgemeine Lösung:}
 \begin{itemize}
     \item Falls alle $r$ Nullstellen $\lambda_i$ des charakteristischen Polynoms reell sind und Multiplizität $m_i$ haben, gilt $u(x)=\sum_{i=0}^{r}(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x})$
@@ -603,3 +612,24 @@ $$a_n u^{(n)}(x) + a_{n-1} u^{(n-1)}(x) \dots + a_1 u'(x) + a_0 u(x) = 0$$
 \subsubsection{Lösen anderer Differentialgleichungen}
 
 % TODO
+
+\subsection{Integration}
+\subsubsection{Stammfunktionen, unbestimmtes Integral}
+
+Sei $I \subset \mathbb{R}$ ein Intervall und $f(x):I \rightarrow \mathbb{R}$ eine Funktion. Eine differenzierbare Funktion $F:I \rightarrow \mathbb{R}$ mit der Eigenschaft
+$$F'(x)=f(x), x \in I$$
+nennt man die \definition{Stammfunktion} von $f$ auf dem Intervall $I$.
+
+Das Bestimmen von $F(x)$ aus $f(x)$ nennt man \definition{(un)bestimmte Integration.}
+
+\textit{\textbf{Beobachtung:} Stammfunktion \greenBox{ist nicht eindeutig}.}
+
+Ist $F(x)$ Stammfunktion, so ist auch \greenBox{$F(x)+C$} für eine beliebige Konstante $C$ eine Stammfunktion.
+
+$f(x)$ hat eine ganze Familie von Stammfunktionen: \definition{unbestimmtes Integral $\int f(x) \, dx$}. (hier ist $f$ \definition{Integrand}).
+
+\subsubsection{Rechenregeln}
+
+\includegraphics[width=0.75\columnwidth]{04_funktionen/integral_add_mult}
+
+\includegraphics[width=0.9\columnwidth]{04_funktionen/integral_weitere}
