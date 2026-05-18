@@ -609,6 +609,17 @@ $$a_n u^{(n)}(x) + a_{n-1} u^{(n-1)}(x) \dots + a_1 u'(x) + a_0 u(x) = 0$$
     \item Falls wir $r$ reelle Nullstellen und $s$ \textbf{Paare} komplexer Nullstellen $(a_j \pm ib_j)$ mit jeweils Multiplizität $m_i$ haben, gilt $u(x)=\sum_{i=0}^{r}(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x}) + \sum_{j=0}^{s} (\sum_{q=0}^{m_j - 1}(A_{jq} x^q e^{a_j x} \sin(b_j x)+B_{jq} x^q e^{a_j x} \cos(b_j x)))$    
 \end{itemize}
 
+\subsubsection{Lösen von Differentialgleichungen erster Ordnung}
+\begin{itemize}
+    \item Trennung der VariablenSubstitution
+    \item Variation der Konstanten (lineare, inhomogene Differentialgleichung)
+\end{itemize}
+
+\subsubsection{Lösen von linearen, inhomogenen Differentialgleichung}
+\begin{itemize}
+    \item Geeignete Ansätze für partikuläre Lösung
+\end{itemize}
+
 \subsubsection{Lösen anderer Differentialgleichungen}
 
 % TODO
@@ -635,10 +646,24 @@ $f(x)$ hat eine ganze Familie von Stammfunktionen: \definition{unbestimmtes Inte
 \includegraphics[width=0.9\columnwidth]{04_funktionen/integral_weitere}
 
 \theorem{Partielle Integration}
-% TODO
+
+\textbf{Herleitung:} 
+$f(x) \cdot g(x) = \int \frac{d}{dx}(f(x) \cdot g(x))\,dx=\int f'(x) \cdot g(x) + f(x) \cdot g'(x) \, dx = \int f'(x) \cdot g(x) \, dx + \int f(x) \cdot g'(x) \, dx$ 
+\textit{(Integration ist Umkehrfunktion von Ableitung; Produkteregel; danach umstellen)}
+
+$$f'(x) \cdot g(x) \, dx = f(x) \cdot g(x) - \int f(x) \cdot g'(x) \, dx$$
+
+$f'(x)$ ist Funktion, die gut integriert werden kann; $g(x)$ ist Funktion, die gut abgeleitet werden kann.
+
+\textit{L (Logarithmus), I (inverse Winkelfunktionen $\arcsin, ...$), A (algebraische Funktionen $x^2, 5x^3, ...$), T (Trigonometrische Funktionen $\sin, \dots$), E (Exponentialfunktionen $e^x, 5a^x, \dots$); Fkt. am Anfang vereinfachen sich durch Ableiten $\implies$ als $g(x)$ wählen.}
 
 \theorem{Integration durch Substitution}
-% TODO
+
+\textbf{Herleitung:}
+$f(g(x))+C = \int \frac{d}{dx} (f(g(x)))\,dx = \int f'(g(x)) \cdot g'(x)\,dx = \int \frac{df}{dy} \frac{dy}{dx}\,dx = \int \frac{df}{dy}\, dy, y=g(x)$
+\textit{(Integration ist Umkehrfunktion von Ableitung; Kettenregel; $y=g(x)$ ersetzen)}
+
+$$\int f'(g(x))\cdot g'(x)\,dx = \int \frac{df}{dy}\, dy = f(g(x))+C$$
 
 \textbf{Trigonometrische Substitution}
 Für Integrale der Form $\int (a \pm x^2)^\alpha \, dx$, $\alpha = \pm 1, \pm \frac{1}{2}$
@@ -673,32 +698,93 @@ $f: [a,b] \rightarrow \mathbb{R}$ ist \definition{Treppenfunktion}, falls $\exis
 
 $\implies$ $f$ ist Treppenfunktion bzgl. der Zerlegung $a=x_0 < x_1 < \dots < x_n = b$.
 
+Das \definition{Integral der Treppenfunktion} $f$ über $[a,b]$ ist die reelle Zahl $\int_{a}^{b}f(x)\, dx := \sum_{k=1}^{n}c_k(x_k - x_{k-1})$, wobei $c_k$ der Funktionswert von $f$ auf dem Intervall $(x_{k-1}, x_k)$ ist.
 
-\subsubsection{Rechenregeln}
-\begin{enumerate}
-    \item \textbf{Linearität:} Seien $f,g:[a,b] \rightarrow \mathbb{R}$ zwei (Riemann-)integrierbare Funktionen, und seien $\alpha, \beta \in \mathbb{R}$. Dann ist auch $\alpha f + \beta g$ integrierbar und es gilt
-        $$\int_{a}^{b} (\alpha f + \beta g)(x) \,dx=\alpha \int_{a}^{b} f(x) \, dx + \beta \int_{a}^{b} g(x) \, dx$$
-    \item \textbf{Monotonie:} 
-    \item \textbf{Dreicksungleichung:} 
-        \textit{Vorstellung: Positionsänderung ist $\leq$ zurückgelegte Strecke}
-    \item \textbf{Umkehrung der Integrationsrichtung:}
-        \textit{Vorstellung: Wir laufen wieder zurück}
-    \item \textbf{Aufteilung des Integrationsbereichs:}
-        \textit{Insb. interessant, wenn Integrationsbereich symmetrisch an Nullpunkt. Z.B. bei ungeraden Funktionen im Intervall $[-1, 1]$ ist Integral $0$, bei geraden Funktionen 2x der Wert von $[0,1]$.}
-\end{enumerate}
-\textit{\textbf{Beweise für Rechenregeln:} "Was passiert für Treppenfunktionen?", dann Approximations-Idee.}
+Sei $f:[a,b] \rightarrow \mathbb{R}$ eine Funktion. 
+Dann ist die Menge der \definition{Obersummen $\mathcal{U}(f)$}$:=\{\int_{a}^{b}s(x)\, dx | s\in \mathcal{TF}; s \geq f\}$, 
+respektive die Menge der \definition{Untersummen $\mathcal{L}(f)$}$:=\{\int_{a}^{b}s(x)\, dx | s\in \mathcal{TF}; s \leq f\}$
+wobei $\mathcal{TF}$ die Menge der Treppenfunktionen bezeichnet.
+
+\includegraphics[width=0.26\columnwidth]{04_funktionen/obersummen_untersummen}
+
+Eine beschränkte Funktion $f:[a,b] \rightarrow \mathbb{R}$ nennt man \definition{Riemann-integrierbar}, falls gilt $\sup \mathcal{L}(f)=\inf \mathcal{U}(f)$.
+
+In diesem Fall wird der Wert das \definition{Riemann-Integral} von $f$ $\int_{a}^{b} f \, dx := \sup \mathcal{L}(f)=\inf \mathcal{U}(f)$ genannt.
+$a$ nennt man \definition{untere Integrationsgrenze}, $b$ \definition{obere Integrationsgrenze} und $f$ den \definition{Integranden.}
 
 \theorem{Monotone Funktionen sind Riemann-integrierbar.}
 \textit{Monotone Funktionen sind in Intervall $[a,b]$ beschränkt.}
 
+\textit{Gilt auch, wenn Funktion auf manchen Teilintervallen monoton wachsend und auf manchen Teilintervallen monoton fallend ist.}
+
 \theorem{Stetige Funktionen sind Riemann-integrierbar.}
 \textit{müssen aber nicht differenzierbar sein (z.B. Knickstellen ok)!}
 
-\textit{Gilt auch für Funktionen die in endlich vielen Stellen nicht monoton oder stetig sind (wegen Aufteilung des Integrationsbereichs).}
+\textit{Gilt auch für Funktionen die \greenBox{in endlich vielen Stellen nicht monoton oder stetig} sind (wegen Aufteilung des Integrationsbereichs).}
+
+
+\subsubsection{Rechenregeln}
+Seien $f,g:[a,b] \rightarrow \mathbb{R}$ zwei (Riemann-)integrierbare Funktionen.
+\begin{enumerate}
+    \item \textbf{Linearität:} Seien zudem $\alpha, \beta \in \mathbb{R}$. Dann ist auch $\alpha f + \beta g$ integrierbar und es gilt
+        $$\int_{a}^{b} (\alpha f + \beta g)(x) \,dx=\alpha \int_{a}^{b} f(x) \, dx + \beta \int_{a}^{b} g(x) \, dx$$
+    \item \textbf{Monotonie:} Falls gilt $f \leq g$, so gilt auch
+        $$\int_{a}^{b} f(x) \, dx \leq \int_{a}^{b} g(x) \, dx$$
+    \item \textbf{Dreicksungleichung:} 
+        $$|\int_{a}^{b} f(x) \, dx| \leq \int_{a}^{b} |f(x)| \, dx$$
+        \textit{Vorstellung: Positionsänderung ist $\leq$ zurückgelegte Strecke}
+    \item \textbf{Umkehrung der Integrationsrichtung:}
+        $$\int_{a}^{b} f(x) \, dx = - \int_{b}^{a} f(x) \, dx$$
+        \textit{Vorstellung: Wir laufen wieder zurück}
+    \item \textbf{Aufteilung des Integrationsbereichs:}
+        $$\int_{a}^{b} f(x) \, dx = \int_{a}^{c} f(x) \, dx + \int_{c}^{b} f(x) \, dx, a \leq c \leq b$$
+        \textit{Insb. interessant, wenn Integrationsbereich symmetrisch an Nullpunkt. Z.B. bei ungeraden Funktionen im Intervall $[-1, 1]$ ist Integral $0$, bei geraden Funktionen 2x der Wert von $[0,1]$.}
+\end{enumerate}
+\textit{\textbf{Beweise für Rechenregeln:} "Was passiert für Treppenfunktionen?", dann Approximations-Idee, allgemeiner zeigen.}
 
 \theorem{Hauptsatz der Integral- und Differentialrechung:}
+
 Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig. Dann ist für alle $C \in \mathbb{R}$ die Funktion $$F(x):=\int_{a}^{x}f(y)\,dy + C$$ eine Stammfunktion von $f$. Jede Stammfunktion int von dieser Form.
+\textit{(Konstruktion von Stammfunktionen)}
+
+\textit{
+    \textbf{Beweis:} 
+    $f$ stetig $\implies$ $f$ auf jedem Intervall $[a,x], x \in [a,b]$ integrierbar.
+    Dann zeigen, dass $F$ Stammfunktion ist ($\epsilon / \delta$), $\lim_{x \rightarrow x_0} \frac{F(x)-F(x_0)}{x-x_0}=F'(x_0)=f(x_0)$.
+}
 
 Sei $F:[a,b]\rightarrow \mathbb{R}$ stetig differenzierbar. Dann gilt für alle $x \in [a,b]$
-$$F(x)=F(a) + \int_{a}^{x} F'(t) \, dt$$
+$$F(x)= \underbrace{F(a)}_{\textit{\small{"Startwert"}}} + \underbrace{\int_{a}^{x} F'(t) \, dt}_{\textit{\small{"Aufsummierung aller Veränderungseffekte"}}}$$
 
+\textit{\textbf{Herleitung:} Gem. Hauptsatz $F(x)=\int_{a}^{x}F'(y)\, dy + C, C \in \mathbb{R}$.
+Insbesondere: $F(a)=\underbrace{\int_{a}^{a}F'(y)\,dy}_{=0}+C$}
+
+Sei $f:[a,b] \rightarrow \mathbb{R}$ stetig und $F:[a,b] \rightarrow \mathbb{R}$ Stammfunktion von $f$. Dann gilt
+$$\int_{a}^{b}f(t)\,dt = F(x)|_a^b = F(b)-F(a)$$
+\textit{(Berechnung von bestimmten Integralen via Stammfunktion)}
+
+\theorem{Partielle Integration}
+Seien $f,g:[a,b] \rightarrow \mathbb{R}$ stetig differenzierbare Funktionen.
+$$\int_{a}^{b} f(x) g'(x) \,dx = f(x)g(x)|_a^b-\int_{a}^{b}f'(x)g(x)\,dx$$
+\textit{Folgt aus Hauptsatz und Produkteregel}
+
+\theorem{Substitution, Version 1}
+Seien $I,J \subset \mathbb{R}$ zwei Intervalle, $f : I \rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. Dann gilt für alle $[a,b] \subset I$
+$$\int_{a}^{b}g(f(x))f'(x)\,dx = \int_{f(a)}^{f(b)}g(y)\,dy$$
+
+\theorem{Substitution, Version 2}
+Seien $I,J \subset \mathbb{R}$ Intervalle, $f:I\rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. 
+Für $[a,b]\subset I$ gelte $f'(x)\neq 0$ für alle $x \in [a,b]$ und sei $f^{-1}:[f(a),f(b)]\rightarrow \mathbb{R}$ Inverse von $f|_{[a,b]}$. 
+Dann
+$$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
+
+\subsection{Funktionenfolgen}
+% TODO
+
+\definition{Punktweise Konvergenz}
+
+\definition{Punktweiser Grenzwert}
+
+\definition{Gleichmässige Konvergenz}
+
+\theorem{Mittelwertsatz der Integralrechnung}
