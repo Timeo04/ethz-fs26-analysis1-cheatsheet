@@ -493,7 +493,7 @@ $$f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2+...= \sum_{k=0}^{\infty}f^{(k)}(a) \f
 
 \subsubsection{Wichtige Reihen}
 
-Diese Reihen konvergieren für alle $x$: \textit{(Entwicklungspunkt ist $a=0$)}
+Diese Reihen konvergieren für alle $x$: \textit{(Entwicklungspunkt ist $a=0$; $x_0 = 0$)}
 
 $$\sin(x)=\sum_{n=0}^{\infty}(-1)^n \frac{1}{(2n+1)!}x^{2n+1}=x-\frac{1}{3!}x^3 + \frac{1}{5!}x^5 - ...$$
 
@@ -633,3 +633,72 @@ $f(x)$ hat eine ganze Familie von Stammfunktionen: \definition{unbestimmtes Inte
 \includegraphics[width=0.75\columnwidth]{04_funktionen/integral_add_mult}
 
 \includegraphics[width=0.9\columnwidth]{04_funktionen/integral_weitere}
+
+\theorem{Partielle Integration}
+% TODO
+
+\theorem{Integration durch Substitution}
+% TODO
+
+\textbf{Trigonometrische Substitution}
+Für Integrale der Form $\int (a \pm x^2)^\alpha \, dx$, $\alpha = \pm 1, \pm \frac{1}{2}$
+
+$\sqrt{1-\sin^2}=\sqrt{\cos^2} = \cos$
+\begin{itemize}
+    \item $\sin^2(x)+\cos^2(x)=1$
+    \item $1+\tan^2(x)=\frac{1}{\cos^2(x)}$
+    \item $\cosh^2 - \sinh^2=1$
+\end{itemize}
+
+
+
+Formen $\int \sqrt{Ax^2 + B x + C} \, dx$ mit quadratischem Ergänzen.
+
+\subsection{Riemann-Integral}
+\textbf{Idee:} Unterteile Funktion in $n$ (nicht zwingend gleich grosse) Teilintervalle, wähle jeweils einen repräsentativen Funktionswert in diesem Intervall, summiere alle einzelnen "Teilflächen".
+
+Danach $n \rightarrow \infty$, sodass die Länge der Teilintervalle gegen $0$ geht.
+
+Sei $[a,b] \subset \mathbb{R}$ ein kompaktes Intervall.
+
+\definition{Zerlegung} von $[a,b]$ ist endliche Menge von Punkten $a=x_0 < x_1 < x_2 < ... < x_{n-1} < x_n = b$ mit $n \in \mathbb{N}$.
+
+$x_i$ heissen \definition{Unterteilungspunkte.}
+
+Zerlegung führt zu \definition{Partition} des Intervalls $[a,b] = \{x_0\} \cup (x_0, x_1) \cup \{x_1\} \cup (x_1, x_2) \cup \dots \cup (x_{n-1}, x_n) \cup \{x_n\}$.
+
+Eine Zerlegung $a=y_0 < y_1 < \dots < y_{m-1} < y_m = b$ ist \definition{Verfeinerung} der Zerlegung $a=x_0 < x_1 < \dots < x_{n-1} < x_n = b$, falls gilt $\{x_0, x_1, \dots, x_n\} \subseteq \{y_0, y_1, \dots, y_n\}$
+
+$f: [a,b] \rightarrow \mathbb{R}$ ist \definition{Treppenfunktion}, falls $\exists$ Zerlegung $a=x_0 < x_1 < \dots < x_n = b$ von $[a,b]$ sodass $\forall k \in \{1, \dots, n\}$ die Restriktionen von $f$ auf $(x_{k-1}, x_k)$, $f|_{(x_{k-1},x_k)}$ konstant sind.
+
+$\implies$ $f$ ist Treppenfunktion bzgl. der Zerlegung $a=x_0 < x_1 < \dots < x_n = b$.
+
+
+\subsubsection{Rechenregeln}
+\begin{enumerate}
+    \item \textbf{Linearität:} Seien $f,g:[a,b] \rightarrow \mathbb{R}$ zwei (Riemann-)integrierbare Funktionen, und seien $\alpha, \beta \in \mathbb{R}$. Dann ist auch $\alpha f + \beta g$ integrierbar und es gilt
+        $$\int_{a}^{b} (\alpha f + \beta g)(x) \,dx=\alpha \int_{a}^{b} f(x) \, dx + \beta \int_{a}^{b} g(x) \, dx$$
+    \item \textbf{Monotonie:} 
+    \item \textbf{Dreicksungleichung:} 
+        \textit{Vorstellung: Positionsänderung ist $\leq$ zurückgelegte Strecke}
+    \item \textbf{Umkehrung der Integrationsrichtung:}
+        \textit{Vorstellung: Wir laufen wieder zurück}
+    \item \textbf{Aufteilung des Integrationsbereichs:}
+        \textit{Insb. interessant, wenn Integrationsbereich symmetrisch an Nullpunkt. Z.B. bei ungeraden Funktionen im Intervall $[-1, 1]$ ist Integral $0$, bei geraden Funktionen 2x der Wert von $[0,1]$.}
+\end{enumerate}
+\textit{\textbf{Beweise für Rechenregeln:} "Was passiert für Treppenfunktionen?", dann Approximations-Idee.}
+
+\theorem{Monotone Funktionen sind Riemann-integrierbar.}
+\textit{Monotone Funktionen sind in Intervall $[a,b]$ beschränkt.}
+
+\theorem{Stetige Funktionen sind Riemann-integrierbar.}
+\textit{müssen aber nicht differenzierbar sein (z.B. Knickstellen ok)!}
+
+\textit{Gilt auch für Funktionen die in endlich vielen Stellen nicht monoton oder stetig sind (wegen Aufteilung des Integrationsbereichs).}
+
+\theorem{Hauptsatz der Integral- und Differentialrechung:}
+Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig. Dann ist für alle $C \in \mathbb{R}$ die Funktion $$F(x):=\int_{a}^{x}f(y)\,dy + C$$ eine Stammfunktion von $f$. Jede Stammfunktion int von dieser Form.
+
+Sei $F:[a,b]\rightarrow \mathbb{R}$ stetig differenzierbar. Dann gilt für alle $x \in [a,b]$
+$$F(x)=F(a) + \int_{a}^{x} F'(t) \, dt$$
+
