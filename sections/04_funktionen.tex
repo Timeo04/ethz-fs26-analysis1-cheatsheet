@@ -31,6 +31,48 @@ $f: X \rightarrow Y$ ist
     \item \definition{bijektiv} falls sie injektiv und surjektiv ist.
 \end{itemize}
 
+\begin{exercise}
+\textit{Injektivität einer Funktion $f(x)$ zeigen: $f(x)=f(y) \implies x=y$ 
+\begin{itemize}
+    \item $f(x)=f(y)$ ausschreiben und direkt zeigen dass $x=y$.
+    \item Monotonie verwenden: Wenn Fkt. auf Intervall streng monoton, dann ist sie automatisch injektiv.
+    \item Widerspruch: Angenommen, es gäbe $x_1 \neq x_2$ mit $f(x_1) = f(x_2)$, zeigen dass dies zu Widerspruch führt.
+\end{itemize}
+}
+
+\hrulefill
+
+\textit{Zeigen dass Funktion nicht injektiv ist:}
+\begin{itemize}
+    \item Gegenbeispiel finden: $x_1 \neq x_2$ mit $f(x_1)=f(x_2)$
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+\textit{Surjektivität einer Funktion $f : A \rightarrow B$ zeigen: $\forall y \in B \exists x \in A : f(x)=y$ 
+\begin{itemize}
+    \item Gleichung $f(x)=y$ lösen: Beliebiges $y \in B$ wählen, Gleichung nach $x$ lösen (und zeigen, dass Lösung im Definitionsbereich liegt)
+    \item Wertebereich bestimmen: Falls $W_f = B$, dann ist $f$ surjektiv. (sonst nicht!)
+\end{itemize}
+}
+
+\hrulefill
+
+\textit{Zeigen dass Funktion nicht surjektiv ist:}
+\begin{itemize}
+    \item Finden eines Elements $y\in B$ mit $\forall x \in A:f(x) \neq y$, dann zeigen, dass $f(x) = y$ keine Lösung hat.
+    \item Zeigen, dass Wertebereich $\neq$ Zielmenge.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+    \textit{
+        Umkehrfunktion finden: Existiert nur wenn $f$ bijektiv (falls $f$ injektiv, dann ist eingeschränkte Fkt. $f:A \rightarrow \operatorname{im}(f)$ bijektiv)
+    }
+
+    \textit{$y=f(x)$ setzen, nach $x$ auflösen, $x$ und $y$ vertauschen}
+\end{exercise}
+
 Sei $f : \mathbb{D}(f) \rightarrow \mathbb{R}$ mit $\mathbb{D}(f) \neq \emptyset$. Dann
 \begin{itemize}
     \item nennen wir $f$ \definition{nach oben beschränkt}, falls $M \in \mathbb{R}$ existiert mit $f(x) \leq M \forall x \in \mathbb{D}(f)$
@@ -48,6 +90,15 @@ Wir betrachten $f: X = \mathbb{D}(f) \subset \mathbb{R} \rightarrow \mathbb{R}$.
 
 \greenBox{Jede streng monotone Funktion ist injektiv.}
 \textit{(Widerspruchsbeweis: Funktion streng monoton aber nicht injektiv $\implies$ $\exists x_1 \neq x_2$ mit $f(x_1) = f(x_2)$ oBdA $x_1 < x_2$ $\implies$ Wiederspruch.)}
+
+\begin{exercise}
+\textit{Monotonie einer Funktion $f(x)$ zeigen: $f(x)=f(y) \implies x=y$ 
+\begin{itemize}
+    \item Ableitung verwenden (streng monoton: $f'(x)> / < 0$; monoton: $f'(x) \geq / \leq 0$; Nullstellen von $f'(x)$ können verwendet werden, um monotone Invervalle zu finden)
+    \item Direkt aus Definition: Für beliebige $x_1 < x_2$ zeigen, dass $f(x_1) < / \leq f(x_2)$ (Bspw.  $f(x) = 2x + 3$. $x_1 < x_2 \implies 2x_1 + 3 < 2x_2 + 3 \implies f(x_1) < f(x_2)$).
+\end{itemize}
+}
+\end{exercise}
 
 $f:\mathbb{R}\rightarrow \mathbb{R}$ nennen wir
 \begin{itemize}
@@ -104,11 +155,32 @@ Falls gilt $\forall N > 0 \exists \delta > 0$ so dass $x \in \mathbb{D}(f) \cap 
 
 Eine Funktion $f : \mathbb{D} \rightarrow \mathbb{R}$ heisst \definition{an der Stelle $x_0$ stetig} falls gilt $\forall \epsilon > 0 \exists \delta > 0 s.t. \forall x \in I (|x - x_0| < \delta \implies |f(x) - f(x_0)| < \epsilon)$.
 
+\textit{\textbf{Arten von Unstetigkeitstellen:} Definitionslücken, Sprungstellen, Polstellen, Grenzwert auf einer Seite existiert nicht (weder eigentlich noch uneigentlich).}
+
 Die Funktion nennen wir \definition{stetig} falls sie in jedem Punkt des Definitionsbereichs stetig ist.
+
+\begin{exercise}
+\textit{\textbf{Zeigen, dass Fkt. stetig ist:} 
+\begin{itemize}
+    \item Zeige dass für jedes $\epsilon$ ein $\delta$ existiert, sodass Definition erfüllt ist.
+    \item Argumentieren, dass aus Rechenregeln folgt, dass Fkt. stetig ist (Fkt. zusammengesetzt aus stetigen Funktionen, z.B. $\frac{x}{x^2 +2}$).
+\end{itemize}
+}    
+\end{exercise}
+
+\begin{exercise}
+\textit{\textbf{Zeigen, dass Fkt. nicht stetig ist:} Zeige, dass z.B. Definitionslücke oder Sprungstelle an einer Stelle besteht.}    
+\end{exercise}
 
 \textit{Falls $f$ an der Stelle $x_0$ nicht definiert ist, können wir auch nicht nach der Stetigkeit an dieser Stelle fragen.}
 
 \textit{\definition{Stetige Fortsetzung} "Dieselbe Funktion mit Lücke eingesetzt"}
+
+\begin{exercise}
+\textit{
+\textbf{Parameter finden, sodass zusammengesetze Funktion stetig ist:} Schauen, dass keine Sprungstellen entstehen.
+}
+\end{exercise}
 
 Sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$, und es sei $x_0 \in \mathbb{D}$. Falls gilt $\lim_{x \geq x_0\; x \rightarrow x_0} f(x) = f(x_0)$ nennen wir den Punkt $x_0$ \definition{rechtsstetig}. \definition{Linksstetigkeit} ist analog definiert.
 
@@ -124,6 +196,14 @@ $f^{-1}(A)= \{x \in \mathbb{D}(f)|f(x) \in A\}$}
 \theorem{Zwischenwertsatz:} Es sei $f: [a,b] \rightarrow \mathbb{R}$ eine stetige Funktion und es sei $c$ eine Zahl zwischen $f(a)$ und $f(b)$. Dann gibt es \textit{(mindestens)} ein $x \in [a,b]$ mit $f(x)=c$.
 
 \textit{\textbf{Spezialfall:} Es sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ eine stetige Funktion und es seien $a,b \in I$ mit $f(a) < 0$ und $f(b)>0$. Dann hat $f$ mindestens eine Nullstelle zwischen $a$ und $b$.}
+
+\begin{exercise}
+Kann oft auch auf abgewandelte Funktion angewandt werden:
+
+\textit{
+Sei $f: [a,b] \rightarrow [a,b]$ stetig, zeige dass $\exists x \in [a,b]$ mit $f(x)=x$ ("Fixpunkt"): Falls nicht $f(a)=a$ oder $f(b)=b$ betrachte $g: [a,b] \rightarrow \mathbb{R}, x \mapsto f(x) - x$.
+}
+\end{exercise}
 
 Ein beschränktes und abgeschlossenes Intervall nennt man \definition{kompakt}.
 
@@ -234,7 +314,7 @@ $$\lim_{h \rightarrow 0}\frac{f(a+h) - f(a)}{h} = \lim_{b \rightarrow a}\frac{f(
 Ausgehend von einer gegebenen Funktion $f: domain(f) \rightarrow \mathbb{R}, x \mapsto y = f(x)$ ist die \definition{Ableitungsfunktion} definiert durch $a \mapsto f'(a) = \frac{dy}{dx}|_{x=a}$.
 \textit{Es gilt auf jeden Fall $\mathbb{D}(f) \supseteq \mathbb{D}(f')$.}
 
-\textit{Bsp.: $f(x)=|x|$. Für $x=0$ existiert keine Ableitung (Knickstelle). \textbf{Punkte, an welchen keine Ableitung erwartet werden kann:} Definitionslücken / Unstetigkeitstellen, insb. Sprungstellen / Knickstellen.}
+\textit{Bsp.: $f(x)=|x|$. Für $x=0$ existiert keine Ableitung (Knickstelle). \textbf{Punkte, an welchen keine Ableitung erwartet werden kann:} Definitionslücken / Unstetigkeitsstellen, insb. Sprungstellen / Knickstellen.}
 
 \subsubsection{Differenzierbarkeit}
 
@@ -243,6 +323,18 @@ Falls für Funktion $f$ die Ableitung $f'(x)$ an der Stelle $x$ existiert, nenne
 Falls $f$ für alle Argumente $x$ des Definitionsbereichs differenzierbar ist, nennen wir $f$ \definition{differenzierbar.}
 
 Ist $f$ an der Stelle $x_0$ differenzierbar, so ist $f$ \lemma{an dieser Stelle insbesondere stetig.}
+
+\textit{Verkettung differenzierbarer Funktionen ist ebenfalls differenzierbar.}
+
+\begin{exercise}
+\textit{\textbf{Zeigen, dass Funktion an Stelle $x$ nicht differenzierbar ist:} 
+\begin{itemize}
+    \item Zeige, dass Fkt. nicht stetig
+    \item Zeige, dass Differentialquotient $\lim_{x \rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0}$ nicht definiert ist (z.B. divergiert oder oszilliert)
+    \item Zeige, dass links- und rechtsseitige Ableitung nicht übereinstimmen.
+\end{itemize}
+}  
+\end{exercise}
 
 \subsubsection{Einsetige Ableitungen}
 
@@ -328,6 +420,17 @@ $$(f^{-1})'(y_0)=\frac{1}{f'(x_0)}$$
 
 \textit{Bemerkung: $(f^{-1}\circ f)(x)=x$ ableiten auf beiden Seiten (mit Kettenregel) ergibt, dass $(f^{-1})'(f(x))\cdot f'(x)=1$.}
 
+\begin{exercise}
+    \textit{
+    \textbf{Tricks zum Ableiten}
+    \begin{itemize}
+        \item Ableitungsregeln anwenden
+        \item $x = e^{\ln x}$
+        \item Differenzenquotient betrachten
+    \end{itemize}
+    }
+\end{exercise}
+
 \subsubsection{Extremalstellen}
 
 \greenBox{Lokale Extremalstellen und erste Ableitung:}
@@ -400,6 +503,16 @@ Seien $R>0, f,g:(R,\infty) \rightarrow \mathbb{R}$ differenzierbar:
 Dann $\exists \lim_{x \rightarrow \infty} \frac{f(x)}{g(x)}$ und $=L$.
 
 \textit{\textbf{Beweis:} Folgt aus Version 1 + 2 für $x \mapsto f(\frac{1}{x}), x \rightarrow g(\frac{1}{x})$.}
+
+\begin{exercise}
+    \textbf{Bernoulli - de L'Hospital anwenden}
+
+    \begin{itemize}
+        \item Prüfen, ob tatsächlich richtige Form: $\frac{0}{0} / \frac{\infty}{\infty}$
+        \item Ansonsten ggf. umformen um diese Form zu erhalten.
+        \item Nenner und Zähler individuell ableiten.
+    \end{itemize}
+\end{exercise}
 
 \subsubsection{Monotonie, Konvexität}
 

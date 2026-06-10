@@ -4,7 +4,7 @@ Ein Ausdruck der Form \definition{$a_0 + a_1 + a_2 + ... = \sum_{i=0}^{\infty}$}
 
 \subsection{Konvergenz, ...}
 
-Falls Folge der \definition{Teilsummen (Partialsummen)} $s_n:=a_0+a_1 + ... + a_n = \sum_{k=0}^{N}a_k$ gegen Grnzwert $L < \infty$ konvergiert, \definition{konvergiert} die Reihe: $a_0 + a_1 + ... = \lim_{n \rightarrow \infty} s_n = \sum_{k=0}^{\infty} a_k = L$
+Falls Folge der \definition{Teilsummen (Partialsummen)} $s_n:=a_0+a_1 + ... + a_n = \sum_{k=0}^{N}a_k$ gegen Grenzwert $L < \infty$ konvergiert, \definition{konvergiert} die Reihe: $a_0 + a_1 + ... = \lim_{n \rightarrow \infty} s_n = \sum_{k=0}^{\infty} a_k = L$
 
 $L$ nennt man \definition{Wert der Reihe}
 
@@ -19,7 +19,7 @@ Seien $\sum_{n=0}^{\infty} a_n$ und $\sum_{n=0}^{\infty}b_n$ konvergente Reihen.
 
 \begin{itemize}
     \item $\sum_{n=0}^{\infty} (a_n + b_n) = \sum_{n=0}^{\infty} a_n +  \sum_{n=0}^{\infty} b_n$
-    \item $\sum_{n=0}^{\infty} C \cdot = C \sum_{n=0}^{\infty} a_n$ ($C \in \mathbb{R}$)
+    \item $\sum_{n=0}^{\infty} C \cdot a_n = C \sum_{n=0}^{\infty} a_n$ ($C \in \mathbb{R}$)
 \end{itemize}
 
 Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe \textbf{nicht-negativer} Elemente. 
@@ -39,6 +39,10 @@ Reihe $\sum_{n=0}^{\infty} a_n$ ist \definition{absolut konvergent,} falls $\sum
 Reihe $\sum_{n=0}^{\infty} a_n$ ist \definition{bedingt konvergent,} falls $\sum_{n=0}^{\infty} a_n$ konvergiert, aber nicht absolut konvergiert.
 
 Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemeinerte Dreiecksungleichung} $|\sum_{n=0}^{\infty} a_n | \leq \sum_{n=0}^{\infty} |a_n|$
+
+\begin{exercise}
+    Wenn $\forall n \in \mathbb{N}: a_n \geq 0$ ist absolute Konvergenz äquivalent zu Konvergenz.
+\end{exercise}
 
 \theorem{Riemannscher Umordnungssatz:} Es sei $\sum_{n=0}^{\infty} a_n$ eine bedingt konvergente Reihe reeller Summaneden und es sei $L \in \mathbb{R}$. Dann gibt es eine bijektive Abbildung $\varphi : \mathbb{N}_0 \rightarrow \mathbb{N}_0$, so dass gilt $L= \sum_{n=0}^{\infty} a_{\varphi(n)}$.
 
@@ -64,6 +68,20 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
     \item Falls $\rho > 1$, konvergiert $\sum_{n=0}^{\infty} a_n$ nicht.
 \end{itemize}
 
+\begin{exercise}
+    Überprüfen, ob Reihe konvergiert:
+    \begin{itemize}
+        \item Zuerst: Falls $\lim_{n\rightarrow \infty} \neq 0$ divergiert die Reihe $\sum a_n$.
+        \item Spezielle Reihe? (Geometrische Reihe $\sum q^n$, verallgemeinerte harmonische Reihe $\sum \frac{1}{n^p}$)
+        \item Quotienten- \textit{(insb. bei Fakultät, Bruchterme, "Rekursive" Terme, ...)} / Wurzelkriterium \textit{(insb. bei Potenzen miz $n$ im Exponenten, kann nicht gekürzt werden bei Quotientenkriterium)}
+        \item Alternierende Reihen: Leibnitz-Kriterium
+        \item Majorantenkriterium / Minorantenkriterium
+        \item Potenzreihe: Siehe Konvergenzradius
+    \end{itemize}
+\end{exercise}
+
+% TODO: Wert von Reihen berechnen
+
 \subsection{Spezielle Reihen}
 
 \subsubsection{\definition{Geometrische Reihen}}
@@ -86,6 +104,12 @@ $1 - 1 + \frac{1}{2} - \frac{1}{3!} + ... = e^{-1} = \frac{1}{e}$
 
 Alternierende harmonische Reihe $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ... = \ln(2) < \infty$
 
+\begin{exercise}
+    \textbf{Teleskopsummen:}
+
+    Reihen mit $a_n=b_n - b_{n+1}$ erfüllen $\sum_{n=1}^{N} a_n = \sum_{n=1}^{N} (b_n - b_{n+1}) = b_1 - b_{N+1}$.
+    $\sum_{n=1}^{\infty}a_n = \lim_{N \rightarrow \infty}\sum_{n=1}^{N} a_n = lim_{N \rightarrow \infty} (b_1 - b_{N+1})=b_1$.
+\end{exercise}
 
 Taylor-Reihe: $\sum_{n=0}^{\infty} \frac{1}{n!} f^{(n)}(x_0)(x-x_0)^n$
 
@@ -96,8 +120,9 @@ Reihe der Form $c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + ... = \sum_{k=0}^{\in
 
 \greenBox{Es gilt folgendes:}
 \begin{enumerate}
-    \item Jede Potenzreihe besitzt einen \textbf{Konvergenzradius} $R$, sodass gilt:
-    Die Reise konvergiert für $x$ mit $|x-a|<R$ und die Reihe divergiert für $x$ mit $|x-a|>R$.
+    \item Jede Potenzreihe besitzt einen \definition{Konvergenzradius} $R$, sodass gilt:
+    Die Reise konvergiert für $x$ mit $|x-a|<R$ \textbf{absolut} und die Reihe divergiert für $x$ mit $|x-a|>R$.
+    \textit{Randpunkte $|x-a|=R$ müssen separat betrachtet werden.}
     \item Das Intervall $(a-R,a+R)$ heisst \textbf{Konvergenzintervall}.
     \item Der Konvergenzradius $R$ lässt sich mit der folgenden Formel berechnen: Es sei $\rho = \limsup_{n \rightarrow \infty} |c_n|^{1/n}$.
     Dann ist $R$ gegeben durch $R = \begin{cases}
@@ -108,8 +133,13 @@ Reihe der Form $c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + ... = \sum_{k=0}^{\in
 \end{enumerate}
 \textit{Folgt aus Wurzelkriterium für allgemeine Reihen.}
 
-\textit{$R:= \frac{1}{\limsup_{k \rightarrow \infty}\sqrt[k]{|c_k|}} = \frac{1}{\lim_{k \rightarrow \infty} |\frac{c_{k+1}}{c_k}|}=\lim_{k \rightarrow \infty}|\frac{c_k}{c_{k+1}}|$}
+\begin{exercise}
+\textit{$R:= \frac{1}{\limsup_{k \rightarrow \infty}\sqrt[k]{|c_k|}} = \frac{1}{\lim_{k \rightarrow \infty} |\frac{c_{k+1}}{c_k}|}=\lim_{k \rightarrow \infty}|\frac{c_k}{c_{k+1}}|$ (falls letzterer Grenzwert existiert)}    
+\end{exercise}
 
-\textit{\textbf{Cauchy-Produkt} Für $\sum_{i=0}^{\infty}a_i$, $\sum_{j=0}^{\infty}b_j$ absolut konvergent $\implies (\sum_{i=0}^{\infty} a_k)(\sum_{j=0}^{\infty}b_j)=\sum_{n=0}^{\infty}\sum_{j=0}^{n}a_{n-j}b_j$}
+\begin{exercise}
+    Absolut konvergente (Potenz-)Reihen multiplizieren:
+\textit{\textbf{Cauchy-Produkt} Für $\sum_{i=0}^{\infty}a_i$, $\sum_{j=0}^{\infty}b_j$ absolut konvergent $\implies (\sum_{i=0}^{\infty} a_k)(\sum_{j=0}^{\infty}b_j)=\sum_{n=0}^{\infty}\sum_{j=0}^{n}a_{n-j}b_j$}    
+\end{exercise}
 
 $e^x = \sum_{n=0}^{\infty} \frac{1}{n!}x^n$
