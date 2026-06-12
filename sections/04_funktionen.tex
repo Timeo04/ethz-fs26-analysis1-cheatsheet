@@ -125,6 +125,16 @@ Wenn der Funktionswert $f(x_0)$ existiert, muss er gleich dem Grenzwert $L$ sein
 
 Sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$. Dann gilt $\lim_{x \rightarrow x_0} f(x)= L$ genau dann, wenn \greenBox{für jede konvergente Folge} $(x_n)_{n \in \mathbb{N}_0}$, welche gegen $x_0$ konvergiert, gilt $\lim_{n \rightarrow \infty} f(x_n) = L$.
 
+\begin{exercise}
+    Zeige, dass $\lim_{x \rightarrow 0}\sin(\frac{1}{x})$ nicht existiert:
+
+    \textit{Gem. Folgenkriterium für Grenzwerte genügt es zu zeigen, dass eine Folge $(x_n)$ mit $x_n \rightarrow 0$ existiert, sodass die Funktion mit den Elementen der Folge nicht konvergiert: $\sin(\frac{1}{x_n})=\sin(\frac{\pi n}{2})$ konvergiert nicht, denn $\sin(\frac{\pi n}{2}) = \begin{cases}
+    1, &n \equiv 1 (\mod 4),\\
+    -1, &n \equiv 3 (\mod 4),\\
+    0, &n \equiv 0 (\mod 2).
+    \end{cases}$}
+\end{exercise}
+
 \subsubsection{Rechenregeln}
 \includegraphics[width=0.75\columnwidth]{04_funktionen/rechenregeln_grenzwerte}
 
@@ -149,6 +159,12 @@ Falls gilt $\forall \epsilon > 0 \exists M > 0$ so dass $x \in \mathbb{D}(f) \ca
 \subsubsection{Uneigentliche Grenzwerte}
 
 Falls gilt $\forall N > 0 \exists \delta > 0$ so dass $x \in \mathbb{D}(f) \cap (x_0 - \delta, x_0 + \delta) \implies f(x) \geq N$ hat $f$ in $x_0$ den \definition{uneigentlichen Grenzwert} $\infty$ (divergiert $f$ gegen unendlich), d.h. $\lim_{x \rightarrow x_0} f(x) = \infty$.
+
+\begin{exercise}
+    Zeige, dass $\lim_{x \rightarrow 0} x \sin(\frac{1}{x}) = 0$:
+
+    \textit{Da $|\sin x| \leq 1$ für alle $x \in \mathbb{R}$ gilt $|x \sin (\frac{1}{x})|\leq |x|$. Da $|x| \rightarrow 0$ für $x \rightarrow 0$ gilt gemäss Sandwichsatz, dass $\lim_{x \rightarrow 0} x \sin (\frac{1}{x})=0$.}
+\end{exercise}
 
 % -------------------------------------
 \subsection{Stetigkeit}
@@ -468,6 +484,12 @@ Seien $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, $f$ differenzierbar auf $(a,b
 
 \textit{\textbf{Beweis:}
 Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Erfüllt Bedingungen von Rolle. $g(a)=g(b)$. $\implies \exists \xi \in (a,b): 0=g'(\xi)=f'(\xi)-\frac{f(b)-f(a)}{b-a} \cdot 1 \implies f'(\xi)=\frac{f(b)-f(a)}{b-a}.$ }
+
+\begin{exercise}
+    \textit{Zeige, dass es in einem Intervall, indem $f'(x)\neq 0$ (das Bedingungen für MWS erfüllt) nur eine Nullstelle gibt:}
+
+    \textit{Angenommen, es gäbe zwei Nullstellen $x_1$ und $x_2$, dann wäre $f'(\xi)=\frac{f(x_2)-f(x_1)}{x_2 - x_1}=\frac{0-0}{x_2-x_1}=0$. Das widerspricht $f'(x)\neq 0$.}
+\end{exercise}
 
 \theorem{Regel von Bernoulli - de L'Hospital}
 \textbf{Version 1: ($a \in \mathbb{R}, \frac{0}{0}$)}
