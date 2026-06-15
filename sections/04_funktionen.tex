@@ -472,6 +472,13 @@ Es sei $f: D \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ sei an der lokalen 
 
 \textit{Aber nicht beide Richtungen sind äquivalent. "$\implies$" hält, aber $f'(x_0)=0$ kann bspw. auch konstant oder Sattelstelle sein.}
 
+\begin{itemize}
+    \item Falls $f''(x)<0$ hat $f$ an dieser Stelle ein lokales Maximum.
+    \item Falls $f''(x)>0$ hat $f$ an dieser Stelle ein lokales Minimum.
+    \item Falls $f''(x)=0$ sagt dieses Kriterium nichts aus.
+    \textit{($f'(x)$ überprüfen auf Vorzeichenwechsel: positiv $\rightarrow$ negativ: Hochpunkt, negativ $\rightarrow$ positiv: Tiefpunkt, sonst kein Extrempunkt)}
+\end{itemize}
+
 \greenBox{Lokale Extremalstellen auf einem Intervall:}
 Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und es sei $x_0$ eine lokale Extremalstelle von $f$. Dann ist mindestens eine der folgenden Tatsachen zutreffend:
 \begin{enumerate}
@@ -503,9 +510,15 @@ Seien $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, $f$ differenzierbar auf $(a,b
 Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Erfüllt Bedingungen von Rolle. $g(a)=g(b)$. $\implies \exists \xi \in (a,b): 0=g'(\xi)=f'(\xi)-\frac{f(b)-f(a)}{b-a} \cdot 1 \implies f'(\xi)=\frac{f(b)-f(a)}{b-a}.$ }
 
 \begin{exercise}
-    \textit{Zeige, dass es in einem Intervall, indem $f'(x)\neq 0$ (das Bedingungen für MWS erfüllt) nur eine Nullstelle gibt:}
+    Zeige, dass es in einem Intervall, indem $f'(x)\neq 0$ (das Bedingungen für MWS erfüllt) nur eine Nullstelle gibt:
 
     \textit{Angenommen, es gäbe zwei Nullstellen $x_1$ und $x_2$, dann wäre $f'(\xi)=\frac{f(x_2)-f(x_1)}{x_2 - x_1}=\frac{0-0}{x_2-x_1}=0$. Das widerspricht $f'(x)\neq 0$.}
+\end{exercise}
+
+\begin{exercise}
+    Zeige, dass die \greenBox{Sinus-Ungleichung $|\sin(y)-\sin(x)\leq|y-x|$} gilt
+
+    \textit{W.l.o.g. $x<y$. $f(x)=\sin(x)$ ist stetig differenzierbar auf $\mathbb{R}$. Gem. MWS: $\exists \xi \in (x,y): f'(\xi)=\cos(\xi)=\frac{\sin(y)-\sin(x)}{y-x}$. Da $|\cos(x)|\leq 1$ gilt $1 \geq |\frac{\sin(y)-\sin(x)}{y-x}|=\frac{|\sin(y)-\sin(x)|}{|y-x|}$. Danach umformen.}
 \end{exercise}
 
 \theorem{Regel von Bernoulli - de L'Hospital}
@@ -641,6 +654,8 @@ $P_n$ heisst \definition{$n.$-tes Taylorpolynom.}
 Für gegebene Funktion $f$ heisst die Reihe
 $$f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2+...= \sum_{k=0}^{\infty}f^{(k)}(a) \frac{1}{k!}(x-a)^k$$
 \definition{Taylorreihe / Taylorentwicklung} der Funktion $f$ (um den Punkt $a$).
+
+Ist innerhalb ihres Konvergenzradius stetig.
 
 \textit{Kann nur konvergieren, wenn in Konvergenzradius.}
 
@@ -940,12 +955,24 @@ Dann
 $$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
 
 \subsection{Funktionenfolgen}
-% TODO
+
+Es gibt auch Folgen $(f_n)_{n \in \mathbb{N}_0}$ von Funktionen $f_n: D \subset \mathbb{R} \rightarrow \mathbb{R}$.
+
+\begin{exercise}
+    Beispiel einer Funktionenfolge: $f_n(x)=x^n$, dann sind die Glieder $f_1(x)=x, f_2(x)=x^2, f_3(x)=x^3, ...$
+\end{exercise}
 
 \definition{Punktweise Konvergenz}
+Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ punktweise gegen $f$, falls für jedes $x \in D$ die reelle Folge $(f_n(x))_{n \in \mathbb{N}_0}$ gegen $f(x)$ konvergiert.
 
-\definition{Punktweiser Grenzwert}
+Wenn für jedes feste $x$ gilt $\lim_{n \rightarrow \infty} f_n(x)=f(x)$
+
+$f$ heisst auch \definition{Punktweiser Grenzwert} der Folge $(f_n)_{n \in \mathbb{N}_0}$
+
 
 \definition{Gleichmässige Konvergenz}
+Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ gleichmässig gegen $f$, falls für jedes $\epsilon > 0$ ein Index $N$ existiert, sodasss für alle $n \geq N$ und für alle $x \in D$ gilt $|f_n(x) - f(x)|< \epsilon$.
+
+Eine \greenBox{Potenzreihe} konvergiert auf jedem kompakten Teilintervall des Konvergenzintervalls \greenBox{gleichmässig}.
 
 \theorem{Mittelwertsatz der Integralrechnung}
