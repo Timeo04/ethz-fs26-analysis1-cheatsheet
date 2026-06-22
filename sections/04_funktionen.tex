@@ -308,6 +308,8 @@ Geometrisch findet man den Graphen der Inversen durch Spiegelung an der Geraden 
 
 \includegraphics[width=0.7\columnwidth]{sincostan} 
 
+\small{$\sin(\frac{\pi}{4})= \cos(\frac{\pi}{4})= \frac{\sqrt{2}}{2}$}
+
 $\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=$
 
 $\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)= +\cos(\alpha)$, $\tan(-\alpha) = - \tan(\alpha)$, $\sin^2(\alpha) + \cos^2(\alpha) = 1$
@@ -318,6 +320,8 @@ $\sin$/$\cos$: $\mathbb{D} = \mathbb{R}$ / $W = [0,1]$
 
 $\tan$: $\mathbb{D} = \mathbb{R}\backslash\{k \cdot \pi + \frac{\pi}{2} | k \in \mathbb{Z}\}$ / $W = \mathbb{R}$
 % TODO: Definitionsbereich
+
+$\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$, $\cot(\alpha) = \frac{1}{\tan(\alpha)} = \frac{\cos(\alpha)}{\sin(\alpha)}$
 
 \subsubsection{\definition{Hyperbolische Funktionen}}
 
@@ -479,6 +483,16 @@ Es sei $f: D \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ sei an der lokalen 
     \textit{($f'(x)$ überprüfen auf Vorzeichenwechsel: positiv $\rightarrow$ negativ: Hochpunkt, negativ $\rightarrow$ positiv: Tiefpunkt, sonst kein Extrempunkt)}
 \end{itemize}
 
+% (Siehe Serie10.6 https://claude.ai/share/47dca5fc-933c-484a-b786-442896875427 )
+\begin{exercise}
+    Beweise mit dem Satz von Taylor dass wenn $f'(x_0) = 0$ und $f''(x_0) > 0$, dann ist $x_0$ ein lokales Minimum.
+
+    \textit{Bemerke: $x_0$ ist lokales Minimum, wenn alle Punkte in der Nähe einen grösseren Funktionswert haben: $f(x)-f(x_0)>0$.}
+    \textit{Da $f''(x)$ stetig ist und $f''(x_0)>0$, gibt es ein Intervall um $x_0$, indem $f''(x)$ überall $>0$ ist.}
+    \textit{Mit dem Satz von Taylor lässt sich $f(x)$ für Punkte nahe an $x_0$ schreiben als: $f(x)=f(x_0)+\underbrace{f'(x_0)(x-x_0)}_{>0} + \frac{1}{2}f''(c_x)(x-x_0)^2$.}
+    \textit{Es bleibt $f(x)-f(x_0)=\frac{1}{2}\underbrace{f''(c_x)}_{>0} \cdot \underbrace{(x-x_0)^2}_{>0}$. Damit ist es gezeigt.}
+\end{exercise}
+
 \greenBox{Lokale Extremalstellen auf einem Intervall:}
 Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und es sei $x_0$ eine lokale Extremalstelle von $f$. Dann ist mindestens eine der folgenden Tatsachen zutreffend:
 \begin{enumerate}
@@ -487,12 +501,18 @@ Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und 
     \item $f$ ist an der Stelle $x_0$ differenzierbar und es gilt $f'(x_0)=0$
 \end{enumerate}
 
-\textit{Aus der Tatsage, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
+\textit{Aus der Tatsache, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
 
 \textit{D.h. Bedingung $f'(x_0)=0$ liefert \textbf{Kandidaten} für Extremalstellen.}
 
 \greenBox{beschränktes und abgeschlossenes Intervall} $\implies$ $f$ nimmt Maximum/Minimum an.
 \textit{für offenes Intervall würde es nicht gelten.}
+
+\begin{exercise}
+    Optimierung
+
+    \textit{Gleichung $f(x)$ aufstellen (ggf. mit Nebenbedingungen), nach der gesuchten Grösse $x$ ableiten, Ableitung $f'(x)=0$ nullsetzen (Extremalstellen berechnen), Gleichung auflösen. Verifizieren, dass $x$ das Maximum (oder Minimum) ist.}
+\end{exercise}
 
 \theorem{Satz von Rolle}
 Falls $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, auf $(a,b)$ differenzierbar, $f(a)=f(b)$, dann $\exists \xi \in (a,b)$ mit $f'(\xi)=0$.
@@ -659,6 +679,12 @@ Ist innerhalb ihres Konvergenzradius stetig.
 
 \textit{Kann nur konvergieren, wenn in Konvergenzradius.}
 
+\begin{exercise}
+    Bestimmtes Integral mit Taylorreihe (auf 2 Dezimalstellen genau) berechnen
+
+    \textit{Taylorreihe berechnen, dann anwenden dass $\int_{min}^{max} \sum_{n=1}^{\infty} f_n \, dx = \sum_{n=1}^{\infty} \int_{max}^{min} f_n \, dx$. Dann genügend Summanden berechnen.}
+\end{exercise}
+
 \subsubsection{Wichtige Reihen}
 
 Diese Reihen konvergieren für alle $x$: \textit{(Entwicklungspunkt ist $a=0$; $x_0 = 0$)}
@@ -674,6 +700,11 @@ $$e^x = \sum_{n=0}^{\infty}\frac{1}{n!}x^n = 1 + x + \frac{1}{2!}x^2 + \frac{1}{
 Die folgenden Reihen konvergieren \textbf{nur für $-1 < x < 1$}:
 
 $$\ln(1+x)= \sum_{n=1}^{\infty}(-1)^{n-1}\frac{1}{n}x^n = x-\frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots$$
+
+{
+    \color{gray}
+    $$\frac{\ln(1+x)}{x} = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n}x^{n-1} = 1 - \frac{1}{2} x + \frac{1}{3} x^2 - \dots$$
+}
 
 $$\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + x^4 + \dots$$
 
@@ -969,9 +1000,20 @@ Wenn für jedes feste $x$ gilt $\lim_{n \rightarrow \infty} f_n(x)=f(x)$
 
 $f$ heisst auch \definition{Punktweiser Grenzwert} der Folge $(f_n)_{n \in \mathbb{N}_0}$
 
+\begin{exercise}
+    Punktweise Konvergenz zeigen:
+
+    \textit{Betrachte fixierten Punkt $x$, berechne Grenzwert $f(x)=lim_{n \rightarrow \infty} f_n(x)$. Wenn dieser Grenzwert für jedes $x$ im Definitionsbereich existiert, dann konvergiert $f_n$ punktweise gegen $f$.}
+\end{exercise}
 
 \definition{Gleichmässige Konvergenz}
 Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ gleichmässig gegen $f$, falls für jedes $\epsilon > 0$ ein Index $N$ existiert, sodasss für alle $n \geq N$ und für alle $x \in D$ gilt $|f_n(x) - f(x)|< \epsilon$.
+
+\begin{exercise}
+    Gleichmässige Konvergenz zeigen:
+
+    \textit{Zuerst punktweise Konvergenz zeigen. Dann: Wir betrachten den grössten Fehler im Definitionsbereich $\sup_{x \in D} |f_n(x)-f(x)|$. Falls gilt $\lim_{n \rightarrow \infty} \sup_{x \in D} |f_n(x)-f(x)|=0$, dann ist Konvergenz gleichmässig.}
+\end{exercise}
 
 Eine \greenBox{Potenzreihe} konvergiert auf jedem kompakten Teilintervall des Konvergenzintervalls \greenBox{gleichmässig}.
 

@@ -87,9 +87,15 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
 \subsubsection{\definition{Geometrische Reihen}}
 $a \sum_{n=0}^{\infty} q^n$
 \begin{itemize}
-    \item $q \neq 0$ und $q \neq 1$: $s_n = a + aq + aq^2+...+aq^{n-1} = a \cdot \frac{1-q^n}{1-q}$
-    \item Falls $|q|<1$: $a=\lim_{n \rightarrow \infty} s_n = a \sum_{n=0}^{\infty} q^n = a \cdot \dfrac{1}{1-q}$
+    \item {\color{gray}$q \neq 0$ und} $q \neq 1$: $s_n = a + aq + aq^2+...+aq^{n-1} = a \cdot \frac{1-q^n}{1-q}$
+    \item Falls $|q|<1$: $\lim_{n \rightarrow \infty} s_n = a \sum_{n=0}^{\infty} q^n = a \cdot \dfrac{1}{1-q}$
 \end{itemize}
+
+\begin{exercise}
+    Zeige, dass $\sum_{n=0}^{\infty} (-1)^n \cdot x^{2n} = \frac{1}{1 + x^2}$ für $|x|<1$.
+
+    \textit{$\sum_{n=0}^{\infty} (-1)^n \cdot x^{2n} = \sum_{n=0}^{\infty} (-1)^n \cdot (x^2)^n = \sum_{n=0}^{\infty} (-x^2)^n$. Da $|x|<1$ gilt auch $|-x^2|<1$. Daher gilt $\sum_{n=0}^{\infty} (-x^2)^n = \frac{1}{1-(-x^2)} = \frac{1}{1 + x^2}$.}
+\end{exercise}
 
 \subsubsection{\definition{Verallgemeinerte harmonische Reihen}}
 $\sum_{k=1}^{\infty} \frac{1}{k^s} = \sum_{k=1}^{\infty} k^{-s}$: konvergiert für $s > 1$ und divergiert für $s \leq 1$
