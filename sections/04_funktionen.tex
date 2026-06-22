@@ -312,16 +312,24 @@ Geometrisch findet man den Graphen der Inversen durch Spiegelung an der Geraden 
 
 $\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=$
 
-$\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)= +\cos(\alpha)$, $\tan(-\alpha) = - \tan(\alpha)$, $\sin^2(\alpha) + \cos^2(\alpha) = 1$
+$\tan(x)=\frac{\sin(x)}{\cos(x)}$
+
+$\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)= +\cos(\alpha)$, $\tan(-\alpha) = - \tan(\alpha)$, $\sin^2(\alpha) + \cos^2(\alpha) = 1$, $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta)$
 
 Definitionsbereich / Wertebereich:
 
 $\sin$/$\cos$: $\mathbb{D} = \mathbb{R}$ / $W = [0,1]$
 
 $\tan$: $\mathbb{D} = \mathbb{R}\backslash\{k \cdot \pi + \frac{\pi}{2} | k \in \mathbb{Z}\}$ / $W = \mathbb{R}$
-% TODO: Definitionsbereich
 
 $\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$, $\cot(\alpha) = \frac{1}{\tan(\alpha)} = \frac{\cos(\alpha)}{\sin(\alpha)}$
+
+\begin{exercise}
+    Bestimme die Amplitude von $a \sin(\omega t) + b \cos(\omega t)$ (Umschreiben in die Form $A \sin (\omega t + \delta)$ oder $A \cos (\omega t - \delta)$).
+
+    \textit{Die Amplitude ist $A=\sqrt{a^2 + b^2}$. Dann Phasenverschiebung bestimmen: $\cos (\delta) = \frac{a}{A}$, $\sin (\delta)=\frac{b}{A}$ (da $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, also beide Zahlen auf Einheitskreis liegen). 
+    Dann Additionstheorem verwenden: $A(\cos \delta \sin (\omega t) + \sin \delta \cos (\omega t)) = A \sin(\omega t + \delta)$}
+\end{exercise}
 
 \subsubsection{\definition{Hyperbolische Funktionen}}
 
@@ -408,16 +416,24 @@ Ausserdem setzen wir $C^\infty (D) := \cap_{n=0}^\infty C^n(D)$ und nennen Funkt
     \item $\tan'(x) = \frac{1}{\cos ^2 (x)}= 1 + \tan ^2(x)$
 \end{itemize}
 
+\begin{itemize}
+    \item $\sec'(x)= \sec(x)\tan(x)$
+    \item $\csc'(x)=-\csc(x)\cot(x)$
+    \item $\cot'(x) = -\csc^2(x)$
+\end{itemize}
+
 \greenBox{Hyperbolische Funktionen:}
 \begin{itemize}
     \item $\sinh'(x)= \cosh(x)$
     \item $\cosh'(x)= \sinh(x)$
+    \item $\tanh'(x)=\frac{1}{\cosh^2(x)} = 1 - \tanh^2(x)$
 \end{itemize}
 $\sinh (x) = \frac{1}{2} (e^x  - e^{-x}), \cosh (x) = \frac{1}{2}(e^x + e^{-x})$
 
 \greenBox{Umkehrfunktionen:}
 \begin{itemize}
     \item $\ln'(x)= \frac{1}{x}$
+    \item $\log_a'(x) = \frac{1}{x \cdot \ln(a)}$
     \item $\arcsin'(x)=\frac{1}{\sqrt{1-x^2}}$
     \item $\arccos'(x)=\frac{-1}{\sqrt{1-x^2}}$
     \item $\arctan'(x)=\frac{1}{1+x^2}$
@@ -729,11 +745,12 @@ Dann ist $f$ auf dem Intervall $[a,b]\subset I$ integrierbar, und es gilt $\int_
 
 \textbf{Beobachtungen zu Taylorreihen}
 
+% TODO
 Wir betrachten $p(x)=\sum_{k=0}^{\infty}a_kx^k$, $p_n(x)=\sum_{k=0}^{n-1}a_kx^k$ und sei $x$ im Konvergenzintervall $(-\delta, \delta)$.
 Wir führen die folgende Hilfsgrösse ein: $|x|<r$ und wir betrachten $r<s<\delta$.
 Dann gilt: $|p(x)-p_n(x)|=|\sum_{k=0}^{\infty}a_kx^k - \sum_{k=0}^{n-1}a_kx^k|=|\sum_{k=n}^{\infty}a_kx^k | \leq \sum_{k=n}^{\infty}|a_k||x|^k\leq \sum_{k=n}^{\infty}|a_k|r^k = \sum_{k=n}^{\infty}|a_k|(\frac{r}{s})^ks^k \leq (\frac{r}{s})^n \underbrace{\sum_{k=n}^{\infty}|a_k|s^k}_{< \infty}\rightarrow_{n \rightarrow \infty}0$
 
-Insbesondere gitl die Abschützung für alle $x$ im Konvergenzintervall!
+Insbesondere gilt die Abschätzung für alle $x$ im Konvergenzintervall!
 Diese Konvergenzeigenschaft von $p_n$ gegen $p$ nennt man auch gleichmässige Konvergenz. (egal welches $x$ ich anschaue, es konvergiert immer gegen $0$.)
 Aus der Stetigkeit der Polynome $p_n(x)$ folgt: \greenBox{Alle Potenzreihen (insb. Taylorreihen) sind stetig} (innerhalb des Konvergenzradius).
 
