@@ -308,11 +308,9 @@ Geometrisch findet man den Graphen der Inversen durch Spiegelung an der Geraden 
 
 \includegraphics[width=0.7\columnwidth]{sincostan} 
 
+$\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=\frac{\sin(x)}{\cos(x)}$
+
 \small{$\sin(\frac{\pi}{4})= \cos(\frac{\pi}{4})= \frac{\sqrt{2}}{2}$}
-
-$\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=$
-
-$\tan(x)=\frac{\sin(x)}{\cos(x)}$
 
 $\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)= +\cos(\alpha)$, $\tan(-\alpha) = - \tan(\alpha)$, $\sin^2(\alpha) + \cos^2(\alpha) = 1$, $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta)$
 
@@ -331,6 +329,11 @@ $\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$
     Dann Additionstheorem verwenden: $A(\cos \delta \sin (\omega t) + \sin \delta \cos (\omega t)) = A \sin(\omega t + \delta)$}
 \end{exercise}
 
+$\arcsin(x) + \arccos(x)=\frac{\pi}{2}$, $\arcsin(-x)=-\arcsin(x)$, $\arccos(-x)= \pi - \arccos(x)$
+
+
+% TODO: Arcussinus, etc.
+
 \subsubsection{\definition{Hyperbolische Funktionen}}
 
 \includegraphics[width=0.5\columnwidth]{04_funktionen/sinh_cosh_tanh}
@@ -338,6 +341,12 @@ $\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$
 $\sinh(x)=\frac{e^x - e^{-x}}{2} \in (-\infty, \infty)$, $\cosh(x)=\frac{e^x + e^{-x}}{2} \in [1, \infty)$, $\tanh(x)=\frac{\sinh(x)}{\cosh(x)}=\frac{e^x - e^{-x}}{e^x + e^{-x}} \in (-1, 1)$
 
 $\mathbb{D} = \mathbb{R}$
+
+$\operatorname{arsinh}(x)=\ln(x+\sqrt{x^2 + 1}) = \int_{0}^{1}\frac{x}{\sqrt{x^2 y^2 + 1}}\, dy$
+
+$\operatorname{arcosh}(x)=\ln(x + \sqrt{x^2 - 1})$ für $x \geq 1$
+
+$\operatorname{artanh}(x)=\tanh^-1(x)= \frac{1}{2}\ln(\frac{1+x}{1-x})$ für $|x|<1$
 
 \subsubsection{Potenzen, Polynome und rationale Funktionen}
 
@@ -435,8 +444,14 @@ $\sinh (x) = \frac{1}{2} (e^x  - e^{-x}), \cosh (x) = \frac{1}{2}(e^x + e^{-x})$
     \item $\ln'(x)= \frac{1}{x}$
     \item $\log_a'(x) = \frac{1}{x \cdot \ln(a)}$
     \item $\arcsin'(x)=\frac{1}{\sqrt{1-x^2}}$
-    \item $\arccos'(x)=\frac{-1}{\sqrt{1-x^2}}$
+    \item $\arccos'(x)=-\frac{1}{\sqrt{1-x^2}}$
     \item $\arctan'(x)=\frac{1}{1+x^2}$
+    \item $\operatorname{arsinh}'(x)=\frac{1}{\sqrt{x^2 + 1}}$
+    \item $\operatorname{arcosh}'(x)=\frac{1}{\sqrt{x^2 - 1}}$ für $x \in \mathbb{R}, x>1$
+    \item $\operatorname{artanh}'(x)=\frac{1}{1-x^2}, |x|<1$
+    \item $\operatorname{arcoth}'(x)=\frac{1}{1-x^2}, |x|>1$
+    \item $\operatorname{arsech}'(x)=-\frac{1}{x\sqrt{1-x^2}}$
+    \item $\operatorname{arcsch}'(x)=-\frac{1}{|x|\sqrt{1+x^2}}$
 \end{itemize}
 
 \textbf{Beweis:} $(e^x)'(x)=e^x$. $e^x=\sum_{k=0}^{\infty} \frac{1}{k!}x^k$ und "Potenzreihen dürfen termweise abgeleitet werden": $(e^x)'(x)=\frac{d}{dx}(\sum_{k=0}^{\infty}\frac{1}{k!}x^k)=\sum_{k=0}^{\infty}\frac{d}{dx} \frac{1}{k!}x^k = 0 + 1 + x^1 + \frac{1}{2!}x^2 + ... = \sum_{s=0}^{\infty}\frac{1}{s!}x^s$.
@@ -833,9 +848,18 @@ $$a_n u^{(n)}(x) + a_{n-1} u^{(n-1)}(x) \dots + a_1 u'(x) + a_0 u(x) = 0$$
     \item Falls wir $r$ reelle Nullstellen und $s$ \textbf{Paare} komplexer Nullstellen $(a_j \pm ib_j)$ mit jeweils Multiplizität $m_i$ haben, gilt $u(x)=\sum_{i=0}^{r}(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x}) + \sum_{j=0}^{s} (\sum_{q=0}^{m_j - 1}(A_{jq} x^q e^{a_j x} \sin(b_j x)+B_{jq} x^q e^{a_j x} \cos(b_j x)))$    
 \end{itemize}
 
+\begin{exercise}
+    Allgemeine Lösung einer linearen, homogenen Differentialgleichung mit Parametern, bspw. $u''(x)-(a+b)u'(x)+abu(x)=0$
+
+    \textit{Charakteristisches Polynom lösen; ergibt $\lambda_1 = a, \lambda_2 = b$, dann Fallunterscheidung für $a\neq b$ und $a=b$. Separat allgemeine Lösungen bestimmen (siehe oben).}
+
+    \small{\textit{Wenn man eine Anfangswertaufgabe mit dieser Gleichung anschaut, kann man mithilfe von Taylorreihen und Vereinfachen zeigen, dass die Lösung für $a \neq b$ und $b \rightarrow a$ gegen die Lösung für den Fall $a=b$ konvergiert.}}
+\end{exercise}
+
 \subsubsection{Lösen von Differentialgleichungen erster Ordnung}
 \begin{itemize}
-    \item Trennung der VariablenSubstitution
+    \item Trennung der Variablen
+    \item Substitution
     \item Variation der Konstanten (lineare, inhomogene Differentialgleichung)
 \end{itemize}
 
@@ -868,6 +892,8 @@ $f(x)$ hat eine ganze Familie von Stammfunktionen: \definition{unbestimmtes Inte
 \includegraphics[width=0.75\columnwidth]{04_funktionen/integral_add_mult}
 
 \includegraphics[width=0.9\columnwidth]{04_funktionen/integral_weitere}
+
+$$\int \ln(x)\,dx = x \cdot \ln(x) - x + C$$
 
 \theorem{Partielle Integration}
 
@@ -974,7 +1000,7 @@ Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig. Dann ist für alle $C \in \mathbb{R}
 \textit{
     \textbf{Beweis:} 
     $f$ stetig $\implies$ $f$ auf jedem Intervall $[a,x], x \in [a,b]$ integrierbar.
-    Dann zeigen, dass $F$ Stammfunktion ist ($\epsilon / \delta$), $\lim_{x \rightarrow x_0} \frac{F(x)-F(x_0)}{x-x_0}=F'(x_0)=f(x_0)$.
+    Dann zeigen, dass $F$ Stammfunktion von $f$ ist (mit $\epsilon / \delta$-Stetigkeitsdefinition), $\lim_{x \rightarrow x_0} |\frac{F(x)-F(x_0)}{x-x_0} - f(x_0)|=\lim |F'(x_0)-f(x_0)|=0$ (einzeln zeigen für $x \in (x_0, x_0+ \delta) \cap [a,b]$ und $x \in (x_0-\delta, x_0) \cap [a,b]$).
 }
 
 Sei $F:[a,b]\rightarrow \mathbb{R}$ stetig differenzierbar. Dann gilt für alle $x \in [a,b]$
@@ -987,20 +1013,34 @@ Sei $f:[a,b] \rightarrow \mathbb{R}$ stetig und $F:[a,b] \rightarrow \mathbb{R}$
 $$\int_{a}^{b}f(t)\,dt = F(x)|_a^b = F(b)-F(a)$$
 \textit{(Berechnung von bestimmten Integralen via Stammfunktion)}
 
+\greenBox{Verallgemeinerung für unstetige $f$}
+Für eine Funktion $\tilde{f}(y)$ mit endlich vielen Unstetigkeitsstellen $\{x_1, \dots, x_n\}$ ist $F(x):=\int_{a}^{x}f(y)\,dy+C$ noch eine Stammfunktion für $x \in [a,b] \ \{x_1, \dots, x_n\}$
+
+\greenBox{Eindeutigkeit der Stammfunktion}
+Der Hauptsatz liefert alle möglichen Stammfunktion.
+
+\textit{\textbf{Beweis:} Sei $G(x)$ eine weitere Stammfunktion, dann $H(x):=G(x)-\int_{a}^{x}f(y) \, dy$. Dann gilt $H'(x)=f(x) - f(x)=0 \forall x \in [a,b]$. Dann muss aber $H(x)$ eine Konstante sein, d.h. $H(x)=C, C \in \mathbb{R}$, dies bedeutet $C = G(x)- \int_{a}^{x}f(y)\,dy \iff G(x)= \int_{a}^{x}f(y)\,dy + C, C \in \mathbb{R}$}
+
 \theorem{Partielle Integration}
 Seien $f,g:[a,b] \rightarrow \mathbb{R}$ stetig differenzierbare Funktionen.
 $$\int_{a}^{b} f(x) g'(x) \,dx = f(x)g(x)|_a^b-\int_{a}^{b}f'(x)g(x)\,dx$$
-\textit{Folgt aus Hauptsatz und Produkteregel}
+\textit{Folgt aus Hauptsatz und Produkteregel: $\int_{a}^{b}\frac{d}{dx} f(x)\cdot g(x)\,dx = \int_{a}^{b}(f'(x)\cdot g(x) + f(x) \cdot g'(x))\,dx = \int_{a}^{b}f'(x)\cdot g(x) \,dx + \int_{a}^{b}f(x) \cdot g'(x)\,dx=f \cdot g|^b_a=f(b)g(b)-f(a)g(a) \implies \int_{a}^{b}f(x)g'(x)\,dx = f(x) \cdot g(x) |^b_a - \int_{a}^{b}f'(x)\cdot g(x) \, dx$}
 
 \theorem{Substitution, Version 1}
 Seien $I,J \subset \mathbb{R}$ zwei Intervalle, $f : I \rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. Dann gilt für alle $[a,b] \subset I$
 $$\int_{a}^{b}g(f(x))f'(x)\,dx = \int_{f(a)}^{f(b)}g(y)\,dy$$
 
+\textit{Weil wir nicht mehr nach $x$ integrieren sondern nach $y$ müssen wir auch die Integrationsgrenzen anpassen und "schauen, wie wir die $x$ in $y$ übersetzen können".}
+
+\textit{Ggf. muss es etwas angepasst werden wenn bspw. eine Faktor als Abweichung bei der Ableitung besteht.}
+
+{\color{gray}
 \theorem{Substitution, Version 2}
 Seien $I,J \subset \mathbb{R}$ Intervalle, $f:I\rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. 
 Für $[a,b]\subset I$ gelte $f'(x)\neq 0$ für alle $x \in [a,b]$ und sei $f^{-1}:[f(a),f(b)]\rightarrow \mathbb{R}$ Inverse von $f|_{[a,b]}$. 
 Dann
 $$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
+}
 
 \subsection{Funktionenfolgen}
 
@@ -1035,3 +1075,6 @@ Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dan
 Eine \greenBox{Potenzreihe} konvergiert auf jedem kompakten Teilintervall des Konvergenzintervalls \greenBox{gleichmässig}.
 
 \theorem{Mittelwertsatz der Integralrechnung}
+% TODO!
+Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
+Geometrisch bedeutet dies, dass die Fläche unter der Kurve genau dem Flächeninhalt eines Rechtecks mit derselben Intervallbreite und der Höhe dieses Mittelwerts entspricht.
