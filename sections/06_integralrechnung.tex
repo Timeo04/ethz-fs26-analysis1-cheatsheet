@@ -174,3 +174,13 @@ Der Hauptsatz liefert alle möglichen Stammfunktion.
 % TODO!
 Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
 Geometrisch bedeutet dies, dass die Fläche unter der Kurve genau dem Flächeninhalt eines Rechtecks mit derselben Intervallbreite und der Höhe dieses Mittelwerts entspricht.
+
+\theorem{Cauchy-Schwarz für Integrale}
+Für zwei beschränkte, (quadrat)integrierbare Funktionen $f,g:[a,b]\rightarrow \mathbb{R}$ gilt
+$$|\int_{a}^{b}f(x)g(x)\,dx|\leq \sqrt{\int_{a}^{b}f(x)^2\,dx}\sqrt{\int_{a}^{b}g(x)^2\,dx}$$
+\textit{(Folgt aus Vektorungleichung $|\mathbf{u}\cdot\mathbf{v}|\leq||\mathbf{u}||||\mathbf{v}||$)}
+
+\begin{exercise}
+    Für $g(x)=1$:
+    $$|\int_{a}^{b}f(x)\,dx|\leq \sqrt{b-a}\sqrt{\int_{a}^{b}f(x)^2\,dx}$$
+\end{exercise}
