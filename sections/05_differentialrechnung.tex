@@ -240,10 +240,11 @@ Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$ differenzierbar. Dann gilt:
 
 \textit{\textbf{Beweis $"\implies"$:} Sei $x \in I$. Fall $x \in (a,b)$: Sei $h\neq 0:x+h \in I$. Falls $h>0: f$ wachsend $\implies \frac{f(x+h)-f(x)}{h}\geq0$. Falls $h<0:\frac{f(x+h)-f(x)}{h}\geq 0$. $\implies f'(x)= \lim_{h \rightarrow 0, h \neq 0}\frac{f(x+h)-f(x)}{h}\geq 0$. (Andere Richtung braucht Mittelwertsatz.)}
 
-Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$: \greenBox{$f$ ist konstant $\Leftrightarrow$$f$ differenzierbar} \greenBox{ und $f'(x)=0$.}
+Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$: \greenBox{$f$ ist konstant $\Leftrightarrow$} \greenBox{ $f$ differenzierbar und $f'(x)=0$.}
 
 \textit{\textbf{Beweis:} "$\implies$" offensichtlich, "$\Leftarrow$": Dann $f'\geq 0$. $\implies$ $f$ wachsend. Dasselbe mit $(-f)'=-f' \geq 0$ $\implies$ $f$ fallend. $\implies$ $f$ konstant.}
 
+\subsubsection{Konvex / Konkav}
 
 $f: I \rightarrow \mathbb{R}$ \definition{konvex (linksgekrümmt)} $\Leftrightarrow \forall a,b \in I$ mit $a<b, t \in (0,1): f((1-t)a+tb)\leq (1-t)f(a)+tf(b)$ \textit{(Graph ist unterhalb Verbindungsgerade; konstante Funktion ist auch konvex.)}
 
