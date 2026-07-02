@@ -1,5 +1,4 @@
-\subsection{Integration}
-\subsubsection{Stammfunktionen, unbestimmtes Integral}
+\subsection{Stammfunktionen, unbestimmtes Integral}
 
 Sei $I \subset \mathbb{R}$ ein Intervall und $f(x):I \rightarrow \mathbb{R}$ eine Funktion. Eine differenzierbare Funktion $F:I \rightarrow \mathbb{R}$ mit der Eigenschaft
 $$F'(x)=f(x), x \in I$$
@@ -55,7 +54,7 @@ $\sqrt{1-\sin^2}=\sqrt{\cos^2} = \cos$
 
 Formen $\int \sqrt{Ax^2 + B x + C} \, dx$ mit quadratischem Ergänzen.
 
-\subsection{Riemann-Integral}
+\subsection{Riemann-Integral (bestimmte Integrale)}
 \textbf{Idee:} Unterteile Funktion in $n$ (nicht zwingend gleich grosse) Teilintervalle, wähle jeweils einen repräsentativen Funktionswert in diesem Intervall, summiere alle einzelnen "Teilflächen".
 
 Danach $n \rightarrow \infty$, sodass die Länge der Teilintervalle gegen $0$ geht.
@@ -118,6 +117,29 @@ Seien $f,g:[a,b] \rightarrow \mathbb{R}$ zwei (Riemann-)integrierbare Funktionen
 \end{enumerate}
 \textit{\textbf{Beweise für Rechenregeln:} "Was passiert für Treppenfunktionen?", dann Approximations-Idee, allgemeiner zeigen.}
 
+\subsubsection{Integrationstechniken}
+\theorem{Partielle Integration}
+Seien $f,g:[a,b] \rightarrow \mathbb{R}$ stetig differenzierbare Funktionen.
+$$\int_{a}^{b} f(x) g'(x) \,dx = f(x)g(x)|_a^b-\int_{a}^{b}f'(x)g(x)\,dx$$
+\textit{Folgt aus Hauptsatz und Produkteregel: $\int_{a}^{b}\frac{d}{dx} f(x)\cdot g(x)\,dx = \int_{a}^{b}(f'(x)\cdot g(x) + f(x) \cdot g'(x))\,dx = \int_{a}^{b}f'(x)\cdot g(x) \,dx + \int_{a}^{b}f(x) \cdot g'(x)\,dx=f \cdot g|^b_a=f(b)g(b)-f(a)g(a) \implies \int_{a}^{b}f(x)g'(x)\,dx = f(x) \cdot g(x) |^b_a - \int_{a}^{b}f'(x)\cdot g(x) \, dx$}
+
+\theorem{Substitution, Version 1}
+Seien $I,J \subset \mathbb{R}$ zwei Intervalle, $f : I \rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. Dann gilt für alle $[a,b] \subset I$
+$$\int_{a}^{b}g(f(x))f'(x)\,dx = \int_{f(a)}^{f(b)}g(y)\,dy$$
+
+\textit{Weil wir nicht mehr nach $x$ integrieren sondern nach $y$ müssen wir auch die Integrationsgrenzen anpassen und "schauen, wie wir die $x$ in $y$ übersetzen können".}
+
+\textit{Ggf. muss es etwas angepasst werden wenn bspw. eine Faktor als Abweichung bei der Ableitung besteht.}
+
+{\color{gray}
+\theorem{Substitution, Version 2}
+Seien $I,J \subset \mathbb{R}$ Intervalle, $f:I\rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. 
+Für $[a,b]\subset I$ gelte $f'(x)\neq 0$ für alle $x \in [a,b]$ und sei $f^{-1}:[f(a),f(b)]\rightarrow \mathbb{R}$ Inverse von $f|_{[a,b]}$. 
+Dann
+$$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
+}
+
+\subsection{Hauptsatz}
 \theorem{Hauptsatz der Integral- und Differentialrechung:}
 
 Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig. Dann ist für alle $C \in \mathbb{R}$ die Funktion $$F(x):=\int_{a}^{x}f(y)\,dy + C$$ eine Stammfunktion von $f$. Jede Stammfunktion int von dieser Form.
@@ -147,27 +169,7 @@ Der Hauptsatz liefert alle möglichen Stammfunktion.
 
 \textit{\textbf{Beweis:} Sei $G(x)$ eine weitere Stammfunktion, dann $H(x):=G(x)-\int_{a}^{x}f(y) \, dy$. Dann gilt $H'(x)=f(x) - f(x)=0 \forall x \in [a,b]$. Dann muss aber $H(x)$ eine Konstante sein, d.h. $H(x)=C, C \in \mathbb{R}$, dies bedeutet $C = G(x)- \int_{a}^{x}f(y)\,dy \iff G(x)= \int_{a}^{x}f(y)\,dy + C, C \in \mathbb{R}$}
 
-\theorem{Partielle Integration}
-Seien $f,g:[a,b] \rightarrow \mathbb{R}$ stetig differenzierbare Funktionen.
-$$\int_{a}^{b} f(x) g'(x) \,dx = f(x)g(x)|_a^b-\int_{a}^{b}f'(x)g(x)\,dx$$
-\textit{Folgt aus Hauptsatz und Produkteregel: $\int_{a}^{b}\frac{d}{dx} f(x)\cdot g(x)\,dx = \int_{a}^{b}(f'(x)\cdot g(x) + f(x) \cdot g'(x))\,dx = \int_{a}^{b}f'(x)\cdot g(x) \,dx + \int_{a}^{b}f(x) \cdot g'(x)\,dx=f \cdot g|^b_a=f(b)g(b)-f(a)g(a) \implies \int_{a}^{b}f(x)g'(x)\,dx = f(x) \cdot g(x) |^b_a - \int_{a}^{b}f'(x)\cdot g(x) \, dx$}
-
-\theorem{Substitution, Version 1}
-Seien $I,J \subset \mathbb{R}$ zwei Intervalle, $f : I \rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. Dann gilt für alle $[a,b] \subset I$
-$$\int_{a}^{b}g(f(x))f'(x)\,dx = \int_{f(a)}^{f(b)}g(y)\,dy$$
-
-\textit{Weil wir nicht mehr nach $x$ integrieren sondern nach $y$ müssen wir auch die Integrationsgrenzen anpassen und "schauen, wie wir die $x$ in $y$ übersetzen können".}
-
-\textit{Ggf. muss es etwas angepasst werden wenn bspw. eine Faktor als Abweichung bei der Ableitung besteht.}
-
-{\color{gray}
-\theorem{Substitution, Version 2}
-Seien $I,J \subset \mathbb{R}$ Intervalle, $f:I\rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. 
-Für $[a,b]\subset I$ gelte $f'(x)\neq 0$ für alle $x \in [a,b]$ und sei $f^{-1}:[f(a),f(b)]\rightarrow \mathbb{R}$ Inverse von $f|_{[a,b]}$. 
-Dann
-$$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
-}
-
+\subsubsection{Mittelwertsatz der Integralrechnung}
 \theorem{Mittelwertsatz der Integralrechnung}
 % TODO!
 Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
