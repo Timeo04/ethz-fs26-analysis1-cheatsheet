@@ -38,15 +38,44 @@
 \titlespacing*{\subsubsection}
 {0pt}{2.0ex}{0.4ex}
 
+\tikzset{
+  fancytitle/.style={
+    fill=black,
+    text=white,
+    font=\bfseries\fontsize{8pt}{9pt}\selectfont,
+    inner xsep=4pt,
+    inner ysep=2pt
+  }
+}
+
+\newcommand{\Title}[1]{%
+  \par\vspace{0.6ex}%
+  \noindent
+  \begin{tikzpicture}
+    \node[fancytitle, anchor=west, minimum width=\linewidth] {#1};
+  \end{tikzpicture}%
+  \par\vspace{0.3ex}
+}
+
 %--------------------------------------------------------
 %
 \titleformat{\section}
   {\fontsize{9pt}{11pt}\selectfont\bfseries\color{teal}}
   {\thesection}{1em}{}
 
-\titleformat{\subsection}
-  {\fontsize{8pt}{10pt}\selectfont\bfseries\color{red}}
-  {\thesubsection}{1em}{}
+% \titleformat{\subsection}
+%   {\fontsize{8pt}{10pt}\selectfont\bfseries\color{red}}
+%   {\thesubsection}{1em}{}
+
+  \let\oldsubsection\subsection
+
+\renewcommand{\subsection}[1]{%
+  \Title{#1}%
+}
+
+\titleformat{\subsubsection}
+  {\fontsize{6pt}{8pt}\selectfont\bfseries}
+  {\thesubsubsection}{1em}{}
 
 % Layout
 \geometry{a4paper, landscape, margin=6.67mm}
