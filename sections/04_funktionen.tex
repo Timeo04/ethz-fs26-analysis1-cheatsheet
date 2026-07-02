@@ -21,21 +21,25 @@ Es seien $\overbrace{f : X \rightarrow Y}^{\text{\small{innere Funktion}}}$ und 
 
 Sei $X$ eine beliebige (nicht leere) Menge. Dann ist die \definition{Identitätsfunktion / Identität} $id_x (x) = x \forall x \in X$.
 
+\subsection{Injektivität / Surjektivität / Bijektivität}
+
 Falls $f: X \rightarrow Y$ bijektiv ist, gibt es eine eindutige Funktion (Abbildung) $g: Y \rightarrow X$ mit den Eigenschaften $g \circ f = id_X$ und $f \circ g = id_Y$. $g$ nennt man die \definition{Inverse} (Umkehrfunktion / inverse Funktion / inverse Abbildung) und wird mit $f^{-1}$ bezeichnet.
 \textit{(Zu jedem $y \in Y$ ordnen wir das eindeutige Element $x \in X$ zu, sodass gilt $f(x)=y$; möglich, da $f$ surjektiv; eindeutig, da $f$ injektiv.)}
 
 $f: X \rightarrow Y$ ist
 \begin{itemize}
-    \item \definition{injektiv} falls gilt: $\forall x_1, x_2 \in X (f(x_1) = f(x_2) \implies x_1 = x_2)$\\ \textit{("verschiedene Argumente generieren verschiedene Outputs")}
+    \item \definition{injektiv} falls gilt: $\forall x_1, x_2 \in X (f(x_1) = f(x_2) \implies x_1 = x_2)$\\ \textit{("verschiedene Argumente generieren verschiedene Outputs")}\\
+        \textit{\greenBox{injektiv und stetig $\implies$ streng monoton}}
     \item \definition{surjektiv} falls gilt: $\forall y \in Y \exists x \in X : f(x) = y$\\ \textit{("Zielbereich = Wertebereich")}
-    \item \definition{bijektiv} falls sie injektiv und surjektiv ist.
+    \item \definition{bijektiv} falls sie injektiv und surjektiv ist.\\
+        \textit{Sei $f:D\rightarrow E$ injektiv und $g:E\rightarrow D$ surjektiv, so ist $g \circ f$ bijektiv.}
 \end{itemize}
 
 \begin{exercise}
 \textit{Injektivität einer Funktion $f(x)$ zeigen: $f(x)=f(y) \implies x=y$ 
 \begin{itemize}
     \item $f(x)=f(y)$ ausschreiben und direkt zeigen dass $x=y$.
-    \item Monotonie verwenden: Wenn Fkt. auf Intervall streng monoton, dann ist sie automatisch injektiv.
+    \item Monotonie verwenden: Wenn Fkt. auf Intervall streng monoton, dann ist sie automatisch injektiv. (Bei stetiger Funktion $f$ kann man dies zeigen mit $f'>0$ oder $f'<0$)
     \item Widerspruch: Angenommen, es gäbe $x_1 \neq x_2$ mit $f(x_1) = f(x_2)$, zeigen dass dies zu Widerspruch führt.
 \end{itemize}
 }
@@ -53,6 +57,10 @@ $f: X \rightarrow Y$ ist
 \begin{itemize}
     \item Gleichung $f(x)=y$ lösen: Beliebiges $y \in B$ wählen, Gleichung nach $x$ lösen (und zeigen, dass Lösung im Definitionsbereich liegt)
     \item Wertebereich bestimmen: Falls $W_f = B$, dann ist $f$ surjektiv. (sonst nicht!)
+    \item Für $f: (a,b) \rightarrow (c,d)$ stetig: Zeige, dass $\lim_{x \rightarrow b} f(x)=d$ und $\lim_{x \rightarrow a} f(x)=c$. 
+    Dann sei $y \in (c,d)$ beliebig. 
+    Wegen den Grenzwerten von $f$ gilt: $\exists x_1 < x_2 : f(x_1) < y < f(x_2)$. 
+    Gem. Zwischenwertsatz $\exists \xi \in [x_1, x_2] : f(\xi) = y$ und somit ist $f$ surjektiv.
 \end{itemize}
 }
 
@@ -73,6 +81,7 @@ $f: X \rightarrow Y$ ist
     \textit{$y=f(x)$ setzen, nach $x$ auflösen, $x$ und $y$ vertauschen}
 \end{exercise}
 
+\subsection{Beschränktheit}
 Sei $f : \mathbb{D}(f) \rightarrow \mathbb{R}$ mit $\mathbb{D}(f) \neq \emptyset$. Dann
 \begin{itemize}
     \item nennen wir $f$ \definition{nach oben beschränkt}, falls $M \in \mathbb{R}$ existiert mit $f(x) \leq M \forall x \in \mathbb{D}(f)$
@@ -81,6 +90,7 @@ Sei $f : \mathbb{D}(f) \rightarrow \mathbb{R}$ mit $\mathbb{D}(f) \neq \emptyset
     \textit{(Falls nach oben und nach unten beschänkt)}
 \end{itemize}
 
+\subsection{Monotonie}
 Wir betrachten $f: X = \mathbb{D}(f) \subset \mathbb{R} \rightarrow \mathbb{R}$. Diese Funktion nennen wir
 \begin{itemize}
     \item \definition{(streng) monoton wachsend}, falls gilt $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1) (<) \leq f(x_2))$
@@ -100,6 +110,7 @@ Wir betrachten $f: X = \mathbb{D}(f) \subset \mathbb{R} \rightarrow \mathbb{R}$.
 }
 \end{exercise}
 
+\subsection{Gerade / Ungerade Funktionen}
 $f:\mathbb{R}\rightarrow \mathbb{R}$ nennen wir
 \begin{itemize}
     \item \definition{ungerade}, falls gilt $\forall x \in \mathbb{R} f(-x) = -f(x)$\\
@@ -108,6 +119,7 @@ $f:\mathbb{R}\rightarrow \mathbb{R}$ nennen wir
     \textit{z.B. gerade Potenzen von x}
 \end{itemize}
 
+\subsection{Konvex / Konkav}
 Der \textbf{Graph} einer Funktion (Menge aller Punkte der From $(x, f(x))$) heisst \definition{linksgekrümmt (konvex)} / \definition{rechtsgekrümmt (konkav)}, falls der Graph beim Durchlaufen von links nach rechts eine Linkskurve \textit{(z.B. $f(x)=x^2$)} / Rechtskurve \textit{(z.B. $f(x)=-x^2$)} vollführt.
 
 \textit{Kann mit Vergleichssekante überprüft werden. Eine Funktion kann in gewissen Abschnitten konvex und in anderen konkav sein.}
@@ -251,12 +263,18 @@ $$y=f(x)=mx+1\text{, resp. }x \mapsto mx + q$$
 \definition{Proportionalitäten:} Falls zwischen $y$ und $x$ eine Bezieung der Form $y=a \cdot x$ ($a$ eine konstante reelle Zahl) gilt, so heisst $y$ (direkt) \definition{proportional} zu $x$. $a$ nennt man \definition{Proportionalitätskonstante.}
 
 \subsubsection{\definition{Exponentialfunktion $exp:\mathbb{R}\rightarrow\mathbb{R}^+$}}
-$$\exp(x)=e^x=\lim_{n\rightarrow\infty}(1+\dfrac{x}{n})^n$$
+$$\exp(x)=e^x=\lim_{n\rightarrow\infty}(1+\dfrac{x}{n})^n=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1 + x + \frac{x^2}{2}+\frac{x^3}{6}+ \dots$$
 \greenBox{$\exp$ ist bijektiv, streng monoton wachsend und stetig.}
 
-$\exp(0)=1$, 
-$\exp(-x)=(\exp(x))^{-1} \forall x \in \mathbb{R}$, 
-$\exp(x+y)=\exp(x) \exp(y) \forall x,y \in \mathbb{R}$
+\begin{itemize}
+    \item $\exp(0)=1$
+    \item $\exp(-x)=(\exp(x))^{-1}$
+    \item $\exp(x)\exp(y)=\exp(x+y)$
+    \item $\exp(x) > 1 \forall x>0$
+    \item $x^a = \exp(a \cdot \ln(x))$ und $x^0 = 1$
+    \item $\exp(iz)=\cos(z)+i\cdot\sin(z)$
+    \item $\exp(i \cdot \frac{\pi}{2})=i$, $\exp(i\pi)=-1$, $\exp(2i\pi)=1$
+\end{itemize}
 
 \definition{Exponentialfunktion (Verallgemeinerung):}
 $$z=f(t)=z_0 \cdot a^t = z_0 e^{kt}$$
@@ -270,10 +288,161 @@ $\log(x) : \mathbb{R}^+ \rightarrow \mathbb{R}$.
 
 Der Logarithmus \greenBox{$\log$ ist bijektiv, streng monoton wachsend} und \greenBox{stetig.}
 
-$\log(1)=0$, 
-$\log(x^-1)=-\log(x) \forall x \in \mathbb{R}^+$, 
-$\log(xy) = \log(x) + \log(y) \forall x,y \in \mathbb{R^+}$
+\begin{itemize}
+    \item $\log(1)=0$
+    \item $\log(x^{-1})=\log(\frac{1}{x})=-\log(x)$
+    \item $\ln(e)=1$
+    \item $\log(a \cdot b)=\log(a)+\log(b)$
+    \item $\log(\frac{a}{b})=\log(a) - \log(b)$
+    \item $\log(x^a)=a \cdot \log(x)$
+    \item $\ln(1+x)=\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}\cdot x^n$ ($-1 \leq x \leq 1$)
+\end{itemize}
 
+Im Allgemeinen gilt $\log_b(a)=\frac{\ln(a)}{\ln(b)}$.
+
+\subsubsection{Potenzen, Polynome und rationale Funktionen}
+
+$y=f(x)=k\cdot x^p$ mit $k,p \in \mathbb{R}$ heisst \definition{Potenzfunktion.}
+
+$$y=f(x)=a_nx^n + a_{n-1}x^{n-1}+...+a_1x+a_0 = \sum_{s=0}^{n}a_sx^s$$ mit $n \in \mathbb{N}$, $a_n \neq 0$, $a_s \in \mathbb{R}$ heisst \definition{Polynom} (ganzrationale Funktion). Die Konstanten $a_s$ heissen \definition{Koeffizienten.} $n$ heisst der \definition{Grad} des Polynoms.
+
+$y=f(x)=\frac{p(x)}{q(x)}$ wobei $p(x)$ und $q(x)$ Polynome sind, heisst \definition{rationale Funktion.}
+
+\subsubsection{Potenzregeln}
+
+Es seien $a,b\in\mathbb{R}$ und $x,y>0$. Dann gelten:
+
+\begin{itemize}
+    \item $x^a \cdot x^b = x^{a+b}$
+    \item $\dfrac{x^a}{x^b}=x^{a-b}$ \quad ($x\neq 0$)
+    \item $(x^a)^b=x^{ab}$
+    \item $(xy)^a=x^a y^a$
+    \item $\left(\dfrac{x}{y}\right)^a=\dfrac{x^a}{y^a}$ \quad ($y\neq 0$)
+    \item $x^{-a}=\dfrac{1}{x^a}$
+    \item $x^{\frac{1}{n}}=\sqrt[n]{x}$ \quad ($n\in\mathbb{N}$)
+    \item $x^{\frac{m}{n}}=\sqrt[n]{x^m}=\left(\sqrt[n]{x}\right)^m$
+\end{itemize}
+
+\subsubsection{Wurzelregeln}
+
+Es seien $x,y\geq 0$ und $n,m\in\mathbb{N}$.
+
+\begin{itemize}
+    \item $\sqrt[n]{x}=x^{\frac{1}{n}}$
+    \item $\sqrt[n]{x^m}=x^{\frac{m}{n}}=\left(\sqrt[n]{x}\right)^m$
+    \item $\sqrt[n]{xy}=\sqrt[n]{x}\cdot\sqrt[n]{y}$
+    \item $\sqrt[n]{\dfrac{x}{y}}=\dfrac{\sqrt[n]{x}}{\sqrt[n]{y}}$ \quad ($y>0$)
+    \item $\sqrt[n]{\sqrt[m]{x}}=\sqrt[nm]{x}$
+    \item $\left(\sqrt[n]{x}\right)^n=x$
+\end{itemize}
+
+\subsubsection{\definition{Trigonometrische Funktionen}}
+
+$$\sin(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n+1}}{(2n+1)!} = z-\frac{z^3}{3!}+\frac{z^5}{5!}-\frac{z^7}{7!}+\dots = \frac{e^{iz} - e^{-iz}}{2i}$$
+$$\cos(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n}}{(2n)!} = 1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\dots = \frac{e^{iz} + e^{-iz}}{2}$$
+(Beide Reihen konvergieren absolut mit Konvergenzradius $+ \infty$)
+
+\greenBox{$\sin : \mathbb{R} \rightarrow \mathbb{R}$ und $\cos : \mathbb{R} \rightarrow \mathbb{R}$ sind stetig.}
+
+$\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=\frac{\sin(x)}{\cos(x)}$, $\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$, $\cot(\alpha) = \frac{1}{\tan(\alpha)} = \frac{\cos(\alpha)}{\sin(\alpha)}$
+
+\includegraphics[width=0.7\columnwidth]{unitCircle}
+
+\includegraphics[width=0.7\columnwidth]{sincostan} 
+
+\begin{enumerate}[label=(\arabic*)]
+	\item $\cos(z) = \cos(-z)$ und $\sin(-z) = - \sin(z)$
+	\item $\cos(\pi - x) = - \cos(x)$ und $\sin(\pi - x) = \sin(x)$
+	\item $\sin(z + w) = \sin(z) \cos(w) + \cos(z) \sin(w)$
+	\item $\cos(z + w) = \cos(z) \cos(w) - \sin(z) \sin(w)$
+	\item \greenBox{$\cos(z)^2 + \sin(z)^2 = 1$}
+	\item $\sin(2z) = 2 \sin(z) \cos(z)$
+	\item $\cos(2z) = \cos(z)^2 - \sin(z)^2$
+	\item $\tan(-\alpha) = - \tan(\alpha)$
+	\item $\sin(\arctan(x)) = \frac{x}{\sqrt{x^2 + 1}}$
+    \item $\cos(\arctan(x)) = \frac{1}{\sqrt{x^2 + 1}}$
+    \item $\sin(x) = \frac{\tan(x)}{\sqrt{1 + \tan^2(x)}}$
+    \item $\cos(x) = \frac{1}{\sqrt{1 + \tan^2(x)}}$
+\end{enumerate}
+
+\textbf{Potenz der Winkelfunktion}
+
+$$\sin^2(x) = \frac{1}{2}(1 - \cos(2x)) \; \text{ und } \; \cos^2(x) = \frac{1}{2}(1 + \cos(2x))$$
+
+\textbf{Einige Funktionswerte:}
+
+\small{$\sin(\frac{\pi}{4})= \cos(\frac{\pi}{4})= \frac{\sqrt{2}}{2}$}
+
+
+\textbf{Definitionsbereich / Wertebereich:}
+
+$\sin$/$\cos$: $\mathbb{D} = \mathbb{R}$ / $W = [0,1]$
+
+$\tan$: $\mathbb{D} = \mathbb{R}\backslash\{k \cdot \pi + \frac{\pi}{2} | k \in \mathbb{Z}\}$ / $W = \mathbb{R}$
+
+\textbf{Nullstellen:}
+\(\cos: [\frac{\pi}{2}+k\pi: k \in \mathbb{Z}]\), \(\sin / \tan: [k\pi: k \in \mathbb{Z}]\)
+
+\begin{exercise}
+    Bestimme die Amplitude von $a \sin(\omega t) + b \cos(\omega t)$ (Umschreiben in die Form $A \sin (\omega t + \delta)$ oder $A \cos (\omega t - \delta)$).
+
+    \textit{Die Amplitude ist $A=\sqrt{a^2 + b^2}$. Dann Phasenverschiebung bestimmen: $\cos (\delta) = \frac{a}{A}$, $\sin (\delta)=\frac{b}{A}$ (da $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, also beide Zahlen auf Einheitskreis liegen). 
+    Dann Additionstheorem verwenden: $A(\cos \delta \sin (\omega t) + \sin \delta \cos (\omega t)) = A \sin(\omega t + \delta)$}
+\end{exercise}
+
+\begin{exercise}
+Es gilt $|\sin(x)| \leq x$ mit folgendem Beweis:
+\textit{$$f(x) = x - \sin(x), \quad x \geq 0 \; \text{ und } \; f'(x) = 1 - \cos(x) \geq 0$$
+Weil $f(0) = 0, f(x) \geq 0$ für $x > 0$. Dann ist $|\sin(x)| \leq |x|$ einfach.}
+\end{exercise}
+
+\textbf{Arc-Funktionen}
+
+\(\arcsin:= [-1, 1 ] \to [-\frac{\pi}{2}, \frac{\pi}{2}];\) 
+\(\arccos:= [-1, 1 ] \to [0, \pi];\)\\
+\(\arctan:= [-1, 1 ] \to [-\frac{\pi}{2}, \frac{\pi}{2}];\)\\
+
+\begin{itemize}
+    \item $\arcsin(x) + \arccos(x)=\frac{\pi}{2}$
+    \item $\arcsin(-x)=-\arcsin(x)$
+    \item $\arccos(-x)= \pi - \arccos(x)$
+	\item $\sin(\arctan(x)) = \frac{x}{\sqrt{x^2 + 1}}$
+    \item $\cos(\arctan(x)) = \frac{1}{\sqrt{x^2 + 1}}$
+\end{itemize}
+
+% TODO: Arcussinus, etc.
+
+\subsubsection{\definition{Hyperbolische Funktionen}}
+
+\begin{enumerate}[label = (\arabic*)]
+	\item $\cosh(x) := \frac{e^x + e^{-x}}{2} : \mathbb{R} \to [1, \infty]$
+	\item $\sinh(x) := \frac{e^x - e^{-x}}{2} : \mathbb{R} \to \mathbb{R}$
+	\item $\tanh(x) := \frac{\sinh{x}}{\cosh{x}} = \frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{\mathrm{e}^{x}+\mathrm{e}^{-x}} : \mathbb{R} \to [-1, 1]$
+\end{enumerate}
+
+\includegraphics[width=0.5\columnwidth]{04_funktionen/sinh_cosh_tanh}
+
+Es gilt \greenBox{$\cosh^2 - \sinh^2 = 1$}
+
+$\operatorname{arsinh}(x)=\ln(x+\sqrt{x^2 + 1}) = \int_{0}^{1}\frac{x}{\sqrt{x^2 y^2 + 1}}\, dy$
+
+$\operatorname{arcosh}(x)=\ln(x + \sqrt{x^2 - 1})$ für $x \geq 1$
+
+$\operatorname{artanh}(x)=\tanh^-1(x)= \frac{1}{2}\ln(\frac{1+x}{1-x})$ für $|x|<1$
+
+\subsection{Die Kreiszahl $\pi$}
+
+	Wir definieren $\pi$ als erste Nullstelle $ > 0$ der Sinusfunktion.
+	$$\pi := \inf \{ t > 0 : \sin t = 0 \}$$
+
+Es gilt dann:
+\begin{enumerate}[label = (\arabic*)]
+	\item $\sin (\pi) = 0$, $\pi \in (2,4)$
+	\item $\forall x \in (0, \pi) : \sin (x) > 0$
+	\item $e^{\frac{i \pi}{2}} = i$
+\end{enumerate}
+
+\subsection{Verknüpfung, Verschiebung, Inverse}
 \subsubsection{Verknüpfung von Funktionen}
 $g(x) = k \cdot f(x)$: 
 \begin{itemize}
@@ -302,59 +471,10 @@ Eine Funktion \greenBox{hat genau dann eine Inverse,} wenn ihr Graph von jeder P
 
 Geometrisch findet man den Graphen der Inversen durch Spiegelung an der Geraden $y=x$.
 
-\subsubsection{\definition{Trigonometrische Funktionen}}
-% TODO
-\includegraphics[width=0.7\columnwidth]{unitCircle}
+\subsection{Bogenlänge}
 
-\includegraphics[width=0.7\columnwidth]{sincostan} 
-
-$\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=\frac{\sin(x)}{\cos(x)}$
-
-\small{$\sin(\frac{\pi}{4})= \cos(\frac{\pi}{4})= \frac{\sqrt{2}}{2}$}
-
-$\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)= +\cos(\alpha)$, $\tan(-\alpha) = - \tan(\alpha)$, $\sin^2(\alpha) + \cos^2(\alpha) = 1$, $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta)$
-
-Definitionsbereich / Wertebereich:
-
-$\sin$/$\cos$: $\mathbb{D} = \mathbb{R}$ / $W = [0,1]$
-
-$\tan$: $\mathbb{D} = \mathbb{R}\backslash\{k \cdot \pi + \frac{\pi}{2} | k \in \mathbb{Z}\}$ / $W = \mathbb{R}$
-
-$\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$, $\cot(\alpha) = \frac{1}{\tan(\alpha)} = \frac{\cos(\alpha)}{\sin(\alpha)}$
-
-\begin{exercise}
-    Bestimme die Amplitude von $a \sin(\omega t) + b \cos(\omega t)$ (Umschreiben in die Form $A \sin (\omega t + \delta)$ oder $A \cos (\omega t - \delta)$).
-
-    \textit{Die Amplitude ist $A=\sqrt{a^2 + b^2}$. Dann Phasenverschiebung bestimmen: $\cos (\delta) = \frac{a}{A}$, $\sin (\delta)=\frac{b}{A}$ (da $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, also beide Zahlen auf Einheitskreis liegen). 
-    Dann Additionstheorem verwenden: $A(\cos \delta \sin (\omega t) + \sin \delta \cos (\omega t)) = A \sin(\omega t + \delta)$}
-\end{exercise}
-
-$\arcsin(x) + \arccos(x)=\frac{\pi}{2}$, $\arcsin(-x)=-\arcsin(x)$, $\arccos(-x)= \pi - \arccos(x)$
-
-
-% TODO: Arcussinus, etc.
-
-\subsubsection{\definition{Hyperbolische Funktionen}}
-
-\includegraphics[width=0.5\columnwidth]{04_funktionen/sinh_cosh_tanh}
-
-$\sinh(x)=\frac{e^x - e^{-x}}{2} \in (-\infty, \infty)$, $\cosh(x)=\frac{e^x + e^{-x}}{2} \in [1, \infty)$, $\tanh(x)=\frac{\sinh(x)}{\cosh(x)}=\frac{e^x - e^{-x}}{e^x + e^{-x}} \in (-1, 1)$
-
-$\mathbb{D} = \mathbb{R}$
-
-$\operatorname{arsinh}(x)=\ln(x+\sqrt{x^2 + 1}) = \int_{0}^{1}\frac{x}{\sqrt{x^2 y^2 + 1}}\, dy$
-
-$\operatorname{arcosh}(x)=\ln(x + \sqrt{x^2 - 1})$ für $x \geq 1$
-
-$\operatorname{artanh}(x)=\tanh^-1(x)= \frac{1}{2}\ln(\frac{1+x}{1-x})$ für $|x|<1$
-
-\subsubsection{Potenzen, Polynome und rationale Funktionen}
-
-$y=f(x)=k\cdot x^p$ mit $k,p \in \mathbb{R}$ heisst \definition{Potenzfunktion.}
-
-$$y=f(x)=a_nx^n + a_{n-1}x^{n-1}+...+a_1x+a_0 = \sum_{s=0}^{n}a_sx^s$$ mit $n \in \mathbb{N}$, $a_n \neq 0$, $a_s \in \mathbb{R}$ heisst \definition{Polynom} (ganzrationale Funktion). Die Konstanten $a_s$ heissen \definition{Koeffizienten.} $n$ heisst der \definition{Grad} des Polynoms.
-
-$y=f(x)=\frac{p(x)}{q(x)}$ wobei $p(x)$ und $q(x)$ Polynome sind, heisst \definition{rationale Funktion.}
+Die Bogenlänge $L$ einer Funktion $f$ auf dem Intervall $[a,b]$ entspricht:
+$$L = \int_a^b \sqrt{1 + (f'(x))^2}dx$$
 
 \subsection{Funktionenfolgen}
 

@@ -13,26 +13,6 @@ Ausgehend von einer gegebenen Funktion $f: domain(f) \rightarrow \mathbb{R}, x \
 
 \textit{Bsp.: $f(x)=|x|$. Für $x=0$ existiert keine Ableitung (Knickstelle). \textbf{Punkte, an welchen keine Ableitung erwartet werden kann:} Definitionslücken / Unstetigkeitsstellen, insb. Sprungstellen / Knickstellen.}
 
-\subsubsection{Differenzierbarkeit}
-
-Falls für Funktion $f$ die Ableitung $f'(x)$ an der Stelle $x$ existiert, nennen wir $f$ \definition{an der Stelle $x$ differenzierbar.}
-
-Falls $f$ für alle Argumente $x$ des Definitionsbereichs differenzierbar ist, nennen wir $f$ \definition{differenzierbar.}
-
-Ist $f$ an der Stelle $x_0$ differenzierbar, so ist $f$ \lemma{an dieser Stelle insbesondere stetig.}
-
-\textit{Verkettung differenzierbarer Funktionen ist ebenfalls differenzierbar.}
-
-\begin{exercise}
-\textit{\textbf{Zeigen, dass Funktion an Stelle $x$ nicht differenzierbar ist:} 
-\begin{itemize}
-    \item Zeige, dass Fkt. nicht stetig
-    \item Zeige, dass Differentialquotient $\lim_{x \rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0}$ nicht definiert ist (z.B. divergiert oder oszilliert)
-    \item Zeige, dass links- und rechtsseitige Ableitung nicht übereinstimmen.
-\end{itemize}
-}  
-\end{exercise}
-
 \subsubsection{Einsetige Ableitungen}
 
 Falls der Grenzwert 
@@ -46,6 +26,16 @@ Analog ist die Ableitung von links definiert.
 Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine Funktion. Iterativ definieren wir \definition{höhere Ableitungen} für $n \in \mathbb{N}_0$:
 $$f^{(0)}=f, f^{(1)} = f', f^{(2)}=f'', f^{(n+1)}=(f^{(n)})'$$
 
+\subsection{Differenzierbarkeit}
+
+Falls für Funktion $f$ die Ableitung $f'(x)$ an der Stelle $x$ existiert, nennen wir $f$ \definition{an der Stelle $x$ differenzierbar.}
+
+Falls $f$ für alle Argumente $x$ des Definitionsbereichs differenzierbar ist, nennen wir $f$ \definition{differenzierbar.}
+
+Ist $f$ an der Stelle $x_0$ differenzierbar, so ist $f$ \lemma{an dieser Stelle insbesondere stetig.}
+
+\textit{Verkettung differenzierbarer Funktionen ist ebenfalls differenzierbar.}
+
 Falls $f^{(n)}$ existiert, nennt man $f$ \definition{$n$-fach differenzierbar.}
 
 Falls die $n$-ten Ableitungen auch noch stetige Funktionen sind, nnen wir $f$ \definition{$n$-fach stetig differenzierbar.}
@@ -54,7 +44,17 @@ Die Menge aller $n$-fach stetig differenzierbarer Funktionen auf $D$ bezeichnen 
 
 Ausserdem setzen wir $C^\infty (D) := \cap_{n=0}^\infty C^n(D)$ und nennen Funktionen in $C^\infty (D)$ \definition{glatte Funktionen.}
 
-\subsubsection{Ableitungsregeln}
+\begin{exercise}
+\textit{\textbf{Zeigen, dass Funktion an Stelle $x$ nicht differenzierbar ist:} 
+\begin{itemize}
+    \item Zeige, dass Fkt. nicht stetig
+    \item Zeige, dass Differentialquotient $\lim_{x \rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0}$ nicht definiert ist (z.B. divergiert oder oszilliert)
+    \item Zeige, dass links- und rechtsseitige Ableitung nicht übereinstimmen.
+\end{itemize}
+}  
+\end{exercise}
+
+\subsection{Ableitungsregeln}
 
 \greenBox{Potenzfunktionen $f(x)=ax^p$:} $f'(x)=a \cdot p \cdot x^{p-1}$   $p \neq 0$
 
@@ -151,36 +151,7 @@ $$(f^{-1})'(y_0)=\frac{1}{f'(x_0)}$$
     }
 \end{exercise}
 
-\theorem{Satz von Rolle}
-Falls $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, auf $(a,b)$ differenzierbar, $f(a)=f(b)$, dann $\exists \xi \in (a,b)$ mit $f'(\xi)=0$.
-\textit{(nicht zwingend eindeutig)}
-
-\textit{\textbf{Beweis:}\\
-Fall 1: $\exists \xi \in (a,b): f(\xi)= \max_{[a,b]} f$ oder $\min_{[a,b]} f $. Dann $f(\xi)=0$.\\
-Fall 2: $\nexists \xi \in (a,b):$ Dann $f(a)=f(b)= \max_{[a,b]}f=\min_{[a,b]}f$. $\implies$ $f$ konstant. Fall tritt nicht ein.}
-
-\theorem{Mittelwertsatz}
-Seien $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, $f$ differenzierbar auf $(a,b)$. Dann $\exists \xi \in (a,b): f'(\xi)=\frac{f(b)-f(a)}{b-a}$.
-\textit{(Es gibt einen Punkt im Intervall, wo die Ableitung die Steigung der Sekante ist.; nicht zwingend eindeutiger Punkt.)}
-
-\textit{\textbf{Beweis:}
-Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Erfüllt Bedingungen von Rolle. $g(a)=g(b)$. $\implies \exists \xi \in (a,b): 0=g'(\xi)=f'(\xi)-\frac{f(b)-f(a)}{b-a} \cdot 1 \implies f'(\xi)=\frac{f(b)-f(a)}{b-a}.$ }
-
-\begin{exercise}
-    Zeige, dass es in einem Intervall, indem $f'(x)\neq 0$ (das Bedingungen für MWS erfüllt) nur eine Nullstelle gibt:
-
-    \textit{Angenommen, es gäbe zwei Nullstellen $x_1$ und $x_2$, dann wäre $f'(\xi)=\frac{f(x_2)-f(x_1)}{x_2 - x_1}=\frac{0-0}{x_2-x_1}=0$. Das widerspricht $f'(x)\neq 0$.}
-\end{exercise}
-
-\begin{exercise}
-    Zeige, dass die \greenBox{Sinus-Ungleichung $|\sin(y)-\sin(x)\leq|y-x|$} gilt
-
-    \textit{W.l.o.g. $x<y$. $f(x)=\sin(x)$ ist stetig differenzierbar auf $\mathbb{R}$. Gem. MWS: $\exists \xi \in (x,y): f'(\xi)=\cos(\xi)=\frac{\sin(y)-\sin(x)}{y-x}$. Da $|\cos(x)|\leq 1$ gilt $1 \geq |\frac{\sin(y)-\sin(x)}{y-x}|=\frac{|\sin(y)-\sin(x)|}{|y-x|}$. Danach umformen.}
-\end{exercise}
-
-\theorem{Cauchy-Mittelwertsatz} (erweiterter Mittelwertsatz)\\
-Seien $a<b, f:[a,b]\rightarrow\mathbb{R}$ stetig und auf $(a,b)$ differenzierbar. Dann $\exists \xi \in (a,b) :g'(\xi)(f(b)-f(a))=f'(\xi)(g(b)-g(a))$.\\
-Falls zusätzlig gilt $\forall x \in (a,b): g'(x) \neq 0$, dann ist aug $g(b)\neq g(a)$ und $\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}$.
+\subsubsection{Bernoulli - de L'Hospital}
 
 \theorem{Regel von Bernoulli - de L'Hospital}
 \textbf{Version 1: ($a \in \mathbb{R}, \frac{0}{0}$)}
@@ -227,6 +198,39 @@ Dann $\exists \lim_{x \rightarrow \infty} \frac{f(x)}{g(x)}$ und $=L$.
         \item Nenner und Zähler individuell ableiten.
     \end{itemize}
 \end{exercise}
+
+\subsection{Satz von Rolle / Mittelwertsatz}
+
+\theorem{Satz von Rolle}
+Falls $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, auf $(a,b)$ differenzierbar, $f(a)=f(b)$, dann $\exists \xi \in (a,b)$ mit $f'(\xi)=0$.
+\textit{(nicht zwingend eindeutig)}
+
+\textit{\textbf{Beweis:}\\
+Fall 1: $\exists \xi \in (a,b): f(\xi)= \max_{[a,b]} f$ oder $\min_{[a,b]} f $. Dann $f(\xi)=0$.\\
+Fall 2: $\nexists \xi \in (a,b):$ Dann $f(a)=f(b)= \max_{[a,b]}f=\min_{[a,b]}f$. $\implies$ $f$ konstant. Fall tritt nicht ein.}
+
+\theorem{Mittelwertsatz}
+Seien $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, $f$ differenzierbar auf $(a,b)$. Dann $\exists \xi \in (a,b): f'(\xi)=\frac{f(b)-f(a)}{b-a}$.
+\textit{(Es gibt einen Punkt im Intervall, wo die Ableitung die Steigung der Sekante ist.; nicht zwingend eindeutiger Punkt.)}
+
+\textit{\textbf{Beweis:}
+Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Erfüllt Bedingungen von Rolle. $g(a)=g(b)$. $\implies \exists \xi \in (a,b): 0=g'(\xi)=f'(\xi)-\frac{f(b)-f(a)}{b-a} \cdot 1 \implies f'(\xi)=\frac{f(b)-f(a)}{b-a}.$ }
+
+\begin{exercise}
+    Zeige, dass es in einem Intervall, indem $f'(x)\neq 0$ (das Bedingungen für MWS erfüllt) nur eine Nullstelle gibt:
+
+    \textit{Angenommen, es gäbe zwei Nullstellen $x_1$ und $x_2$, dann wäre $f'(\xi)=\frac{f(x_2)-f(x_1)}{x_2 - x_1}=\frac{0-0}{x_2-x_1}=0$. Das widerspricht $f'(x)\neq 0$.}
+\end{exercise}
+
+\begin{exercise}
+    Zeige, dass die \greenBox{Sinus-Ungleichung $|\sin(y)-\sin(x)| \leq|y-x|$} gilt
+
+    \textit{W.l.o.g. $x<y$. $f(x)=\sin(x)$ ist stetig differenzierbar auf $\mathbb{R}$. Gem. MWS: $\exists \xi \in (x,y): f'(\xi)=\cos(\xi)=\frac{\sin(y)-\sin(x)}{y-x}$. Da $|\cos(x)|\leq 1$ gilt $1 \geq |\frac{\sin(y)-\sin(x)}{y-x}|=\frac{|\sin(y)-\sin(x)|}{|y-x|}$. Danach umformen.}
+\end{exercise}
+
+\theorem{Cauchy-Mittelwertsatz} (erweiterter Mittelwertsatz)\\
+Seien $a<b, f:[a,b]\rightarrow\mathbb{R}$ stetig und auf $(a,b)$ differenzierbar. Dann $\exists \xi \in (a,b) :g'(\xi)(f(b)-f(a))=f'(\xi)(g(b)-g(a))$.\\
+Falls zusätzlig gilt $\forall x \in (a,b): g'(x) \neq 0$, dann ist aug $g(b)\neq g(a)$ und $\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}$.
 
 \subsection{Monotonie, Konvexität}
 

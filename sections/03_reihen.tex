@@ -80,6 +80,8 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
     \end{itemize}
 \end{exercise}
 
+Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe. Für $N \in \mathbb{N}_0$ ist $\sum_{n=N}^{\infty} a_n$ \lemma{genau dann konvergent} wenn $\sum_{n=0}^{\infty} a_n$ konvergiert, und dann gilt: $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N -1} a_n + \sum_{n=N}^{\infty} a_n$.
+
 % TODO: Wert von Reihen berechnen
 
 \subsection{Spezielle Reihen}
@@ -100,15 +102,33 @@ $a \sum_{n=0}^{\infty} q^n$
 \subsubsection{\definition{Verallgemeinerte harmonische Reihen}}
 $\sum_{k=1}^{\infty} \frac{1}{k^s} = \sum_{k=1}^{\infty} k^{-s}$: konvergiert für $s > 1$ und divergiert für $s \leq 1$
 
-Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe. Für $N \in \mathbb{N}_0$ ist $\sum_{n=N}^{\infty} a_n$ \lemma{genau dann konvergent} wenn $\sum_{n=0}^{\infty} a_n$ konvergiert, und dann gilt: $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N -1} a_n + \sum_{n=N}^{\infty} a_n$.
-
 $\sum_{k=1}^{\infty} \frac{1}{k}$ divergiert.
+
+\definition{Alternierende harmonische Reihe} konvergiert: $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ... = \ln(2) < \infty$
+
+\subsubsection{Weitere Reihen}
+\bgroup
+\def\arraystretch{2}
+\begin{center}
+	\begin{tabular}{ | l | l | }
+		 \hline
+	 	$\sum_{i = 1}^{n} i = \frac{n(n+1)}{2}$ & $\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$ \\
+		 \hline 
+	 	$\sum_{i=1}^{n} i^3 = \frac{n^2(n+1)^2}{4}$ & $\sum_{i = 1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$ \\
+		 \hline  
+	 	$\sum_{i = 1}^{\infty} \frac{1}{n(n+1)} = 1$ & $\sum_{i = 1}^\infty z^i = \frac{1 - z^{i + 1}}{1 - z}$ \\
+		 \hline   
+	\end{tabular}
+\end{center}
+\egroup
 
 $\sum_{n=0}^{\infty}\frac{1}{n!} = e^1 = e \approx 2.4...$
 
 $1 - 1 + \frac{1}{2} - \frac{1}{3!} + ... = e^{-1} = \frac{1}{e}$
 
-Alternierende harmonische Reihe $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ... = \ln(2) < \infty$
+\textbf{Teleskopsumme:} \\
+$\sum_{n = 1}^\infty \log \left(\frac{n}{n+1}\right) = \sum_{n = 1}^\infty \log(n) - \log(n + 1) = $ 
+$\log(1) + \log(2) - \log(2) + \dots  = \log(1) - \lim_{n \to \infty} \log(n + 1) = - \infty$ \medskip \\ 
 
 \begin{exercise}
     \textbf{Teleskopsummen:}

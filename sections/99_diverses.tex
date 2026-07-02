@@ -1,24 +1,3 @@
-
-\subsection{Injektiv / Surjektiv}
-
-Gegeben eine Funktion $f : X \to Y$: \smallskip \\
-\quad \textbf{Injektiv:} $\forall a,b \in X$, $f(a) = f(b) \Rightarrow a = b$ \\
-\quad \textbf{Surjektiv:} $\forall y \in Y$, $\exists x \in X$, $f(x) = y$  \smallskip \\
-Sei $f : D \to E$ eine injektive Funktion und $g : E \to D$ eine surjektive Funktion, so ist die
-Verknüpfung $g \circ f$ bijektiv. \medskip
-
-\textbf{Injektivität zeigen:} $f$ injektive $\Leftrightarrow$ $f$ streng monton $\Leftrightarrow$ $f' > 0$ 
-oder $f' < 0$. \medskip
-
-\textbf{Surjektivität zeigen:} Mit Zwischenwertsatz, sei der Bildbereich $]a,b[$
-\begin{enumerate}[label = (\arabic*)]
-        \item $\lim_{x \to \infty} f(x) = b$ und $\lim_{x \to - \infty} f(x) = a$ zeigen
-        \item Sei nun $y \in ]a,b[$ beliebig. Wegen den Grenzwerten von $f$ gilt: $\exists x_1 < x_2
-        : f(x_1) < y < f(x_2)$. Mit dem Zwischenwertsatz gilt dann: $\exists c \in [x_1, x_2] : f(c) = y$
-        und somit ist $f$ surjektiv.
-\end{enumerate}
-
-
 \subsection{Nützliche Formeln}
 $$ax^2 + bx + c = 0 \Rightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 $$b^n- a^n = (b-a)(b^{n-1}+b^{n-2}\cdot a + \dots + a^{n-2}\cdot b + a^{n-1})$$
@@ -33,76 +12,8 @@ $$\forall \epsilon > 0, \forall x, y \in \mathbb{R}: 2 |xy| \leq \epsilon x^2 + 
 \subsection{Binomialsatz}
 $$(x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k$$
 
-
-\columnbreak
-%----------------------------------------------------------------------------------------------------
-
-
-\subsection{Die Exponentialfunktion}
-
-\begin{tcolorbox}
-	Die Reihe $\sum_{n=0}^\infty \frac{z^{n}}{(n)!}$ heisst Exponential von $z$,
-	
-	$$ \exp(z) = 1 + z + \frac{z^2}{2} + \frac{z^3}{6} + \frac{z^4}{24}+... = e^z$$
-
-	Es gilt $\exp(z) = \lim (1 + \frac{z}{n})^n$. Diese Reihe ist stetig, streng monoton wachsend 
-	und surjektiv.
-\end{tcolorbox}
-
-
-Für die Exponentialfunktion gilt:
-\begin{enumerate}[label = (\arabic*)]
-	\item $\exp(x) \exp(y) = \exp(x+y)$
-	\item $\exp(x) > 1 \forall x > 0$
-	\item $x^a = \exp(a \cdot \ln(x))$ und $x^0 = 1$
-	\item $\exp(iz) = \cos(z) + i \cdot \sin(z)$
-	\item $\exp(i \cdot \frac{\pi}{2}) = i$, $\exp(i \pi) = -1$ und $\exp(2 i \pi) = 1$
-\end{enumerate}
-
-
-\subsection{Der natürliche Logarithmus} 
-
-Der natürliche Logarithmus $\ln : ]0, \infty[ \to \mathbb{R}$ bildet die Umkehrfunktion zu $\exp$ und ist
-streng monoton wachsend und stetig. Für den natürliche Logarithmus gilt:
-
-\begin{enumerate}[label = (\arabic*)]
-	\item $\ln(1) = 0$
-	\item $\ln(e) = 1$
-	\item $\ln(a \cdot b) = \ln(a) + \ln(b)$
-	\item $\ln(a / b) = \ln(a) - \ln(b)$
-	\item $\ln(x^a) = a \cdot \ln(x)$
-	\item $x^a \cdot x^b = x^{a + b}$
-	\item $(x^a)^b = x^{a \cdot b}$
-	\item $\ln(1 + x) = \sum_{n = 1}^{\infty} \frac{(-1)^{n-1}}{n} \cdot x^n \quad (-1 \leq x \leq 1)$
-\end{enumerate}
-
-Im Allgemeinen gilt $\log_b(a) = \frac{\ln(a)}{\ln(b)}$.
-
-
 \subsection{Trigonometrischen Funktionen}
 
-Wir können die folgende trigonometrische Funktionen definieren:
-$$\sin(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n+1}}{(2n+1)!} = z-\frac{z^3}{3!}+\frac{z^5}{5!}-\frac{z^7}{7!}+\dots = \frac{e^{iz} - e^{-iz}}{2i}$$
-$$\cos(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n}}{(2n)!} = 1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\dots = \frac{e^{iz} + e^{-iz}}{2}$$
-
-\begin{tcolorbox}
-	$\sin : \mathbb{R} \to \mathbb{R}$ und $\cos : \mathbb{R} \to \mathbb{R}$ sind stetige Funktionen und aus dem Quotientenkriterium
-	folg, dass beide \textbf{Reihen} absolut konvergieren mit Konvergenzradius $+ \infty$.
-\end{tcolorbox}
-
-Folgende weiter Eigenschaften ergeben sich aus dem Zusammenhang mit der Exponentialfunktion:
-\begin{enumerate}[label=(\arabic*)]
-	\item $\cos(z) = \cos(-z)$ und $\sin(-z) = - \sin(z)$
-	\item $\cos(\pi - x) = - \cos(x)$ und $\sin(\pi - x) = \sin(x)$
-	\item $\sin(z + w) = \sin(z) \cos(w) + \cos(z) \sin(w)$
-	\item $\cos(z + w) = \cos(z) \cos(w) - \sin(z) \sin(w)$
-	\item $\cos(z)^2 + \sin(z)^2 = 1$
-	\item $\sin(2z) = 2 \sin(z) \cos(z)$
-	\item $\cos(2z) = \cos(z)^2 - \sin(z)^2$
-\end{enumerate}
-
-Ein paar Funktionswerte:
-\vspace{-3mm}
 \bgroup
 \def\arraystretch{1.8}
 \begin{center}
@@ -153,84 +64,7 @@ Ein paar Funktionswerte:
 \end{center}
 \egroup
 
-
-Zusätzlich definieren wir noch:
-$$\tan (z) = \frac{\sin(z)}{\cos(z)}, \quad \forall z \notin \frac{\pi}{2} + \pi \cdot \mathbb{Z}$$
-$$\cot (z) = \frac{\cos(z)}{\sin(z)}, \quad \forall z \notin \pi \cdot \mathbb{Z}$$
-
-Es gilt weiter:
-\begin{multicols}{2}
-    $$\sin(\arctan(x)) = \frac{x}{\sqrt{x^2 + 1}}$$
-    $$\cos(\arctan(x)) = \frac{1}{\sqrt{x^2 + 1}}$$ \\ \columnbreak
-    $$\sin(x) = \frac{\tan(x)}{\sqrt{1 + \tan^2(x)}}$$
-    $$\cos(x) = \frac{1}{\sqrt{1 + \tan^2(x)}}$$  
-\end{multicols}
-
-\vspace*{2mm}
-\begin{multicols}{2}
-        \textbf{Nullstellen:} \\
-        \(\cos = [\frac{\pi}{2}+k\pi: k \in Z]\)\\
-        \(\sin = [k\pi: k \in Z]\)\\ \columnbreak
-        \textbf{Arc Funktionen:} \\
-        \(\arcsin:= [-1, 1 ] \to [-\frac{\pi}{2}, \frac{\pi}{2}];\)\\
-        \(\arccos:= [-1, 1 ] \to [0, \pi];\)\\
-        \(\arctan:= [-1, 1 ] \to [-\frac{\pi}{2}, \frac{\pi}{2}];\)\\
-\end{multicols}
-
-\subsection{Hyperbol Funktionen}
-
-\begin{enumerate}[label = (\arabic*)]
-	\item $\cosh(x) := \frac{e^x + e^{-x}}{2} : \mathbb{R} \to [1, \infty]$
-	\item $\sinh(x) := \frac{e^x - e^{-x}}{2} : \mathbb{R} \to \mathbb{R}$
-	\item $\tanh(x) := \frac{\sinh{x}}{\cosh{x}} = \frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{\mathrm{e}^{x}+\mathrm{e}^{-x}} : \mathbb{R} \to [-1, 1]$
-\end{enumerate}
-
-Es gilt $\cosh^2 - \sinh^2 = 1$
-
-
-\subsection{Sinus Abschätzung}
-
-Es gilt $|\sin(x)| \leq x$ mit folgendem Beweis:
-$$f(x) = x - \sin(x), \quad x \geq 0 \; \text{ und } \; f'(x) = 1 - \cos(x) \geq 0$$
-Weil $f(0) = 0, f(x) \geq 0$ für $x > 0$. Dann ist $|\sin(x)| \leq |x|$ einfach.
-
-
-\columnbreak
 %----------------------------------------------------------------------------------------------------
-
-
-\subsection{Die Kreiszahl $\pi$}
-
-\begin{tcolorbox}
-	Wir definieren $\pi$ als erste Nullstelle $ > 0$ der Sinusfunktion.
-	$$\pi := \inf \{ t > 0 : \sin t = 0 \}$$
-\end{tcolorbox}
-
-Es gilt dann:
-\begin{enumerate}[label = (\arabic*)]
-	\item $\sin (\pi) = 0$, $\pi \in ]2,4[$
-	\item $\forall x \in ]0, \pi[ : \sin (x) > 0$
-	\item $e^{\frac{i \pi}{2}} = i$
-\end{enumerate}
-
-\subsection{Potenz der Winkelfunktion}
-
-$$\sin^2(x) = \frac{1}{2}(1 - \cos(2x)) \; \text{ und } \; \cos^2(x) = \frac{1}{2}(1 + \cos(2x))$$
-
-\subsection{Reduktionsformel}
-$$\int \cos^n(x)dx = \frac{n-1}{n} \int \cos^{n-2}(x)dx + \frac{\cos^{n-1}(x)\sin(x)}{n}$$
-$$\int \sin^n(x)dx = \frac{n-1}{n} \int \sin^{n-2}(x)dx - \frac{\cos(x)\sin^{n-1}(x)}{n}$$
-
-\subsection{Bogenlänge}
-
-Die Bogenlänge $L$ einer Funktion $f$ auf dem Intervall $[a,b]$ entspricht:
-$$L = \int_a^b \sqrt{1 + (f'(x))^2}dx$$
-
-
-\subsection{(Un)gerade Funktionen}
-
-Eine reele Funktion $f$ ist gerade, wenn $f(-x) = f(x)$ und ungerade wenn $f(-x) = -f(x)$.e
-
 
 \subsection{Bekannte Taylorreihen}
 \begin{align*}
@@ -246,10 +80,9 @@ Eine reele Funktion $f$ ist gerade, wenn $f(-x) = f(x)$ und ungerade wenn $f(-x)
         \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - \mathcal{O}(x^4)
 \end{align*}
 
-
-\columnbreak
 %----------------------------------------------------------------------------------------------------
 
+\newcolumn
 
 \subsection{Typische Grenzwerte / Folgen}
 
@@ -303,45 +136,6 @@ Eine reele Funktion $f$ ist gerade, wenn $f(-x) = f(x)$ und ungerade wenn $f(-x)
 	\end{tabular}
 \end{center}
 \egroup
-
-
-\subsection{Typische-Reihen}
-
-\bgroup
-\def\arraystretch{2}
-\begin{center}
-	\begin{tabular}{ | l | l | }
-		 \hline
-	 	$\sum_{i = 1}^{n} i = \frac{n(n+1)}{2}$ & $\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$ \\
-		 \hline 
-	 	$\sum_{i=1}^{n} i^3 = \frac{n^2(n+1)^2}{4}$ & $\sum_{i = 1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$ \\
-		 \hline  
-	 	$\sum_{i = 1}^{\infty} \frac{1}{n(n+1)} = 1$ & $\sum_{i = 1}^\infty z^i = \frac{1 - z^{i + 1}}{1 - z}$ \\
-		 \hline   
-	\end{tabular}
-\end{center}
-\egroup
-
-\textbf{Die Geometrische Reihe:}
-$\sum_{k=0}^{n} q^k = \frac{1 - q^{n+1}}{1 - q}$ konvergiert wenn $|q| < 1$. Dies gilt auch bei 
-$n \to \infty$. \medskip \\
-
-\textbf{Die Harmonische Reihe:}
-Die Harmonische Reihe $\sum_{n = 1}^{\infty} \frac{1}{n}$ ist divergent. Die alternierende harmonische
-Reihe ist jedoch konvergent. \medskip \\
-
-\textbf{Die Zeta Funktion:}
-Die Riemann-Zeta Funktion $\zeta(s) = \sum_{n = 1}^\infty \frac{1}{n^s}$ konvergiert für $s > 1$. \medskip \\
-
-
-\columnbreak
-%----------------------------------------------------------------------------------------------------
-
-
-\textbf{Teleskopsumme:} \\
-$\sum_{n = 1}^\infty \log \left(\frac{n}{n+1}\right) = \sum_{n = 1}^\infty \log(n) - \log(n + 1) = $ 
-$\log(1) + \log(2) - \log(2) + \dots  = \log(1) - \lim_{n \to \infty} \log(n + 1) = - \infty$ \medskip \\ 
-
 
 \subsection{Typische Ableitungen und Stammfunktionen}
 
@@ -424,3 +218,13 @@ $\log(1) + \log(2) - \log(2) + \dots  = \log(1) - \lim_{n \to \infty} \log(n + 1
                 $ \frac{\sin^2(x)}{2}  $ &  $ \sin(x)\cos(x) $ \\
         \end{tabular}
 \end{center}
+
+\subsection{Diverses}
+
+$\int \operatorname{arsinh}(x)\,dx = x \cdot \operatorname{arsinh}(x) - \sqrt{x^2 + 1} + C$
+
+$\int \operatorname{arcosh}(x)\,dx = x \cdot \operatorname{arcosh}(x) - \sqrt{x^2 - 1} + C$
+
+TODO: Physikalische Formeln?
+
+$lim_{n \rightarrow \infty}(1 + \frac{x}{n})^n = e^x$
