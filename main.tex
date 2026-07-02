@@ -66,7 +66,6 @@
 \date{March 2026}
 
 \begin{document}
-\begin{multicols*}{4}
 
 
 \newtcbox{\yellowBox}{
@@ -149,6 +148,8 @@
     \yellowBox{\textbf{#1}}
 }
 
+\begin{multicols*}{4}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Logik, Mengen, Zahlen}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,7 +204,11 @@
 \newpage
 
 \begin{multicols*}{5}
-    \section{Weiteres}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Diverses}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \subfile{sections/99_diverses}
 
     % Logarithmusgesetze, ...
     \subsection{Logarithmusregeln}
@@ -232,6 +237,12 @@
     TODO: Physikalische Formeln?
 
 $lim_{n \rightarrow \infty}(1 + \frac{x}{n})^n = e^x$
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Aufgaben}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \subfile{sections/99_aufgaben}
 
 \end{multicols*}
 \end{document}

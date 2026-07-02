@@ -168,38 +168,6 @@ Dann
 $$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
 }
 
-\subsection{Funktionenfolgen}
-
-Es gibt auch Folgen $(f_n)_{n \in \mathbb{N}_0}$ von Funktionen $f_n: D \subset \mathbb{R} \rightarrow \mathbb{R}$.
-
-\begin{exercise}
-    Beispiel einer Funktionenfolge: $f_n(x)=x^n$, dann sind die Glieder $f_1(x)=x, f_2(x)=x^2, f_3(x)=x^3, ...$
-\end{exercise}
-
-\definition{Punktweise Konvergenz}
-Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ punktweise gegen $f$, falls für jedes $x \in D$ die reelle Folge $(f_n(x))_{n \in \mathbb{N}_0}$ gegen $f(x)$ konvergiert.
-
-Wenn für jedes feste $x$ gilt $\lim_{n \rightarrow \infty} f_n(x)=f(x)$
-
-$f$ heisst auch \definition{Punktweiser Grenzwert} der Folge $(f_n)_{n \in \mathbb{N}_0}$
-
-\begin{exercise}
-    Punktweise Konvergenz zeigen:
-
-    \textit{Betrachte fixierten Punkt $x$, berechne Grenzwert $f(x)=lim_{n \rightarrow \infty} f_n(x)$. Wenn dieser Grenzwert für jedes $x$ im Definitionsbereich existiert, dann konvergiert $f_n$ punktweise gegen $f$.}
-\end{exercise}
-
-\definition{Gleichmässige Konvergenz}
-Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ gleichmässig gegen $f$, falls für jedes $\epsilon > 0$ ein Index $N$ existiert, sodasss für alle $n \geq N$ und für alle $x \in D$ gilt $|f_n(x) - f(x)|< \epsilon$.
-
-\begin{exercise}
-    Gleichmässige Konvergenz zeigen:
-
-    \textit{Zuerst punktweise Konvergenz zeigen. Dann: Wir betrachten den grössten Fehler im Definitionsbereich $\sup_{x \in D} |f_n(x)-f(x)|$. Falls gilt $\lim_{n \rightarrow \infty} \sup_{x \in D} |f_n(x)-f(x)|=0$, dann ist Konvergenz gleichmässig.}
-\end{exercise}
-
-Eine \greenBox{Potenzreihe} konvergiert auf jedem kompakten Teilintervall des Konvergenzintervalls \greenBox{gleichmässig}.
-
 \theorem{Mittelwertsatz der Integralrechnung}
 % TODO!
 Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
