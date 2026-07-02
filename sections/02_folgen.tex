@@ -85,6 +85,64 @@ Falls $\lim_{n \rightarrow \infty} a_n = K ( \neq \pm \infty)$, $\lim_{n \righta
 \theorem{Sandwich-Theorem} $(a_n)_{n\in\mathbb{N}_0}$ und $(c_n)_{n\in\mathbb{N}_0}$ mit $\lim_{n \rightarrow \infty} a_n = L$ und $\lim_{n \rightarrow \infty} c_n = L$ und $(b_n)_{n \in \mathbb{N}_0}$ mit der Eigenschaft,
 dass $\exists N_0 \in \mathbb{N}$ mit $a_n \leq b_n \leq c_n \forall n \geq N_0$. $\implies$ $(b_n)_{n \in \mathbb{N}_0}$ ist konvergent und $\lim_{n \rightarrow \infty} b_n = L$
 
+
+% ------------------------------
+\subsection{Cauchy-Folgen}
+$(a_n)_{n \in \mathbb{N}_0 \subset \mathbb{R}}$ heisst \definition{Cauchy-Folge}, falls $\forall \epsilon >0$ ein $N \in \mathbb{N}$ existiert, so dass gilt $\forall m, n \geq N |a_n - a_m| < \epsilon$.
+
+\lemma{Jede Cauchy-Folge ist beschränkt.}
+
+Eine Folge reeller Zahlen \theorem{konvergiert genau dann,} wenn sie eine \theorem{Cauchy-Folge ist}.
+
+\textit{Bew.-Idee: Zeigen, dass konvergente F. immer auch Cauchy-F. ist (mit Def. und $\epsilon / 2$). $\Leftarrow$: C-F. ist beschränkt $\implies$ konv. Teilfolge $\implies$ Lim. sup/inf. / Dreiecksungleichung}
+
+\definition{Reihe} Summe von Folgegliedern
+
+
+\definition{Harmonische Summe} $\sum_{k=1}^n \frac{1}{k}$
+
+$c_n=1 + \frac{1}{2} + \frac{1}{3} + ... + \frac{1}{n} = \sum_{k=1}^n \frac{1}{k}$ divergiert. Kann keine Cauchy-Folge sein.
+
+\textit{(im Gegensatz zu $\sum_{k=1}^{n} \frac{1}{k^2}$)}
+
+\definition{Geometrische Summe} $\sum_{k=0/1}^n q^k$
+
+\begin{exercise}
+    \textbf{Konvergenz von Folgen}
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item Für \textbf{Brüche}, grösste Potenz von $n$ ausklammern und kürzen. Alle übrigen Brüche der Form $\frac{a}{n^s}$ streichen,
+        da diese zu 0 konvergieren.
+        \item Für \textbf{Wurzeln in einer Summe}, multipliziere mit der Differenz der Summe (bei $a + b$
+        multipliziere mit $a - b$). 	
+        \item Anwendung \textbf{Sandwich-Theorem}.
+        \item Vergleich mit Referenz-Folgen.
+        \item Grenzwert durch simple Operationen und Umformen ermitteln.
+        \item Definition der Konvergenz / Limes anwenden.
+        \item Für \textbf{rekursive Folgen}, Satz von Weierstrass anwenden, obere / untere Schranke abschätzen
+        und per Induktion beweisen.
+        \item Anwendung des Cauchy-Kriteriums
+        \item Suchen eines konvergenten Majoranten.
+    \end{enumerate}
+
+    \textbf{Beispiel:} $d_1 = 3, \; d_{n+1} = \sqrt{3d_n -2}, \; \forall n > 1$ \\
+    Beweise per Induktion, dass die Folge monoton fallend ist. Nun brauchen wir eine untere Schranke.
+    Induktionstrick für mögliche Kandidaten vom Limes. Angenommen die Folge konvergiert, so hat jede
+    Teilfolge den gleichen Grenzwert. Betrachten wir die Teilfolge $l(n) = n+1$:
+    $$d = \lim_{n \to \infty} d_n =\lim_{n \to \infty} d_{n+1} = \sqrt{\lim_{n \to \infty} 3d_n -2} = \sqrt{3d -2}$$
+    $d^2 = 3d -2$, nehmen wir $d = 2$. Zeige nun dass die Folge nach unten beschränkt ist, mit d = 2.
+    Dies erfolgt wieder per Induktion.
+\end{exercise}
+
+\begin{exercise}
+    \textbf{Divergenz von Folgen}
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item Suche einen divergenten Minoranten
+        \item Für alternierende Folgen zeige, dass $\lim_{n \rightarrow \infty} a_{p_1(n)} \neq \lim_{n \rightarrow \infty} a_{p_2(n)}$.
+    \end{enumerate}
+\end{exercise}
+
 % ------------------------------
 \subsection{Limes superior / inferior}
 \definition{Limes superior} von $a_n$: $\limsup_{n \rightarrow \infty} a_n = \overline{\lim_{n \rightarrow \infty}}a_n=\lim_{n \rightarrow \infty} \overbrace{\sup\{a_k | k \geq n\}}^{=s_n}$
@@ -107,30 +165,8 @@ Limes superior (inferior) gibt den grössten (kleinsten) möglichen Häufungspun
 
 \includegraphics[width=0.75\columnwidth]{02_folgen/lim_sup_inf.png}
 
-
 % ------------------------------
 \subsection{Teilfolgen}
 \definition{Teilfolge} ist Folge $(a_{n_k})_{k\in \mathbb{N}_0}$, wobei $(n_k)_{k\in \mathbb{N}_0}$ Folge nicht-negativer ganzer Zahlen ist mit $\forall k\in \mathbb{N}_0: n_{k+1}>n_k$.
 
 Für konvergente Folge $(a_n)_{n \in \mathbb{N}_0}$ \textbf{mit Grenzwert $L$} konvergiert jede Teilfolge \lemma{gegen den gleichen Grenzwert $L$}.
-
-% ------------------------------
-\subsection{Cauchy-Folgen}
-$(a_n)_{n \in \mathbb{N}_0 \subset \mathbb{R}}$ heisst \definition{Cauchy-Folge}, falls $\forall \epsilon >0$ ein $N \in \mathbb{N}$ existiert, so dass gilt $\forall m, n \geq N |a_n - a_m| < \epsilon$.
-
-\lemma{Jede Cauchy-Folge ist beschränkt.}
-
-\definition{Reihe} Summe von Folgegliedern
-
-
-\definition{Harmonische Summe} $\sum_{k=1}^n \frac{1}{k}$
-
-$c_n=1 + \frac{1}{2} + \frac{1}{3} + ... + \frac{1}{n} = \sum_{k=1}^n \frac{1}{k}$ divergiert. Kann keine Cauchy-Folge sein.
-
-\textit{(im Gegensatz zu $\sum_{k=1}^{n} \frac{1}{k^2}$)}
-
-Eine Folge reeller Zahlen \theorem{konvergiert genau dann,} wenn sie eine \theorem{Cauchy-Folge ist}.
-
-\textit{Bew.-Idee: Zeigen, dass konvergente F. immer auch Cauchy-F. ist (mit Def. und $\epsilon / 2$). $\Leftarrow$: C-F. ist beschränkt $\implies$ konv. Teilfolge $\implies$ Lim. sup/inf. / Dreiecksungleichung}
-
-\definition{Geometrische Summe} $\sum_{k=0/1}^n q^k$
