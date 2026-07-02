@@ -82,9 +82,13 @@ wobei $\mathcal{TF}$ die Menge der Treppenfunktionen bezeichnet.
 
 \includegraphics[width=0.26\columnwidth]{04_funktionen/obersummen_untersummen}
 
+\subsubsection{Riemann-Integrierbarkeit}
+
 Eine beschränkte Funktion $f:[a,b] \rightarrow \mathbb{R}$ nennt man \definition{Riemann-integrierbar}, falls gilt $\sup \mathcal{L}(f)=\inf \mathcal{U}(f)$.
 
-In diesem Fall wird der Wert das \definition{Riemann-Integral} von $f$ $\int_{a}^{b} f \, dx := \sup \mathcal{L}(f)=\inf \mathcal{U}(f)$ genannt.
+In diesem Fall wird der Wert das \definition{Riemann-Integral} von $f$ 
+$$\int_{a}^{b} f \, dx := \sup \mathcal{L}(f)=\inf \mathcal{U}(f)$$ 
+genannt.\\
 $a$ nennt man \definition{untere Integrationsgrenze}, $b$ \definition{obere Integrationsgrenze} und $f$ den \definition{Integranden.}
 
 \theorem{Monotone Funktionen sind Riemann-integrierbar.}
@@ -97,6 +101,16 @@ $a$ nennt man \definition{untere Integrationsgrenze}, $b$ \definition{obere Inte
 
 \textit{Gilt auch für Funktionen die \greenBox{in endlich vielen Stellen nicht monoton oder stetig} sind (wegen Aufteilung des Integrationsbereichs).}
 
+\theorem{$f$ differenzierbar $\implies$ $f$ stetig $\implies$ $f$ integrierbar}
+
+Beschränkte Funktionen auf einem kompakten Intervall sind \textbf{nicht zwingend integrierbar.}
+
+\begin{exercise}
+    Die \definition{Dirichlet-Funktion} $f(x)=\begin{cases}
+    1, &x \in \mathbb{Q}\\
+    0, &x \notin \mathbb{Q}
+    \end{cases}$ ist \textbf{nicht} Riemann-integrierbar, da sie überall unstetig ist.
+\end{exercise}
 
 \subsubsection{Rechenregeln}
 Seien $f,g:[a,b] \rightarrow \mathbb{R}$ zwei (Riemann-)integrierbare Funktionen.
@@ -171,9 +185,11 @@ Der Hauptsatz liefert alle möglichen Stammfunktion.
 
 \subsubsection{Mittelwertsatz der Integralrechnung}
 \theorem{Mittelwertsatz der Integralrechnung}
-% TODO!
-Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
-Geometrisch bedeutet dies, dass die Fläche unter der Kurve genau dem Flächeninhalt eines Rechtecks mit derselben Intervallbreite und der Höhe dieses Mittelwerts entspricht.
+Falls der Integrand $f(x)$ auf dem betrachteten Intervall $[a,b]$ settig ist, gilt für ein $c\in [a,b]$
+$$f(c)=\frac{1}{b-a}\int_{a}^{b} f(x)\,dx$$
+Der Ausdruck $\frac{1}{b-a}\int_{a}^{b} f(x)\,dx$ ist der \definition{Mittelwert} von $f$ über $[a,b]$.\\
+\textit{Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
+Geometrisch bedeutet dies, dass die Fläche unter der Kurve genau dem Flächeninhalt eines Rechtecks mit derselben Intervallbreite und der Höhe dieses Mittelwerts entspricht.}
 
 \theorem{Cauchy-Schwarz für Integrale}
 Für zwei beschränkte, (quadrat)integrierbare Funktionen $f,g:[a,b]\rightarrow \mathbb{R}$ gilt
