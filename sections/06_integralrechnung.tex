@@ -1,0 +1,206 @@
+\subsection{Integration}
+\subsubsection{Stammfunktionen, unbestimmtes Integral}
+
+Sei $I \subset \mathbb{R}$ ein Intervall und $f(x):I \rightarrow \mathbb{R}$ eine Funktion. Eine differenzierbare Funktion $F:I \rightarrow \mathbb{R}$ mit der Eigenschaft
+$$F'(x)=f(x), x \in I$$
+nennt man die \definition{Stammfunktion} von $f$ auf dem Intervall $I$.
+
+Das Bestimmen von $F(x)$ aus $f(x)$ nennt man \definition{(un)bestimmte Integration.}
+
+\textit{\textbf{Beobachtung:} Stammfunktion \greenBox{ist nicht eindeutig}.}
+
+Ist $F(x)$ Stammfunktion, so ist auch \greenBox{$F(x)+C$} für eine beliebige Konstante $C$ eine Stammfunktion.
+
+$f(x)$ hat eine ganze Familie von Stammfunktionen: \definition{unbestimmtes Integral $\int f(x) \, dx$}. (hier ist $f$ \definition{Integrand}).
+
+\subsubsection{Rechenregeln}
+
+\includegraphics[width=0.75\columnwidth]{04_funktionen/integral_add_mult}
+
+\includegraphics[width=0.9\columnwidth]{04_funktionen/integral_weitere}
+
+$$\int \ln(x)\,dx = x \cdot \ln(x) - x + C$$
+
+\theorem{Partielle Integration}
+
+\textbf{Herleitung:} 
+$f(x) \cdot g(x) = \int \frac{d}{dx}(f(x) \cdot g(x))\,dx=\int f'(x) \cdot g(x) + f(x) \cdot g'(x) \, dx = \int f'(x) \cdot g(x) \, dx + \int f(x) \cdot g'(x) \, dx$ 
+\textit{(Integration ist Umkehrfunktion von Ableitung; Produkteregel; danach umstellen)}
+
+$$f'(x) \cdot g(x) \, dx = f(x) \cdot g(x) - \int f(x) \cdot g'(x) \, dx$$
+
+$f'(x)$ ist Funktion, die gut integriert werden kann; $g(x)$ ist Funktion, die gut abgeleitet werden kann.
+
+\textit{L (Logarithmus), I (inverse Winkelfunktionen $\arcsin, ...$), A (algebraische Funktionen $x^2, 5x^3, ...$), T (Trigonometrische Funktionen $\sin, \dots$), E (Exponentialfunktionen $e^x, 5a^x, \dots$); Fkt. am Anfang vereinfachen sich durch Ableiten $\implies$ als $g(x)$ wählen.}
+
+\theorem{Integration durch Substitution}
+
+\textbf{Herleitung:}
+$f(g(x))+C = \int \frac{d}{dx} (f(g(x)))\,dx = \int f'(g(x)) \cdot g'(x)\,dx = \int \frac{df}{dy} \frac{dy}{dx}\,dx = \int \frac{df}{dy}\, dy, y=g(x)$
+\textit{(Integration ist Umkehrfunktion von Ableitung; Kettenregel; $y=g(x)$ ersetzen)}
+
+$$\int f'(g(x))\cdot g'(x)\,dx = \int \frac{df}{dy}\, dy = f(g(x))+C$$
+
+\textbf{Trigonometrische Substitution}
+Für Integrale der Form $\int (a \pm x^2)^\alpha \, dx$, $\alpha = \pm 1, \pm \frac{1}{2}$
+
+$\sqrt{1-\sin^2}=\sqrt{\cos^2} = \cos$
+\begin{itemize}
+    \item $\sin^2(x)+\cos^2(x)=1$
+    \item $1+\tan^2(x)=\frac{1}{\cos^2(x)}$
+    \item $\cosh^2 - \sinh^2=1$
+\end{itemize}
+
+
+
+Formen $\int \sqrt{Ax^2 + B x + C} \, dx$ mit quadratischem Ergänzen.
+
+\subsection{Riemann-Integral}
+\textbf{Idee:} Unterteile Funktion in $n$ (nicht zwingend gleich grosse) Teilintervalle, wähle jeweils einen repräsentativen Funktionswert in diesem Intervall, summiere alle einzelnen "Teilflächen".
+
+Danach $n \rightarrow \infty$, sodass die Länge der Teilintervalle gegen $0$ geht.
+
+Sei $[a,b] \subset \mathbb{R}$ ein kompaktes Intervall.
+
+\definition{Zerlegung} von $[a,b]$ ist endliche Menge von Punkten $a=x_0 < x_1 < x_2 < ... < x_{n-1} < x_n = b$ mit $n \in \mathbb{N}$.
+
+$x_i$ heissen \definition{Unterteilungspunkte.}
+
+Zerlegung führt zu \definition{Partition} des Intervalls $[a,b] = \{x_0\} \cup (x_0, x_1) \cup \{x_1\} \cup (x_1, x_2) \cup \dots \cup (x_{n-1}, x_n) \cup \{x_n\}$.
+
+Eine Zerlegung $a=y_0 < y_1 < \dots < y_{m-1} < y_m = b$ ist \definition{Verfeinerung} der Zerlegung $a=x_0 < x_1 < \dots < x_{n-1} < x_n = b$, falls gilt $\{x_0, x_1, \dots, x_n\} \subseteq \{y_0, y_1, \dots, y_n\}$
+
+$f: [a,b] \rightarrow \mathbb{R}$ ist \definition{Treppenfunktion}, falls $\exists$ Zerlegung $a=x_0 < x_1 < \dots < x_n = b$ von $[a,b]$ sodass $\forall k \in \{1, \dots, n\}$ die Restriktionen von $f$ auf $(x_{k-1}, x_k)$, $f|_{(x_{k-1},x_k)}$ konstant sind.
+
+$\implies$ $f$ ist Treppenfunktion bzgl. der Zerlegung $a=x_0 < x_1 < \dots < x_n = b$.
+
+Das \definition{Integral der Treppenfunktion} $f$ über $[a,b]$ ist die reelle Zahl $\int_{a}^{b}f(x)\, dx := \sum_{k=1}^{n}c_k(x_k - x_{k-1})$, wobei $c_k$ der Funktionswert von $f$ auf dem Intervall $(x_{k-1}, x_k)$ ist.
+
+Sei $f:[a,b] \rightarrow \mathbb{R}$ eine Funktion. 
+Dann ist die Menge der \definition{Obersummen $\mathcal{U}(f)$}$:=\{\int_{a}^{b}s(x)\, dx | s\in \mathcal{TF}; s \geq f\}$, 
+respektive die Menge der \definition{Untersummen $\mathcal{L}(f)$}$:=\{\int_{a}^{b}s(x)\, dx | s\in \mathcal{TF}; s \leq f\}$
+wobei $\mathcal{TF}$ die Menge der Treppenfunktionen bezeichnet.
+
+\includegraphics[width=0.26\columnwidth]{04_funktionen/obersummen_untersummen}
+
+Eine beschränkte Funktion $f:[a,b] \rightarrow \mathbb{R}$ nennt man \definition{Riemann-integrierbar}, falls gilt $\sup \mathcal{L}(f)=\inf \mathcal{U}(f)$.
+
+In diesem Fall wird der Wert das \definition{Riemann-Integral} von $f$ $\int_{a}^{b} f \, dx := \sup \mathcal{L}(f)=\inf \mathcal{U}(f)$ genannt.
+$a$ nennt man \definition{untere Integrationsgrenze}, $b$ \definition{obere Integrationsgrenze} und $f$ den \definition{Integranden.}
+
+\theorem{Monotone Funktionen sind Riemann-integrierbar.}
+\textit{Monotone Funktionen sind in Intervall $[a,b]$ beschränkt.}
+
+\textit{Gilt auch, wenn Funktion auf manchen Teilintervallen monoton wachsend und auf manchen Teilintervallen monoton fallend ist.}
+
+\theorem{Stetige Funktionen sind Riemann-integrierbar.}
+\textit{müssen aber nicht differenzierbar sein (z.B. Knickstellen ok)!}
+
+\textit{Gilt auch für Funktionen die \greenBox{in endlich vielen Stellen nicht monoton oder stetig} sind (wegen Aufteilung des Integrationsbereichs).}
+
+
+\subsubsection{Rechenregeln}
+Seien $f,g:[a,b] \rightarrow \mathbb{R}$ zwei (Riemann-)integrierbare Funktionen.
+\begin{enumerate}
+    \item \textbf{Linearität:} Seien zudem $\alpha, \beta \in \mathbb{R}$. Dann ist auch $\alpha f + \beta g$ integrierbar und es gilt
+        $$\int_{a}^{b} (\alpha f + \beta g)(x) \,dx=\alpha \int_{a}^{b} f(x) \, dx + \beta \int_{a}^{b} g(x) \, dx$$
+    \item \textbf{Monotonie:} Falls gilt $f \leq g$, so gilt auch
+        $$\int_{a}^{b} f(x) \, dx \leq \int_{a}^{b} g(x) \, dx$$
+    \item \textbf{Dreicksungleichung:} 
+        $$|\int_{a}^{b} f(x) \, dx| \leq \int_{a}^{b} |f(x)| \, dx$$
+        \textit{Vorstellung: Positionsänderung ist $\leq$ zurückgelegte Strecke}
+    \item \textbf{Umkehrung der Integrationsrichtung:}
+        $$\int_{a}^{b} f(x) \, dx = - \int_{b}^{a} f(x) \, dx$$
+        \textit{Vorstellung: Wir laufen wieder zurück}
+    \item \textbf{Aufteilung des Integrationsbereichs:}
+        $$\int_{a}^{b} f(x) \, dx = \int_{a}^{c} f(x) \, dx + \int_{c}^{b} f(x) \, dx, a \leq c \leq b$$
+        \textit{Insb. interessant, wenn Integrationsbereich symmetrisch an Nullpunkt. Z.B. bei ungeraden Funktionen im Intervall $[-1, 1]$ ist Integral $0$, bei geraden Funktionen 2x der Wert von $[0,1]$.}
+\end{enumerate}
+\textit{\textbf{Beweise für Rechenregeln:} "Was passiert für Treppenfunktionen?", dann Approximations-Idee, allgemeiner zeigen.}
+
+\theorem{Hauptsatz der Integral- und Differentialrechung:}
+
+Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig. Dann ist für alle $C \in \mathbb{R}$ die Funktion $$F(x):=\int_{a}^{x}f(y)\,dy + C$$ eine Stammfunktion von $f$. Jede Stammfunktion int von dieser Form.
+\textit{(Konstruktion von Stammfunktionen)}
+
+\textit{
+    \textbf{Beweis:} 
+    $f$ stetig $\implies$ $f$ auf jedem Intervall $[a,x], x \in [a,b]$ integrierbar.
+    Dann zeigen, dass $F$ Stammfunktion von $f$ ist (mit $\epsilon / \delta$-Stetigkeitsdefinition), $\lim_{x \rightarrow x_0} |\frac{F(x)-F(x_0)}{x-x_0} - f(x_0)|=\lim |F'(x_0)-f(x_0)|=0$ (einzeln zeigen für $x \in (x_0, x_0+ \delta) \cap [a,b]$ und $x \in (x_0-\delta, x_0) \cap [a,b]$).
+}
+
+Sei $F:[a,b]\rightarrow \mathbb{R}$ stetig differenzierbar. Dann gilt für alle $x \in [a,b]$
+$$F(x)= \underbrace{F(a)}_{\textit{\small{"Startwert"}}} + \underbrace{\int_{a}^{x} F'(t) \, dt}_{\textit{\small{"Aufsummierung aller Veränderungseffekte"}}}$$
+
+\textit{\textbf{Herleitung:} Gem. Hauptsatz $F(x)=\int_{a}^{x}F'(y)\, dy + C, C \in \mathbb{R}$.
+Insbesondere: $F(a)=\underbrace{\int_{a}^{a}F'(y)\,dy}_{=0}+C$}
+
+Sei $f:[a,b] \rightarrow \mathbb{R}$ stetig und $F:[a,b] \rightarrow \mathbb{R}$ Stammfunktion von $f$. Dann gilt
+$$\int_{a}^{b}f(t)\,dt = F(x)|_a^b = F(b)-F(a)$$
+\textit{(Berechnung von bestimmten Integralen via Stammfunktion)}
+
+\greenBox{Verallgemeinerung für unstetige $f$}
+Für eine Funktion $\tilde{f}(y)$ mit endlich vielen Unstetigkeitsstellen $\{x_1, \dots, x_n\}$ ist $F(x):=\int_{a}^{x}f(y)\,dy+C$ noch eine Stammfunktion für $x \in [a,b] \ \{x_1, \dots, x_n\}$
+
+\greenBox{Eindeutigkeit der Stammfunktion}
+Der Hauptsatz liefert alle möglichen Stammfunktion.
+
+\textit{\textbf{Beweis:} Sei $G(x)$ eine weitere Stammfunktion, dann $H(x):=G(x)-\int_{a}^{x}f(y) \, dy$. Dann gilt $H'(x)=f(x) - f(x)=0 \forall x \in [a,b]$. Dann muss aber $H(x)$ eine Konstante sein, d.h. $H(x)=C, C \in \mathbb{R}$, dies bedeutet $C = G(x)- \int_{a}^{x}f(y)\,dy \iff G(x)= \int_{a}^{x}f(y)\,dy + C, C \in \mathbb{R}$}
+
+\theorem{Partielle Integration}
+Seien $f,g:[a,b] \rightarrow \mathbb{R}$ stetig differenzierbare Funktionen.
+$$\int_{a}^{b} f(x) g'(x) \,dx = f(x)g(x)|_a^b-\int_{a}^{b}f'(x)g(x)\,dx$$
+\textit{Folgt aus Hauptsatz und Produkteregel: $\int_{a}^{b}\frac{d}{dx} f(x)\cdot g(x)\,dx = \int_{a}^{b}(f'(x)\cdot g(x) + f(x) \cdot g'(x))\,dx = \int_{a}^{b}f'(x)\cdot g(x) \,dx + \int_{a}^{b}f(x) \cdot g'(x)\,dx=f \cdot g|^b_a=f(b)g(b)-f(a)g(a) \implies \int_{a}^{b}f(x)g'(x)\,dx = f(x) \cdot g(x) |^b_a - \int_{a}^{b}f'(x)\cdot g(x) \, dx$}
+
+\theorem{Substitution, Version 1}
+Seien $I,J \subset \mathbb{R}$ zwei Intervalle, $f : I \rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. Dann gilt für alle $[a,b] \subset I$
+$$\int_{a}^{b}g(f(x))f'(x)\,dx = \int_{f(a)}^{f(b)}g(y)\,dy$$
+
+\textit{Weil wir nicht mehr nach $x$ integrieren sondern nach $y$ müssen wir auch die Integrationsgrenzen anpassen und "schauen, wie wir die $x$ in $y$ übersetzen können".}
+
+\textit{Ggf. muss es etwas angepasst werden wenn bspw. eine Faktor als Abweichung bei der Ableitung besteht.}
+
+{\color{gray}
+\theorem{Substitution, Version 2}
+Seien $I,J \subset \mathbb{R}$ Intervalle, $f:I\rightarrow J$ stetig differenzierbar und $g:J \rightarrow \mathbb{R}$ stetig. 
+Für $[a,b]\subset I$ gelte $f'(x)\neq 0$ für alle $x \in [a,b]$ und sei $f^{-1}:[f(a),f(b)]\rightarrow \mathbb{R}$ Inverse von $f|_{[a,b]}$. 
+Dann
+$$\int_{a}^{b} g(f(x))\,dx = \int_{f(a)}^{f(b)}g(y)(f^{-1})'(y)\,dy$$
+}
+
+\subsection{Funktionenfolgen}
+
+Es gibt auch Folgen $(f_n)_{n \in \mathbb{N}_0}$ von Funktionen $f_n: D \subset \mathbb{R} \rightarrow \mathbb{R}$.
+
+\begin{exercise}
+    Beispiel einer Funktionenfolge: $f_n(x)=x^n$, dann sind die Glieder $f_1(x)=x, f_2(x)=x^2, f_3(x)=x^3, ...$
+\end{exercise}
+
+\definition{Punktweise Konvergenz}
+Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ punktweise gegen $f$, falls für jedes $x \in D$ die reelle Folge $(f_n(x))_{n \in \mathbb{N}_0}$ gegen $f(x)$ konvergiert.
+
+Wenn für jedes feste $x$ gilt $\lim_{n \rightarrow \infty} f_n(x)=f(x)$
+
+$f$ heisst auch \definition{Punktweiser Grenzwert} der Folge $(f_n)_{n \in \mathbb{N}_0}$
+
+\begin{exercise}
+    Punktweise Konvergenz zeigen:
+
+    \textit{Betrachte fixierten Punkt $x$, berechne Grenzwert $f(x)=lim_{n \rightarrow \infty} f_n(x)$. Wenn dieser Grenzwert für jedes $x$ im Definitionsbereich existiert, dann konvergiert $f_n$ punktweise gegen $f$.}
+\end{exercise}
+
+\definition{Gleichmässige Konvergenz}
+Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ gleichmässig gegen $f$, falls für jedes $\epsilon > 0$ ein Index $N$ existiert, sodasss für alle $n \geq N$ und für alle $x \in D$ gilt $|f_n(x) - f(x)|< \epsilon$.
+
+\begin{exercise}
+    Gleichmässige Konvergenz zeigen:
+
+    \textit{Zuerst punktweise Konvergenz zeigen. Dann: Wir betrachten den grössten Fehler im Definitionsbereich $\sup_{x \in D} |f_n(x)-f(x)|$. Falls gilt $\lim_{n \rightarrow \infty} \sup_{x \in D} |f_n(x)-f(x)|=0$, dann ist Konvergenz gleichmässig.}
+\end{exercise}
+
+Eine \greenBox{Potenzreihe} konvergiert auf jedem kompakten Teilintervall des Konvergenzintervalls \greenBox{gleichmässig}.
+
+\theorem{Mittelwertsatz der Integralrechnung}
+% TODO!
+Der Mittelwertsatz der Integralrechnung besagt, dass eine stetige Funktion auf einem geschlossenen Intervall mindestens einmal ihren durchschnittlichen (mittleren) Funktionswert annimmt. 
+Geometrisch bedeutet dies, dass die Fläche unter der Kurve genau dem Flächeninhalt eines Rechtecks mit derselben Intervallbreite und der Höhe dieses Mittelwerts entspricht.

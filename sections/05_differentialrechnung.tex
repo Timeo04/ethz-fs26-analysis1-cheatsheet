@@ -1,0 +1,412 @@
+% ----------- ------------------------------
+\subsection{Ableitung}
+
+\definition{Mittlere (durchschnittliche) Änderungsrate} von $f$ im Definitionsbereich zwischen $a$ und $a+h$: $\frac{\delta y}{\delta x} = \frac{f(a+h) - f(a)}{h}$ \definition{= Differenzenquotient}
+\textit{(Sekantensteigung)}
+
+\definition{Ableitung / Differentialquotient} \textbf{an der Stelle} $a$ ist gegeben durch (sofern der Grenzwert existiert):
+$$\lim_{h \rightarrow 0}\frac{f(a+h) - f(a)}{h} = \lim_{b \rightarrow a}\frac{f(b)-f(a)}{b-a} = \frac{dy}{dx}|_{x=a}=\frac{df}{dx}|_{x=a}=f'(a)$$
+\textit{\textbf{momentante} Änderungsrate / Tangentensteigung / Vorzeichen: Zu- oder Abnahme}
+
+Ausgehend von einer gegebenen Funktion $f: domain(f) \rightarrow \mathbb{R}, x \mapsto y = f(x)$ ist die \definition{Ableitungsfunktion} definiert durch $a \mapsto f'(a) = \frac{dy}{dx}|_{x=a}$.
+\textit{Es gilt auf jeden Fall $\mathbb{D}(f) \supseteq \mathbb{D}(f')$.}
+
+\textit{Bsp.: $f(x)=|x|$. Für $x=0$ existiert keine Ableitung (Knickstelle). \textbf{Punkte, an welchen keine Ableitung erwartet werden kann:} Definitionslücken / Unstetigkeitsstellen, insb. Sprungstellen / Knickstellen.}
+
+\subsubsection{Differenzierbarkeit}
+
+Falls für Funktion $f$ die Ableitung $f'(x)$ an der Stelle $x$ existiert, nennen wir $f$ \definition{an der Stelle $x$ differenzierbar.}
+
+Falls $f$ für alle Argumente $x$ des Definitionsbereichs differenzierbar ist, nennen wir $f$ \definition{differenzierbar.}
+
+Ist $f$ an der Stelle $x_0$ differenzierbar, so ist $f$ \lemma{an dieser Stelle insbesondere stetig.}
+
+\textit{Verkettung differenzierbarer Funktionen ist ebenfalls differenzierbar.}
+
+\begin{exercise}
+\textit{\textbf{Zeigen, dass Funktion an Stelle $x$ nicht differenzierbar ist:} 
+\begin{itemize}
+    \item Zeige, dass Fkt. nicht stetig
+    \item Zeige, dass Differentialquotient $\lim_{x \rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0}$ nicht definiert ist (z.B. divergiert oder oszilliert)
+    \item Zeige, dass links- und rechtsseitige Ableitung nicht übereinstimmen.
+\end{itemize}
+}  
+\end{exercise}
+
+\subsubsection{Einsetige Ableitungen}
+
+Falls der Grenzwert 
+$$\lim_{h>0\; h \rightarrow 0}\frac{f(a+h)-f(a)}{h}$$
+existiert, nennt man diesen die \definition{rechtsseitige Ableitung,} respektive $f$ an der Stelle $a$ \textbf{von rechts differenzierbar.}
+
+Analog ist die Ableitung von links definiert.
+
+\subsubsection{Höhere Ableitungen}
+
+Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine Funktion. Iterativ definieren wir \definition{höhere Ableitungen} für $n \in \mathbb{N}_0$:
+$$f^{(0)}=f, f^{(1)} = f', f^{(2)}=f'', f^{(n+1)}=(f^{(n)})'$$
+
+Falls $f^{(n)}$ existiert, nennt man $f$ \definition{$n$-fach differenzierbar.}
+
+Falls die $n$-ten Ableitungen auch noch stetige Funktionen sind, nnen wir $f$ \definition{$n$-fach stetig differenzierbar.}
+
+Die Menge aller $n$-fach stetig differenzierbarer Funktionen auf $D$ bezeichnen wir mit $C^n(D)$.
+
+Ausserdem setzen wir $C^\infty (D) := \cap_{n=0}^\infty C^n(D)$ und nennen Funktionen in $C^\infty (D)$ \definition{glatte Funktionen.}
+
+\subsubsection{Ableitungsregeln}
+
+\greenBox{Potenzfunktionen $f(x)=ax^p$:} $f'(x)=a \cdot p \cdot x^{p-1}$   $p \neq 0$
+
+\greenBox{Exponentialfunktionen $f(x)=a^x$ ($a>0$):} $f'(x) = \ln(a) \cdot a^x$
+
+\greenBox{Trigonometrische Funktionen (Bogenmass):}
+\begin{itemize}
+    \item $\sin'(x)= \cos(x)$
+    \item $\cos'(x)=-\sin(x)$
+    \item $\tan'(x) = \frac{1}{\cos ^2 (x)}= 1 + \tan ^2(x)$
+\end{itemize}
+
+\begin{itemize}
+    \item $\sec'(x)= \sec(x)\tan(x)$
+    \item $\csc'(x)=-\csc(x)\cot(x)$
+    \item $\cot'(x) = -\csc^2(x)$
+\end{itemize}
+
+\greenBox{Hyperbolische Funktionen:}
+\begin{itemize}
+    \item $\sinh'(x)= \cosh(x)$
+    \item $\cosh'(x)= \sinh(x)$
+    \item $\tanh'(x)=\frac{1}{\cosh^2(x)} = 1 - \tanh^2(x)$
+\end{itemize}
+$\sinh (x) = \frac{1}{2} (e^x  - e^{-x}), \cosh (x) = \frac{1}{2}(e^x + e^{-x})$
+
+\greenBox{Umkehrfunktionen:}
+\begin{itemize}
+    \item $\ln'(x)= \frac{1}{x}$
+    \item $\log_a'(x) = \frac{1}{x \cdot \ln(a)}$
+    \item $\arcsin'(x)=\frac{1}{\sqrt{1-x^2}}$
+    \item $\arccos'(x)=-\frac{1}{\sqrt{1-x^2}}$
+    \item $\arctan'(x)=\frac{1}{1+x^2}$
+    \item $\operatorname{arsinh}'(x)=\frac{1}{\sqrt{x^2 + 1}}$
+    \item $\operatorname{arcosh}'(x)=\frac{1}{\sqrt{x^2 - 1}}$ für $x \in \mathbb{R}, x>1$
+    \item $\operatorname{artanh}'(x)=\frac{1}{1-x^2}, |x|<1$
+    \item $\operatorname{arcoth}'(x)=\frac{1}{1-x^2}, |x|>1$
+    \item $\operatorname{arsech}'(x)=-\frac{1}{x\sqrt{1-x^2}}$
+    \item $\operatorname{arcsch}'(x)=-\frac{1}{|x|\sqrt{1+x^2}}$
+\end{itemize}
+
+\textbf{Beweis:} $(e^x)'(x)=e^x$. $e^x=\sum_{k=0}^{\infty} \frac{1}{k!}x^k$ und "Potenzreihen dürfen termweise abgeleitet werden": $(e^x)'(x)=\frac{d}{dx}(\sum_{k=0}^{\infty}\frac{1}{k!}x^k)=\sum_{k=0}^{\infty}\frac{d}{dx} \frac{1}{k!}x^k = 0 + 1 + x^1 + \frac{1}{2!}x^2 + ... = \sum_{s=0}^{\infty}\frac{1}{s!}x^s$.
+
+\greenBox{\textbf{Summenregel:}}
+Seien $f,g: D \rightarrow \mathbb{R}$ zwei an der Stelle $x_0$ $n$-fach differenzierbare Funktionen. Dann ist $f+g$ an der Stelle $x_0$ ebenfalls $n$-fach differenzierbar und es gilt
+$$(f+g)^{(n)}(x_0)=f^{(n)}(x_0)+g^{(n)}(x_0)$$
+\textit{Beweis: Für $n=1$: $(f+g)'(x)=\lim_{h \rightarrow 0}\frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}=\lim_{h \rightarrow 0}\frac{f(x+h)-f(x)}{h}+\lim_{h \rightarrow 0}\frac{g(x+h)-g(x)}{h}=f'(x)+g'(x)$, dann Induktion über $n$.}
+
+\greenBox{\textbf{Produkteregel:}}
+Seien $f,g: D \rightarrow \mathbb{R}$ zwei an der Stelle $x_0$ $n$-fach differenzierbare Funktionen. Dann ist $f\cdot g$ an der Stelle $x_0$ ebenfalls $n$-fach differenzierbar und es gilt
+$$(f \cdot g)^{(n)}(x_0)=\sum_{k=0}^{n} {n \choose k} f^{(k)} (x_0) g^{(n-k)}(x_0)$$
+
+${n \choose k}=\frac{n!}{k!(n-k)!}$.
+\textit{Beweis: Für $n=1$: $(f \cdot g)'(x)= \lim_{h \rightarrow 0}\frac{f(x+h)\cdot g(x+h) - f(x) \cdot g(x)}{h}=\lim_{h \rightarrow 0}\frac{f(x+h) \cdot g(x+h) -f(x+h) \cdot g(x) + f(x+h) \cdot g(x) - f(x) \cdot g(x)}{h} = \lim_{h \rightarrow 0}f(x+h) \frac{g(x+h)-g(x)}{h}+ \lim_{h \rightarrow 0} g(x) \frac{f(x+h)-f(x)}{h}=f(x) \cdot g'(x) + g(x) \cdot f'(x)$, allgemeines $n$ via Induktion.}
+
+\greenBox{\textbf{Kettenregel:}}
+Es sei $f: D \rightarrow E$ differenzierbar an der Stelle $x_0$ und es sei $g: E \rightarrow \mathbb{R}$ differenzierbar an der Stelle $y_0=f(x_0)$.
+Dann ist $g \circ f : D \rightarrow \mathbb{R}$ an der Stelle $x_0$ differenzierbar und es gilt
+$$(g \circ f)'(x_0) = \underbrace{g'(f(x_0))f'(x_0)}_{\text{\small{"äussere Ableitung mal innere Ableitung"}}}$$
+
+\textit{Beweis: $g(y)=\underbrace{g(y_0)+g'(y_0)(y-y_0)}_{\text{\small{Tangente}}} + g(y)-g(y_0) - g'(y_0)(y-y_0)=g(y_0)+g'(y_0)(y-y_0) + \underbrace{[\frac{g(y)-g(y_0)}{y-y_0} - g'(y_0)]}_{=: \epsilon(y) \text{ mit }  \epsilon(y_0):=0}(y-y_0)$. 
+Damit $(g \circ f)'(x_0)=\lim_{x \rightarrow x_0} \frac{g(f(x))-g(f(x_0))}{x - x_0} = \lim_{x \rightarrow x_0} (g(f(x_0))+g'(f(x_0))[f(x)-f(x_0)]+\epsilon(f(x))[f(x)-f(x_0)]-g(f(x_0)))\frac{1}{x-x_0}=g'(y_0) \cdot f'(x_0) + 0$}
+
+\greenBox{\textbf{Quotientenregel:}}
+Seien $f,g : D \rightarrow \mathbb{R}$ differenzierbar an der Stelle $x_0$. Falls $g(x_0) \neq 0$, ist auch $\frac{f}{g}$ differenzierbar an der Stelle $x_0$ und es gilt:
+$$(\frac{f}{g})'(x_0) = \frac{f'(x_0)g(x_0)-f(x_0)g'(x_0)}{g(x_0)^2}$$
+
+\textit{Basiert auf Produkteregel und Kettenregel mit $\frac{1}{x}$.}
+
+\greenBox{Ableitung der \textbf{Umkehrfunktion}:}
+Sei $f: D \rightarrow E \subset \mathbb{R}$ eine stetige, bijektive Funktion, derein Umkehrfunktion $f^{-1} : E \rightarrow D$ ebenfalls stetig ist. Ausserdem sei $s_0 \in \mathbb{D}$ ein Häufungspunkt von $D \backslash \{x_0\}$, und sei $f$ an der Stelle $x_0$ differenzierbar mit $f'(x_0) \neq 0$.
+Dann ist $f^{-1}$ an der Stelle $y_0=f(x_0)$ differenzierbar, und es gilt
+$$(f^{-1})'(y_0)=\frac{1}{f'(x_0)}$$
+
+\textit{Bemerkung: $(f^{-1}\circ f)(x)=x$ ableiten auf beiden Seiten (mit Kettenregel) ergibt, dass $(f^{-1})'(f(x))\cdot f'(x)=1$.}
+
+\begin{exercise}
+    \textit{
+    \textbf{Tricks zum Ableiten}
+    \begin{itemize}
+        \item Ableitungsregeln anwenden
+        \item $x = e^{\ln x}$
+        \item Differenzenquotient betrachten
+    \end{itemize}
+    }
+\end{exercise}
+
+\subsubsection{Extremalstellen}
+
+\greenBox{Lokale Extremalstellen und erste Ableitung:}
+Es sei $f: D \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ sei an der lokalen Extremalstelle \small{(lokales Maximum oder Minimum)} $x_0 \in D$ differenzierbar, und $x_0$ sei sowohl ein Häufungspunkt von $D \cap (x_0, \infty)$ als auch von $D \cap (-\infty, x_0)$. Dann gilt $f'(x_0)=0$.
+
+\textit{Aber nicht beide Richtungen sind äquivalent. "$\implies$" hält, aber $f'(x_0)=0$ kann bspw. auch konstant oder Sattelstelle sein.}
+
+\begin{itemize}
+    \item Falls $f''(x)<0$ hat $f$ an dieser Stelle ein lokales Maximum.
+    \item Falls $f''(x)>0$ hat $f$ an dieser Stelle ein lokales Minimum.
+    \item Falls $f''(x)=0$ sagt dieses Kriterium nichts aus.
+    \textit{($f'(x)$ überprüfen auf Vorzeichenwechsel: positiv $\rightarrow$ negativ: Hochpunkt, negativ $\rightarrow$ positiv: Tiefpunkt, sonst kein Extrempunkt)}
+\end{itemize}
+
+% (Siehe Serie10.6 https://claude.ai/share/47dca5fc-933c-484a-b786-442896875427 )
+\begin{exercise}
+    Beweise mit dem Satz von Taylor dass wenn $f'(x_0) = 0$ und $f''(x_0) > 0$, dann ist $x_0$ ein lokales Minimum.
+
+    \textit{Bemerke: $x_0$ ist lokales Minimum, wenn alle Punkte in der Nähe einen grösseren Funktionswert haben: $f(x)-f(x_0)>0$.}
+    \textit{Da $f''(x)$ stetig ist und $f''(x_0)>0$, gibt es ein Intervall um $x_0$, indem $f''(x)$ überall $>0$ ist.}
+    \textit{Mit dem Satz von Taylor lässt sich $f(x)$ für Punkte nahe an $x_0$ schreiben als: $f(x)=f(x_0)+\underbrace{f'(x_0)(x-x_0)}_{>0} + \frac{1}{2}f''(c_x)(x-x_0)^2$.}
+    \textit{Es bleibt $f(x)-f(x_0)=\frac{1}{2}\underbrace{f''(c_x)}_{>0} \cdot \underbrace{(x-x_0)^2}_{>0}$. Damit ist es gezeigt.}
+\end{exercise}
+
+\greenBox{Lokale Extremalstellen auf einem Intervall:}
+Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und es sei $x_0$ eine lokale Extremalstelle von $f$. Dann ist mindestens eine der folgenden Tatsachen zutreffend:
+\begin{enumerate}
+    \item $x_0 \in I$ ist ein Endpunkt des Intervalls $I$
+    \item $f$ ist an der Stelle $x_0$ nicht differenzierbar
+    \item $f$ ist an der Stelle $x_0$ differenzierbar und es gilt $f'(x_0)=0$
+\end{enumerate}
+
+\textit{Aus der Tatsache, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
+
+\textit{D.h. Bedingung $f'(x_0)=0$ liefert \textbf{Kandidaten} für Extremalstellen.}
+
+\greenBox{beschränktes und abgeschlossenes Intervall} $\implies$ $f$ nimmt Maximum/Minimum an.
+\textit{für offenes Intervall würde es nicht gelten.}
+
+\begin{exercise}
+    Optimierung
+
+    \textit{Gleichung $f(x)$ aufstellen (ggf. mit Nebenbedingungen), nach der gesuchten Grösse $x$ ableiten, Ableitung $f'(x)=0$ nullsetzen (Extremalstellen berechnen), Gleichung auflösen. Verifizieren, dass $x$ das Maximum (oder Minimum) ist.}
+\end{exercise}
+
+\theorem{Satz von Rolle}
+Falls $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, auf $(a,b)$ differenzierbar, $f(a)=f(b)$, dann $\exists \xi \in (a,b)$ mit $f'(\xi)=0$.
+\textit{(nicht zwingend eindeutig)}
+
+\textit{\textbf{Beweis:}\\
+Fall 1: $\exists \xi \in (a,b): f(\xi)= \max_{[a,b]} f$ oder $\min_{[a,b]} f $. Dann $f(\xi)=0$.\\
+Fall 2: $\nexists \xi \in (a,b):$ Dann $f(a)=f(b)= \max_{[a,b]}f=\min_{[a,b]}f$. $\implies$ $f$ konstant. Fall tritt nicht ein.}
+
+\theorem{Mittelwertsatz}
+Seien $a<b, f:[a,b]\rightarrow \mathbb{R}$ stetig, $f$ differenzierbar auf $(a,b)$. Dann $\exists \xi \in (a,b): f'(\xi)=\frac{f(b)-f(a)}{b-a}$.
+\textit{(Es gibt einen Punkt im Intervall, wo die Ableitung die Steigung der Sekante ist.; nicht zwingend eindeutiger Punkt.)}
+
+\textit{\textbf{Beweis:}
+Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Erfüllt Bedingungen von Rolle. $g(a)=g(b)$. $\implies \exists \xi \in (a,b): 0=g'(\xi)=f'(\xi)-\frac{f(b)-f(a)}{b-a} \cdot 1 \implies f'(\xi)=\frac{f(b)-f(a)}{b-a}.$ }
+
+\begin{exercise}
+    Zeige, dass es in einem Intervall, indem $f'(x)\neq 0$ (das Bedingungen für MWS erfüllt) nur eine Nullstelle gibt:
+
+    \textit{Angenommen, es gäbe zwei Nullstellen $x_1$ und $x_2$, dann wäre $f'(\xi)=\frac{f(x_2)-f(x_1)}{x_2 - x_1}=\frac{0-0}{x_2-x_1}=0$. Das widerspricht $f'(x)\neq 0$.}
+\end{exercise}
+
+\begin{exercise}
+    Zeige, dass die \greenBox{Sinus-Ungleichung $|\sin(y)-\sin(x)\leq|y-x|$} gilt
+
+    \textit{W.l.o.g. $x<y$. $f(x)=\sin(x)$ ist stetig differenzierbar auf $\mathbb{R}$. Gem. MWS: $\exists \xi \in (x,y): f'(\xi)=\cos(\xi)=\frac{\sin(y)-\sin(x)}{y-x}$. Da $|\cos(x)|\leq 1$ gilt $1 \geq |\frac{\sin(y)-\sin(x)}{y-x}|=\frac{|\sin(y)-\sin(x)|}{|y-x|}$. Danach umformen.}
+\end{exercise}
+
+\theorem{Regel von Bernoulli - de L'Hospital}
+\textbf{Version 1: ($a \in \mathbb{R}, \frac{0}{0}$)}
+Seien $a<b, f,g:(a,b) \rightarrow \mathbb{R}$ differenzierbar, sodass:
+\begin{enumerate}
+    \item $g(x) \neq 0$, $g'(x) \neq 0 \forall x\in (a,b)$
+    \item $\lim_{x>0, x \rightarrow a} f(x)= \lim_{x>0, x \rightarrow a} g(x)=0$ und analog für $b$. ($\frac{0}{0}$)
+    \item $L:= \lim_{x>0, x \rightarrow a} \frac{f'(x)}{g'(x)}$ existiert.
+\end{enumerate}
+
+Dann $\exists \lim_{x>a, x \rightarrow a} \frac{f(x)}{g(x)}$ und $=L$.
+
+\textit{\textbf{Beweis} verwendet den Mittelwertsatz.}
+
+\textbf{Version 2: ($a \in \mathbb{R}, \frac{\infty}{\infty}$)}
+Seien $f,g:(a,b) \rightarrow \mathbb{R}$ differenzierbar:
+\begin{enumerate}
+    \item $g(x) \neq 0$, $g'(x) \neq 0$, $\forall x$
+    \item $lim_{x > a, x \rightarrow a}|f(x)| = \lim_{x>a, x \rightarrow a}|g(x)| = \infty$ (oder $- \infty$)
+    \item $\exists L:=\lim_{x>a, x \rightarrow \infty}\frac{f'(x)}{g'(x)}$
+\end{enumerate}
+
+Dann $\exists \lim_{x>a, x \rightarrow a} \frac{f(x)}{g(x)}$ und $=L$.
+
+\textbf{Version 3: ($b:= \infty, \frac{0}{0}, \frac{\infty}{\infty}$)}
+Seien $R>0, f,g:(R,\infty) \rightarrow \mathbb{R}$ differenzierbar:
+\begin{enumerate}
+    \item $g(x) \neq 0, g'(x) \neq 0 \forall x$
+    \item entweder $\lim_{x \rightarrow \infty} f(x) = \lim_{x \rightarrow \infty} g(x) = 0$ ($\frac{0}{0}$)
+        oder $\lim_{x \rightarrow \infty} f(x) = \lim_{x \rightarrow \infty} = \infty$ ($\frac{\infty}{\infty}$)
+    \item $\exists L:= \lim_{x \rightarrow \infty} \frac{f'(x)}{g'(x)}$.
+\end{enumerate}
+
+Dann $\exists \lim_{x \rightarrow \infty} \frac{f(x)}{g(x)}$ und $=L$.
+
+\textit{\textbf{Beweis:} Folgt aus Version 1 + 2 für $x \mapsto f(\frac{1}{x}), x \rightarrow g(\frac{1}{x})$.}
+
+\begin{exercise}
+    \textbf{Bernoulli - de L'Hospital anwenden}
+
+    \begin{itemize}
+        \item Prüfen, ob tatsächlich richtige Form: $\frac{0}{0} / \frac{\infty}{\infty}$
+        \item Ansonsten ggf. umformen um diese Form zu erhalten.
+        \item Nenner und Zähler individuell ableiten.
+    \end{itemize}
+\end{exercise}
+
+\subsubsection{Monotonie, Konvexität}
+
+Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$ differenzierbar. Dann gilt:
+
+\lemma{$f$ ist wachsend} $\Leftrightarrow f'\geq 0$, d.h. $f'(x) \geq 0 \forall x \in I$.
+
+\textit{\textbf{Beweis $"\implies"$:} Sei $x \in I$. Fall $x \in (a,b)$: Sei $h\neq 0:x+h \in I$. Falls $h>0: f$ wachsend $\implies \frac{f(x+h)-f(x)}{h}\geq0$. Falls $h<0:\frac{f(x+h)-f(x)}{h}\geq 0$. $\implies f'(x)= \lim_{h \rightarrow 0, h \neq 0}\frac{f(x+h)-f(x)}{h}\geq 0$. (Andere Richtung braucht Mittelwertsatz.)}
+
+Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$: \greenBox{$f$ ist konstant $\Leftrightarrow$$f$ differenzierbar} \greenBox{ und $f'(x)=0$.}
+
+\textit{\textbf{Beweis:} "$\implies$" offensichtlich, "$\Leftarrow$": Dann $f'\geq 0$. $\implies$ $f$ wachsend. Dasselbe mit $(-f)'=-f' \geq 0$ $\implies$ $f$ fallend. $\implies$ $f$ konstant.}
+
+
+$f: I \rightarrow \mathbb{R}$ \definition{konvex (linksgekrümmt)} $\Leftrightarrow \forall a,b \in I$ mit $a<b, t \in (0,1): f((1-t)a+tb)\leq (1-t)f(a)+tf(b)$ \textit{(Graph ist unterhalb Verbindungsgerade; konstante Funktion ist auch konvex.)}
+
+Falls $f$ differenzierbar, dann \greenBox{$f$ auf $I$ konvex $\Leftrightarrow$ $f'$ auf $I$ wachsend.}
+
+\textit{\textbf{Beweis "$\impliedby$":} Ann. $f'$ wachsend. Seien $a,b \in I$, $x \in (a,b)$. Mittelwertsatz $\implies \exists \xi \in (a,x): f'(\xi) = \frac{f(x) -f(a)}{x-a}$. $\exists \zeta \in (x,b): f'(\zeta)=\frac{f(b)-f(x)}{b-x}: f'$ wachsend. $\implies$ $f'(\xi) \leq f'(\zeta)$. Gem. Hilfssatz ist $f$ konvex:}
+
+\textit{$f:[a,b] \rightarrow \mathbb{R}$. $f$ konvex $\iff \forall x \in (a,b): \frac{f(x)-f(a)}{x-a}\leq \frac{f(b)-f(x)}{b-x}$}
+
+Falls $f$ 2mal differenzierbar, dann \greenBox{$f$ auf $I$ konvex $\iff$ $f''\geq 0$}
+
+\textit{\textbf{Beweis "$\impliedby$":} Resultat von oben und: $F'\geq 0 \iff F$ wachsend ($F:=f'$)}
+
+$f:I \rightarrow \mathbb{R}$ \definition{konkav (rechtsgekrümmt)} wenn $-f$ konvex ist.
+
+Folgerung aus Konvexität (Jensen): 
+$$\underbrace{\sqrt[n]{\sum_{i=1}^{n}x_i}}_{\text{\small{geometrisches Mittel}}}\leq \underbrace{\frac{1}{n}\sum_{i=1}^{n}x_i}_{\text{\small{arithmentisches Mittel}}}, x_i \geq 0$$
+
+Folgerung aus Konvexität (Legendre-Transformation): Youngsche Ungleichung:
+$$\forall p \in (1,\infty), x,y \in (0,\infty); xy \leq \frac{|x|^p}{p}+\frac{|y|^{p'}}{p'}, \frac{1}{p}+\frac{1}{p'}=1$$
+
+Eine konvexe Funktion hat höchstens eine Minimalstelle. (Relevant für konvexe Optimierung.)
+
+\subsubsection{Lokale Approximation durch Polynome}
+
+In einer genügend kleinen Umgebung eines betrachteten Punktes $x_0$ verhalten sich der Graph einer gegebenen Funktion $f$ und die Tangente an $f$ im Pumkt $x_0$ fast gleich.
+
+$\implies$ Wir können die Funktion mit Hifle der Tangente lokal approximieren.
+
+Falls $f$ an der Stelle $x_0$ differenzierbar ist, so gilt \definition{lineare Approximation} / \definition{Tangentenapproximation} / \definition{1. Taylor Approximation}
+$$f(x) \approx f(x_0) + f'(x_0)(x-x_0)=P_1(x)$$
+
+$f(x_0)+f'(x_0)(x-x_0)$ wird auch \definition{Linearisierung} oder \definition{1. Taylorpolynom von $f$ an der Stelle $x_0$} genannt.
+
+\textit{Bsp.: Für $f_1(x)=x^2, f_2(x)=x^3, f_3(x)=-x^2$ ist Tangente im Ursprung horizontal.}
+
+\textbf{Verbesserungsidee:} Polynom 2. Grades verwenden: $P_2(x)=A(x-x_0)^2 + B(x-x_0)+C$.
+Es soll gelten: 
+\begin{itemize}
+    \item $P_2(x_0)=f(x_0) \implies C=f(x_0)$
+    \item $P'_2(x_0)=f'(x_0) \implies B=f'(x_0)$
+    \item $P''_2(x_0)=f''(x_0)\implies 2A=f''(x_0)\implies A=\frac{1}{2}f''(x_0)$
+\end{itemize}
+
+
+$\implies f(x) \approx f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2$
+
+\theorem{Satz von Taylor}
+\textit{Bessere Approximation, beliebiges $x_0$}
+
+Wir nehmen an, dass $f$ auf dem offenen Intervall $I$ (mit $x_0 \in I$) Ableitung beliebig hoher Ordnung besitzt. Dann gilt für jedes beliebige Argument $x\in I$
+
+\begin{align*}
+    f(x)&=f(x_0)+f'(x_0)(x-x_0)+...+\frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n \\
+    &\quad{\color{gray}  +\frac{1}{(n+1)!}f^{(n+1)}(c)(x-x_0)^{n+1}} \\
+    &=\sum_{k=0}^{n}f^{(k)}(x_0)\frac{1}{k!}(x-x_0)^k {\color{gray}  + \frac{1}{(n+1)!}f^{(n+1)}(c)(x-x_0)^{n+1} } \\
+    &=P_n(x){\color{gray} +R_n(x) }
+\end{align*}
+
+für ein $c$ zwischen $x_0$ und $x$.
+$P_n$ heisst \definition{$n.$-tes Taylorpolynom.}
+
+\textbf{Bemerkungen:}
+\begin{itemize}
+    \item Der Grad von $P_n(x)$ ist $\leq n$. \textit{Kann einen Grad $<n$ haben (falls $f^{(n)}=0$).}
+    \item Für Polynom $f(x)=P(x)$ vom Grad $m$ gibt das $m$.-te Taylorpolynom die Funktion exakt wider.
+    \item Es gibt noch andere Beschreibungen des Restterms $R_n(x)$.
+\end{itemize}
+
+\textit{Der maximale Fehlerterm kann abgeschätzt werden (Maximum des Restterms im Intervall zwischen $x$ und $x_0$ bestimmen)}
+
+
+Für gegebene Funktion $f$ heisst die Reihe
+$$f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2+...= \sum_{k=0}^{\infty}f^{(k)}(a) \frac{1}{k!}(x-a)^k$$
+\definition{Taylorreihe / Taylorentwicklung} der Funktion $f$ (um den Punkt $a$).
+
+Ist innerhalb ihres Konvergenzradius stetig.
+
+\textit{Kann nur konvergieren, wenn in Konvergenzradius.}
+
+\begin{exercise}
+    Bestimmtes Integral mit Taylorreihe (auf 2 Dezimalstellen genau) berechnen
+
+    \textit{Taylorreihe berechnen, dann anwenden dass $\int_{min}^{max} \sum_{n=1}^{\infty} f_n \, dx = \sum_{n=1}^{\infty} \int_{max}^{min} f_n \, dx$. Dann genügend Summanden berechnen.}
+\end{exercise}
+
+\subsubsection{Wichtige Reihen}
+
+Diese Reihen konvergieren für alle $x$: \textit{(Entwicklungspunkt ist $a=0$; $x_0 = 0$)}
+
+$$\sin(x)=\sum_{n=0}^{\infty}(-1)^n \frac{1}{(2n+1)!}x^{2n+1}=x-\frac{1}{3!}x^3 + \frac{1}{5!}x^5 - ...$$
+
+$$\cos(x)=\sum_{n=0}^{\infty}(-1)^n \frac{1}{(2n)!}x^{2n}=1-\frac{1}{2!}x^2 + \frac{1}{4!}x^4 - \dots$$
+
+$$e^x = \sum_{n=0}^{\infty}\frac{1}{n!}x^n = 1 + x + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \dots$$
+
+\textit{Beweis: Für jedes Argument zeigen, dass der Restteil gegen 0 geht.}
+
+Die folgenden Reihen konvergieren \textbf{nur für $-1 < x < 1$}:
+
+$$\ln(1+x)= \sum_{n=1}^{\infty}(-1)^{n-1}\frac{1}{n}x^n = x-\frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots$$
+
+{
+    \color{gray}
+    $$\frac{\ln(1+x)}{x} = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n}x^{n-1} = 1 - \frac{1}{2} x + \frac{1}{3} x^2 - \dots$$
+}
+
+$$\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + x^4 + \dots$$
+
+$$(1+x)^p = \sum_{n=0}^{\infty} \binom{p}{n} x^n = 1 + px + \frac{p(p-1)}{2!}x^2 + \dots$$ \textit{(Verallgemeinerte Binomialreihe)}
+
+\textit{Solche Reihen können verwendet werden, um Taylorreihen neuer Funktionen zu bestimmen. (Einsetzen (Substitution), Multiplikation, Differentiation, Integration)}
+
+\definition{Verallgemeinerte Bionmialkoeffiziente:} $\binom{p}{n} = \frac{p(p-1)\dots (p-n+1)}{n!}$ ($p \in \mathbb{R}$) mit $\binom{p}{0} = 1$.
+
+\subsubsection{Rechenregeln für Taylorreihen}
+
+\greenBox{Multiplikation von Reihen} $f(x)= \sum_{n=0}^{\infty}a_nx^n$, $g(x)=\sum_{n=0}^{\infty}b_nx^n$, wobei $x$ im Konvergenzintervall beider Reihen ist.
+Dann gilt $f(x) \cdot g(x) = \sum_{n=0}^{\infty}(\sum_{k=0}^{n}a_k b_{n-k})x^n$. \textit{(Summe über alle Möglichkeiten Potenz $n$ von $x$ zu erhalten.)}
+
+\greenBox{Termweises Ableiten} $f(x)=\sum_{n=0}^{\infty} a_nx^n$, dabei ist $x$ im Konvergenzintervall $I$.
+Dann ist $f$ differenzierbar und es gilt $f'(x)=\sum_{n=1}^{\infty}na_nx^{n-1}$.
+\textit{(Ableiten und summieren kann vertauscht werden; damit lässt sich z.B. zeigen, dass $\sin'(x)=\cos(x)$)}
+
+\greenBox{Termweises Integrieren} $f(x)=\sum_{n=0}^{\infty}a_nx^n$, dabei ist $x$ im Konvergenzintervall $I$.
+Dann ist $f$ auf dem Intervall $[a,b]\subset I$ integrierbar, und es gilt $\int_{a}^{b}f(x) \,dx=\sum_{n=0}^{\infty}\int_{a}^{b}a_nx^n \, dx$.
+\textit{(Integrieren und summieren kann vertauscht werden)}
+
+\textbf{Beobachtungen zu Taylorreihen}
+
+% TODO
+Wir betrachten $p(x)=\sum_{k=0}^{\infty}a_kx^k$, $p_n(x)=\sum_{k=0}^{n-1}a_kx^k$ und sei $x$ im Konvergenzintervall $(-\delta, \delta)$.
+Wir führen die folgende Hilfsgrösse ein: $|x|<r$ und wir betrachten $r<s<\delta$.
+Dann gilt: $|p(x)-p_n(x)|=|\sum_{k=0}^{\infty}a_kx^k - \sum_{k=0}^{n-1}a_kx^k|=|\sum_{k=n}^{\infty}a_kx^k | \leq \sum_{k=n}^{\infty}|a_k||x|^k\leq \sum_{k=n}^{\infty}|a_k|r^k = \sum_{k=n}^{\infty}|a_k|(\frac{r}{s})^ks^k \leq (\frac{r}{s})^n \underbrace{\sum_{k=n}^{\infty}|a_k|s^k}_{< \infty}\rightarrow_{n \rightarrow \infty}0$
+
+Insbesondere gilt die Abschätzung für alle $x$ im Konvergenzintervall!
+Diese Konvergenzeigenschaft von $p_n$ gegen $p$ nennt man auch gleichmässige Konvergenz. (egal welches $x$ ich anschaue, es konvergiert immer gegen $0$.)
+Aus der Stetigkeit der Polynome $p_n(x)$ folgt: \greenBox{Alle Potenzreihen (insb. Taylorreihen) sind stetig} (innerhalb des Konvergenzradius).

@@ -1,0 +1,102 @@
+\subsection{Differentialgleichungen}
+\textit{Gleichung, wo die gesuchte Grösse eine Funktion ist. Ableitung der gesuchten Funktion kann vorkommen.}
+
+\subsubsection{Aufstellen von Differentialgleichungen}
+
+\textit{\textbf{Typische Situation:} Gegeben sind verschiedenen Informationen und gesucht ist die
+Entwicklung einer bestimmten Grösse.}
+
+\begin{enumerate}
+    \item Wie verändert sich die betrachtete Grösse in einem kleinen Zeitintervall $\delta t$?\\
+        \textit{Zuwachs / Abnahme / Nettobilanz}
+    \item Was ist die Differenz zwischen den Werten, falls die Zeiten nahe beieinander sind?
+    \item Was ist die proportionale Veränderung? \textit{(Quotient)}
+    \item Was passiert mit dem Grenzwert $\delta t \rightarrow 0$?
+    \item Zusammenfassen 
+\end{enumerate}
+
+\textit{
+    Für jede Kraft $F$ gilt insbesondere (nach Newton) $F = m\ddot{y} = ma$
+}
+
+Eine \definition{Differentialgleichung} ist eine Gleichung, in der die gesuchte Funktion, sowie deren Ableitungen auftreten.
+
+\textit{\textbf{Beispiele:} $u'(t)=f(a-u(t)), u'(t)=r(a-u(t))(b-u(t)), u'(t)=ru(t)(1-\frac{u(t)}{L})$ wobei $r,a,b \text{ und }L$ Konstanten sind, oder auch $y^{(4)}(x)-4y^{(3)}(x)+5y^{(2)}(x)-4y'(x)+4y(x)=0$}
+
+\textit{
+$t,x$ heissen \textbf{unabhängige Variablen},
+$u,y$ heissen \textbf{abhängige Variablen}
+}
+
+Eine Differentialgleichung der Form $a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}(x)+\dots+a_1(x)y'(x)+a_0(x)y(x)=s(x)$ heisst \definition{lineare Differentialgleichung} mit \textbf{Koeffizienten $a_i(t)$}.
+
+Die \definition{Ordnung} der Differentialgleichung ist die maximale Ordnung der vorkommenden Ableitungen.
+
+Die Funktion $s(x)$ nennen wir \definition{Störfunktion.}
+
+Falls gilt $s(x)=0$ heisst die Differentialgleichung \definition{homogen}, andernfalls \definition{inhomogen}.
+
+Falls alle Funktionen $a_i(x)$ in der Differentialgleichung konstante Funktionen sind, nennen wir diese eine \definition{Differentialgleichung mit konstanten Koeffizienten}.
+
+\theorem{Superpositionsprinzip}
+Sind $y_1(x)$ und $y_2(x)$ Lösungen einer linearen, homogenen Differentialgleichung, so ist auch $y(x)=C_1y_1(x)+C_2y_2(x), C_1, C_2 \in \mathbb{R}$ eine Lösung derselben Differentialgleichung.
+
+\textit{Geht nur für homogene Differentialgleichungen (weil falls $C_1=C_2=0$)}
+
+\theorem{Fundamentallösungen}
+Eine lineare, homogene Differentialgleichung der Ordnung $n$ besitzt $n$ Lösungen $y_1(x), \dots, y_n(x)$, so ist die allgemeine Lösung dieser Gleichung gegeben durch $y(x)=C_1y_1(x)+\dots+C_ny_n(x), C_1, \dots, C_n \in \mathbb{R}$.
+Diese Lösungen werden \definition{Fundamentallösungen} genannt.
+
+\begin{exercise}
+    Zeige dass alle Funktionen der Form $y(x)=a \cosh (\frac{x-x_0}{a})+y_0$ die Differentailgleichung $(y-y_0)y''-(y')^2 = 1$ lösen:
+
+    \textit{$y(x)$ "berechnen": Ableitungen berechnen, einsetzen und rechnerisch nachweisen, dass dies $=1$.}
+
+    \textit{Für Anfangswertproblem die Anfangsbedingungen ebenfalls überprüfen.}
+\end{exercise}
+
+\subsubsection{Lösen einer linearen, homogenen Differentialgleichung}
+$$a_n u^{(n)}(x) + a_{n-1} u^{(n-1)}(x) \dots + a_1 u'(x) + a_0 u(x) = 0$$
+
+\definition{Eulerscher Ansatz} $u(x)=e^{\lambda x}$
+
+\definition{Charakteristische Gleichung} $a_n \lambda^n + a_{n-1} \lambda^{n-1}+ \dots + a_1 \lambda + a_0 =0$
+\textit{(folgt aus dem eulerschen Ansatz)} 
+
+\definition{Charakteristisches Polynom} $p(\lambda) = a_n \lambda^n + a_{n-1} \lambda^{n-1}+ \dots + a_1 \lambda + a_0$.
+
+\textit{
+    Jede einfache relle Nullstelle $\lambda$ des charakteristischen Polynoms erzeugt die Fundamentallösung $u(x)=e^{\lambda x}$\\
+    Jede Paar zweier zueinande komplex konjugierter Nullstellen $\lambda_{1,2}=a\pm ib$ erzeugt die beiden Fundamentallösungen $u_1(x)=e^{ax}\sin(bx)$, $u_2(x)=e^{ax}\cos(bx)$\\
+    Jede Nullstelle $\lambda$ mit Multiplizität $s$ erzeugt die $s$ Fundamentallösungen $x^ke^{\lambda x}, k=0,...,s-1$
+}
+
+\greenBox{Allgemeine Lösung:}
+\begin{itemize}
+    \item Falls alle $r$ Nullstellen $\lambda_i$ des charakteristischen Polynoms reell sind und Multiplizität $m_i$ haben, gilt $u(x)=\sum_{i=0}^{r}(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x})$
+    \item Falls wir $r$ reelle Nullstellen und $s$ \textbf{Paare} komplexer Nullstellen $(a_j \pm ib_j)$ mit jeweils Multiplizität $m_i$ haben, gilt $u(x)=\sum_{i=0}^{r}(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x}) + \sum_{j=0}^{s} (\sum_{q=0}^{m_j - 1}(A_{jq} x^q e^{a_j x} \sin(b_j x)+B_{jq} x^q e^{a_j x} \cos(b_j x)))$    
+\end{itemize}
+
+\begin{exercise}
+    Allgemeine Lösung einer linearen, homogenen Differentialgleichung mit Parametern, bspw. $u''(x)-(a+b)u'(x)+abu(x)=0$
+
+    \textit{Charakteristisches Polynom lösen; ergibt $\lambda_1 = a, \lambda_2 = b$, dann Fallunterscheidung für $a\neq b$ und $a=b$. Separat allgemeine Lösungen bestimmen (siehe oben).}
+
+    \small{\textit{Wenn man eine Anfangswertaufgabe mit dieser Gleichung anschaut, kann man mithilfe von Taylorreihen und Vereinfachen zeigen, dass die Lösung für $a \neq b$ und $b \rightarrow a$ gegen die Lösung für den Fall $a=b$ konvergiert.}}
+\end{exercise}
+
+\subsubsection{Lösen von Differentialgleichungen erster Ordnung}
+\begin{itemize}
+    \item Trennung der Variablen
+    \item Substitution
+    \item Variation der Konstanten (lineare, inhomogene Differentialgleichung)
+\end{itemize}
+
+\subsubsection{Lösen von linearen, inhomogenen Differentialgleichung}
+\begin{itemize}
+    \item Geeignete Ansätze für partikuläre Lösung
+\end{itemize}
+
+\subsubsection{Lösen anderer Differentialgleichungen}
+
+% TODO
