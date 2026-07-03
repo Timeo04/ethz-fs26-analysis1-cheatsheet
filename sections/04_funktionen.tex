@@ -338,7 +338,7 @@ Es seien $x,y\geq 0$ und $n,m\in\mathbb{N}$.
 
 \subsubsection{\definition{Trigonometrische Funktionen}}
 
-$$\sin(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n+1}}{(2n+1)!} = z-\frac{z^3}{3!}+\frac{z^5}{5!}-\frac{z^7}{7!}+\dots = \frac{e^{iz} - e^{-iz}}{2i}$$
+$$\sin(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n+1}}{(2n+1)!} = z-\frac{z^3}{3!}+\frac{z^5}{5!}-\dots = \frac{e^{iz} - e^{-iz}}{2i}$$
 $$\cos(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n}}{(2n)!} = 1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\dots = \frac{e^{iz} + e^{-iz}}{2}$$
 (Beide Reihen konvergieren absolut mit Konvergenzradius $+ \infty$)
 
@@ -396,7 +396,9 @@ Es gilt $|\sin(x)| \leq x$ mit folgendem Beweis:
 Weil $f(0) = 0, f(x) \geq 0$ für $x > 0$. Dann ist $|\sin(x)| \leq |x|$ einfach.}
 \end{exercise}
 
-\textbf{Arc-Funktionen}
+\subsubsection{Inverse trigonometrische Funktionen}
+
+\includegraphics[width=0.5\columnwidth]{04_funktionen/arcfunct}
 
 \(\arcsin:= [-1, 1 ] \to [-\frac{\pi}{2}, \frac{\pi}{2}];\) 
 \(\arccos:= [-1, 1 ] \to [0, \pi];\)\\
@@ -424,11 +426,25 @@ Weil $f(0) = 0, f(x) \geq 0$ für $x > 0$. Dann ist $|\sin(x)| \leq |x|$ einfach
 
 Es gilt \greenBox{$\cosh^2 - \sinh^2 = 1$}
 
+\subsubsection{Inverse hyperbolische Funktionen}
+
+\includegraphics[width=0.5\columnwidth]{04_funktionen/inverse_hyperbolisch}
+
 $\operatorname{arsinh}(x)=\ln(x+\sqrt{x^2 + 1}) = \int_{0}^{1}\frac{x}{\sqrt{x^2 y^2 + 1}}\, dy$
 
 $\operatorname{arcosh}(x)=\ln(x + \sqrt{x^2 - 1})$ für $x \geq 1$
 
-$\operatorname{artanh}(x)=\tanh^-1(x)= \frac{1}{2}\ln(\frac{1+x}{1-x})$ für $|x|<1$
+$\operatorname{artanh}(x)=\tanh^{-1}(x)= \frac{1}{2}\ln(\frac{1+x}{1-x})$ für $|x|<1$
+
+$\operatorname{arsech}(x)=\ln(\frac{1+\sqrt{1-x^2}}{x})$
+
+$\operatorname{arcsch}(x)=\begin{cases}
+    \ln(\frac{1+\sqrt{1+x^2}}{x}) &,\text{ für }x>0\\
+    \ln(\frac{1-\sqrt{1+x^2}}{x}) &,\text{ für }x<0
+\end{cases}
+$
+
+$\operatorname{arcoth}(x)=\frac{1}{2}\ln(\frac{x+1}{x-1})$ für $|x|>1$.
 
 \subsection{Die Kreiszahl $\pi$}
 
