@@ -37,13 +37,13 @@ Eine Differentialgleichung der Form
 $$a_n(x)y^{(n)}(x)+\dots+a_1(x)y'(x)+a_0(x)y(x)=s(x)$$ 
 heisst \definition{lineare Differentialgleichung} mit \textbf{Koeffizienten $a_i(t)$}.
 
-Die \definition{Ordnung} der Differentialgleichung ist die \textbf{maximale Ordnung der vorkommenden Ableitungen}.
-
 Die Funktion $s(x)$ nennen wir \definition{Störfunktion.}
 
 Falls gilt $s(x)=0$ heisst die Differentialgleichung \definition{homogen}, andernfalls \definition{inhomogen}.
 
 Falls alle Funktionen $a_i(x)$ in der Differentialgleichung konstante Funktionen sind, nennen wir diese eine \definition{Differentialgleichung mit konstanten Koeffizienten}.
+
+Die \definition{Ordnung} der Differentialgleichung ist die \textbf{maximale Ordnung der vorkommenden Ableitungen}.
 
 \begin{exercise}
     Zeige dass alle Funktionen der Form $y(x)=a \cosh (\frac{x-x_0}{a})+y_0$ die Differentailgleichung $(y-y_0)y''-(y')^2 = 1$ lösen:
@@ -65,7 +65,7 @@ Sind $y_1(x)$ und $y_2(x)$ Lösungen einer linearen, homogenen Differentialgleic
 Eine lineare, homogene Differentialgleichung der Ordnung $n$ besitzt $n$ Lösungen $y_1(x), \dots, y_n(x)$, so ist die allgemeine Lösung dieser Gleichung gegeben durch $y(x)=C_1y_1(x)+\dots+C_ny_n(x), C_1, \dots, C_n \in \mathbb{R}$.
 Diese Lösungen werden \definition{Fundamentallösungen} genannt.
 
-\subsubsection{Allgemeine Lösung finden}
+\subsubsection{Allgemeine Lösung finden (mit konstanten Koeffizienten)}
 
 \definition{Eulerscher Ansatz} $u(x)=e^{\lambda x}$
 
@@ -96,13 +96,46 @@ Diese Lösungen werden \definition{Fundamentallösungen} genannt.
 
 \subsection{Differentialgleichungen erster Ordnung}
 $$\frac{dy}{dx}=x+y\iff y'-y-x=0$$
+oder auch
+$$(y')^2+y=x$$
+
+\subsubsection{Lösung finden}
+
+\greenBox{\textbf{Trennung der Variablen}}\\
+\textit{"Alles was mit x zu tun hat auf eine Seite, alles andere auf die andere Seite"},
+\textbf{eignet sich für $y'(x)=f(x)\cdot g(y)$}.
+
+\begin{enumerate}
+    \item Differentialgleichung in Form $\frac{dy}{dx}=f(x)g(x)$ bringen
+    \item Umstellen zu $\frac{1}{g(y)}dy=f(x)\,dx$
+    \item Beidseitig integrieren und berechnen \textit{(mit Konstanten!)}
+    \item Nach $y$ auflösen
+\end{enumerate}
+
+\begin{exercise}
+    \textbf{Beispiel: Newtonsches Abkühlungsgesetz}\\
+    Löse $y'(t)=-k(y-y^*) \iff \frac{dy}{dt}=-k(y-y^*)=f(t) \cdot g(y)$ mit $f(t)=-k$ und $g(y)=y-y^*$
+
+    $\implies \int \frac{1}{y-y^*}\,dy = \int -k\,dt$\\
+    $\implies \ln|y-y^*|=-kt+C,C \in \mathbb{R}$\\
+    $\implies |y-y^*|=e^{-kt+C}=e^{-kt}e^C=Ce^{-kt}, C \in \mathbb{R}$\\
+    $\implies y-y^*=Ce^{-kt}, C \in \mathbb{R}$\\
+    $\implies y = y(t) = y^* + Ce^{-kt}, C \in \mathbb{R}$
+
+\end{exercise}
+
+\greenBox{\textbf{Substitution}}\\
+
+
 \begin{itemize}
-    \item Trennung der Variablen
-    \item Substitution
     \item Variation der Konstanten (lineare, inhomogene Differentialgleichung)
 \end{itemize}
 
-\subsection{Lösen von linearen, inhomogenen Differentialgleichung}
+\subsection{Lineare, inhomogene Diff.-gleichungen}
+
+$$a_n(x)y^{(n)}(x)+\dots+a_1(x)y'(x)+a_0(x)y(x)=s(x)$$ 
+
+\subsubsection{Lösung finden}
 \begin{itemize}
     \item Geeignete Ansätze für partikuläre Lösung
 \end{itemize}
