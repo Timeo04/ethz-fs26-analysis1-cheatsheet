@@ -96,12 +96,12 @@ $$\int_{a}^{b} f \, dx := \sup \mathcal{L}(f)=\inf \mathcal{U}(f)$$
 genannt.\\
 $a$ nennt man \definition{untere Integrationsgrenze}, $b$ \definition{obere Integrationsgrenze} und $f$ den \definition{Integranden.}
 
-\theorem{Monotone Funktionen sind Riemann-integrierbar.}
+\theorem{Monotone Funktionen $f:[a,b]\to \mathbb{R}$ sind Riemann-integrierbar.}
 \textit{Monotone Funktionen sind in Intervall $[a,b]$ beschränkt.}
 
 \textit{Gilt auch, wenn Funktion auf manchen Teilintervallen monoton wachsend und auf manchen Teilintervallen monoton fallend ist.}
 
-\theorem{Stetige Funktionen $f:[a,b]\rightarrow\mathbb{R}$ sind Riemann-integrierbar.}
+\theorem{Stetige Funktionen $f:[a,b]\to\mathbb{R}$ sind Riemann-integrierbar.}
 \textit{müssen aber nicht differenzierbar sein (z.B. Knickstellen ok)!}
 
 \textit{\textbf{Beweis:} $f$ ist gleichmässig stetig. Zeigen, dass der Unterschied zwischen $\mathcal{L}$ und $\mathcal{U}$ beliebig klein wird. Mit archimedischem Prinzip und glm. Stetigkeit lässt sich zeigen, dass $|f(x)-f(y)|<\epsilon'=\frac{\epsilon}{b-a}$, dann zeigen dass das Integral $\int_{a}^{b}(\mathcal{U}(x)-\mathcal{L}(x))\,dx<n\epsilon'\frac{(b-a)}{n}=\epsilon$. Dann ist $f$ Riemann-integrierbar.}
