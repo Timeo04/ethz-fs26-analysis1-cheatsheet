@@ -101,8 +101,10 @@ $a$ nennt man \definition{untere Integrationsgrenze}, $b$ \definition{obere Inte
 
 \textit{Gilt auch, wenn Funktion auf manchen Teilintervallen monoton wachsend und auf manchen Teilintervallen monoton fallend ist.}
 
-\theorem{Stetige Funktionen sind Riemann-integrierbar.}
+\theorem{Stetige Funktionen $f:[a,b]\rightarrow\mathbb{R}$ sind Riemann-integrierbar.}
 \textit{müssen aber nicht differenzierbar sein (z.B. Knickstellen ok)!}
+
+\textit{\textbf{Beweis:} $f$ ist gleichmässig stetig. Zeigen, dass der Unterschied zwischen $\mathcal{L}$ und $\mathcal{U}$ beliebig klein wird. Mit archimedischem Prinzip und glm. Stetigkeit lässt sich zeigen, dass $|f(x)-f(y)|<\epsilon'=\frac{\epsilon}{b-a}$, dann zeigen dass das Integral $\int_{a}^{b}(\mathcal{U}(x)-\mathcal{L}(x))\,dx<n\epsilon'\frac{(b-a)}{n}=\epsilon$. Dann ist $f$ Riemann-integrierbar.}
 
 \textit{Gilt auch für Funktionen die \greenBox{in endlich vielen Stellen nicht monoton oder stetig} sind (wegen Aufteilung des Integrationsbereichs).}
 
