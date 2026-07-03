@@ -221,6 +221,7 @@ $f^{-1}(A)= \{x \in \mathbb{D}(f)|f(x) \in A\}$}
 
 \textit{\textbf{Bew.-Idee.:} $f$ streng monoton - $J$ ist auch Intervall - Stetigkeit}
 
+\subsubsection{Zwischenwertsatz}
 \theorem{Zwischenwertsatz:} Es sei $f: [a,b] \rightarrow \mathbb{R}$ eine stetige Funktion und es sei $c$ eine Zahl zwischen $f(a)$ und $f(b)$. Dann gibt es \textit{(mindestens)} ein $x \in [a,b]$ mit $f(x)=c$.
 
 \textit{\textbf{Spezialfall:} Es sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ eine stetige Funktion und es seien $a,b \in I$ mit $f(a) < 0$ und $f(b)>0$. Dann hat $f$ mindestens eine Nullstelle zwischen $a$ und $b$.}
@@ -238,6 +239,13 @@ Ein beschränktes und abgeschlossenes Intervall nennt man \definition{kompakt}.
 Es sei $[a,b]$ ein kompaktes Intervall und es sei $(x_n)_{n\in \mathbb{N}_0}$ in $[a,b]$. Dann \lemma{existiert eine Teilfolge} $(s_{n_k})_{k \in \mathbb{N}_0}$ mit $\lim_{k \rightarrow\infty} x_{n_k} = x_0$ mit $x_0 \in [a,b]$.
 
 \greenBox{Stetige Funktion auf kompaktem Intervall:} Sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ stetige Funktion und $I$ kompakt. Dann ist $f$ beschränkt und $f$ nimmt sein Maximum und Minimum auf $I$ an, d.h. es gibt ein $x_{min} \in I$ und ein $x_{max} \in I$ mit $\forall x \in I : f(x_{min}) \leq f(x) \leq f(x_{max})$.
+
+{\color{gray}
+\subsubsection{Gleichmässige Stetigkeit}
+Sei $S \subset \mathbb{R}, f:S \rightarrow \mathbb{R}$ heisst \definition{gleichmässig stetig} $\iff \forall \epsilon>0 \exists \delta > 0$ sodass $\forall x,y \in S |x-y|<\delta \implies |f(x)-f(y)|<\epsilon$. \textit{($\delta$ hängt nicht von $x$ ab.)}
+
+Jede \lemma{stetige Funktion auf einem kompakten Intervall} ist \lemma{gleichmässig stetig.}
+}
 
 \subsubsection{Rechenregeln}
 \includegraphics[width=0.8\columnwidth]{04_funktionen/rechenregeln_stetigkeit}
@@ -346,11 +354,11 @@ $$\cos(z) = \sum_{n=0}^\infty \frac{(-1)^{n}z^{2n}}{(2n)!} = 1-\frac{z^2}{2!}+\f
 
 $\sin(x)=\frac{\text{GK}}{\text{H}}=$, $\cos(x)=\frac{\text{AK}}{\text{H}}=$, $\tan(x)=\frac{\text{GK}}{\text{AK}}=\frac{\sin(x)}{\cos(x)}$, $\csc(\alpha) = \frac{1}{\sin(\alpha)}$, $\sec(\alpha) = \frac{1}{\cos(\alpha)}$, $\cot(\alpha) = \frac{1}{\tan(\alpha)} = \frac{\cos(\alpha)}{\sin(\alpha)}$
 
+\includegraphics[width=0.7\columnwidth]{sincostan} 
+
 \includegraphics[width=0.7\columnwidth]{unitCircle}
 
 {\color{gray}$(x: \cos(x), y: \sin(x))$}
-
-\includegraphics[width=0.7\columnwidth]{sincostan} 
 
 \begin{enumerate}[label=(\arabic*)]
 	\item $\cos(z) = \cos(-z)$ und $\sin(-z) = - \sin(z)$
@@ -517,6 +525,7 @@ $f$ heisst auch \definition{Punktweiser Grenzwert} der Folge $(f_n)_{n \in \math
 
 \definition{Gleichmässige Konvergenz}
 Sei $f : D \subset \mathbb{R} \rightarrow \mathbb{R}$ eine weitere Funktion. Dann konvergiert die Folge $(f_n)_{n \in \mathbb{N}_0}$ gleichmässig gegen $f$, falls für jedes $\epsilon > 0$ ein Index $N$ existiert, sodasss für alle $n \geq N$ und für alle $x \in D$ gilt $|f_n(x) - f(x)|< \epsilon$.
+\textit{($n$ hängt nicht von $x$ ab, also egal wo man schaut auf der Folge)}
 
 \begin{exercise}
     Gleichmässige Konvergenz zeigen:
