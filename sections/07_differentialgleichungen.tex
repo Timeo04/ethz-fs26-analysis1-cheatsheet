@@ -46,7 +46,7 @@ Falls alle Funktionen $a_i(x)$ in der Differentialgleichung konstante Funktionen
 Die \definition{Ordnung} der Differentialgleichung ist die \textbf{maximale Ordnung der vorkommenden Ableitungen}.
 
 \begin{exercise}
-    Zeige dass alle Funktionen der Form $y(x)=a \cosh (\frac{x-x_0}{a})+y_0$ die Differentailgleichung $(y-y_0)y''-(y')^2 = 1$ lösen:
+    Zeige dass alle Funktionen der Form $y(x)=a \cosh (\frac{x-x_0}{a})+y_0$ die Differentialgleichung $(y-y_0)y''-(y')^2 = 1$ lösen:
 
     \textit{$y(x)$ "berechnen": Ableitungen berechnen, einsetzen und rechnerisch nachweisen, dass dies $=1$.}
 
@@ -124,22 +124,89 @@ $$(y')^2+y=x$$
 
 \end{exercise}
 
-\greenBox{\textbf{Substitution}}\\
+\greenBox{\textbf{Substitution}} (Einführung einer neuen Variable)\\
+\textbf{Eignet sich für $\frac{du}{dx}=u'(x)=f(ax+bu(x)+c)$} (Rechte Seite linear in $x$ und in $u$).
 
+\begin{enumerate}
+    \item Neue Variable/Funktion linear in $x$ und $u(x)$ einführen ($z(x):=ax+bu(x)+c$)
+    \item Ableiten
+    \item $\frac{du}{dx}$ ersetzen durch $z$
+    \item Mit Trennung der Variablen lösen
+    \item Rücksubstituieren: $z(x)= ax+bu(x)+c = \dots$ umformen nach $u(x)$.
+\end{enumerate}
 
-\begin{itemize}
-    \item Variation der Konstanten (lineare, inhomogene Differentialgleichung)
-\end{itemize}
+\begin{exercise}
+    \textbf{Beispiel:} $u'(x)=-3x+2u(x)-5$. 
+    
+    Neue Variable/Funktion: $z(x):=-3x+2u(x)-5$. 
+    Dann gilt: $\frac{dz}{dx} = -3 + 2 \frac{du}{dx} = -3 + 2z$ ($\rightarrow$ trennbar).
+    
+    Lösen ergibt $z(x)=\frac{3}{2}+De^{2x}, D \in \mathbb{R}$, dann rücksubstituieren: $z(x)=-3x+2u(x)-5=\frac{3}{2}+De^{2x}$\\
+    $\implies u(x)=De^{2x} + \frac{3}{2}x + \frac{13}{4}, D \in \mathbb{R}$
+\end{exercise}
+
+\textbf{Eignet sich auch für $\frac{du}{dx}=u'(x)=f(\frac{y}{x})$} (\textbf{homogen in den Variablen}, \textit{"Rechte Seite hängt nur vom Verhältnis $\frac{x}{y}$ ab"}).
+
+\begin{enumerate}
+    \item Neue Variable/Funktion $z(x)=\frac{y}{x}$ wählen.
+    \item $z(x)=\frac{y}{x} \iff z(x)\cdot x = y(x)$
+    \item Ableiten (Produkteregel): $z(x)+ x \cdot \frac{dz}{dx}=\frac{dy}{dx}=\dots$
+    \item $y'(x)$ einsetzen: \textit{Beispielsweise: $\dots=z(x)+z^{-2}(x)$}
+    \item Umstellen nach $\frac{dz}{dx}= f(x)\cdot g(z)$ und Trennung der Variablen anwenden.
+    \item Rücksubstituieren: $z(x)=\dots=\frac{y(x)}{x}$ nach $y(x)$ auflösen.
+\end{enumerate}
+
+\begin{exercise}
+    \textbf{Beispiel:} $y'(x)=\frac{y}{x}+\frac{x^2}{y^2}$
+
+    Neue Variable/Funktion: $z(x)=\frac{y}{x}\iff z(x)\cdot x=y(x)$
+
+    Durch Ableiten: $z(x)+x \cdot \frac{dz}{dx}=\frac{dy}{dx}=z(x)+z^{-2}(x)$
+
+    $\implies x \frac{dz}{dx}=z ^{-2} \implies \frac{dz}{dx}=z^{-2}\cdot x^{-1}$ ($\rightarrow$ trennbar).
+    
+    Lösen durch Trennung: $z(x)=(3 \ln|x|+C)^{\frac{1}{3}}, C \in \mathbb{R}$
+
+    Rücksubstituieren: $z(x)=(3 \ln|x|+C)^{\frac{1}{3}}=\frac{y(x)}{x} \implies y(x)=x(3 \ln|x|+C)^{\frac{1}{3}}, C \in \mathbb{R}$
+\end{exercise}
+
+\greenBox{Variation der Konstanten} (lineare, inhomogene Differentialgleichung): siehe unten
 
 \subsection{Lineare, inhomogene Diff.-gleichungen}
 
-$$a_n(x)y^{(n)}(x)+\dots+a_1(x)y'(x)+a_0(x)y(x)=s(x)$$ 
+$$a_n(x)y^{(n)}(x)+\dots+a_1(x)y'(x)+a_0(x)y(x)=s(x)\neq 0$$ 
 
-\subsubsection{Lösung finden}
-\begin{itemize}
-    \item Geeignete Ansätze für partikuläre Lösung
-\end{itemize}
+Für eine solche inhomogene Differentialgleichung heisst $a_n(x)y^{(n)}(x)+\dots+a_0(x)y(x)=0$ die \textbf{dazugehörige homogene Differentialgleichung}.
 
-\subsection{Lösen anderer Differentialgleichungen}
+\subsubsection{Allgemeine Lösung finden}
 
-% TODO
+Ist $y_p(x)$ eine \textbf{partikuläre Lösung} einer linearen, inhomogenen Differentialgleichung und $y_h(x)$ die allgemeine Lösung der dazugehörigen homogenen Differentialgleichung, so ist
+$$y(x)=y_h(x)+y_p(x)$$
+die allgemeine Lösung der linearen, inhomogenen Differentialgleichung.
+
+\subsubsection{Bestimmen einer partikulären Lösung}
+\greenBox{\textbf{Variation der Konstante}} (für Differentialgleichung erster Ordnung)\\
+\begin{enumerate}
+    \item Allgemeine Lösung der dazugehörigen homogenen Differentialgleichung berechnen
+    \item In allgemeiner Lösung statt Konstante eine Funktion $C(x)$ einsetzen.
+    \item Einsetzen in ursprüngliche Differentialgleichung. Dann Terme wegkürzen (sollte immer möglich sein!).
+    \item Auflösen nach $C(x)$ (z.B. durch integrieren)
+    \item $C(x)$ in (2.) einsetzen.
+    {\color{gray} \item Für allgemeine Lösung die allgemeine Lösung der dazugehörigen homogenen Differentialgleichung addieren.}
+\end{enumerate}
+
+\textbf{Geeignete Ansätze für partikuläre Lösung}\\
+\textit{Partikuläre Lösung sieht ähnlich aus wie Störfunktion. Wir können einen "besseren" Ansatz nehmen, um uns Rechenaufwand zu sparen.}
+
+Nullstellen des charakteristischen Polynoms müssen beachtet werden!
+
+\includegraphics[width=0.95\columnwidth]{07_differentialgleichungen/ansätze_partikuläre_lösung_1}
+\includegraphics[width=0.95\columnwidth]{07_differentialgleichungen/ansätze_partikuläre_lösung_2}
+
+\begin{enumerate}
+    \item Allgemeine Lösung der dazugehörigen homogenen Differentialgleichung berechnen.
+    \item Nullstellen des charakteristischen Polynoms betrachten.
+    \item Geeigneten Ansatz wählen ($\rightarrow$ Tabelle).
+    \item Diesen Ansatz in ursprüngliche Differentialgleichung einsetzen und nach Unbekannten auflösen.
+    {\color{gray} \item Für allgemeine Lösung die allgemeine Lösung der dazugehörigen homogenen Differentialgleichung addieren.} 
+\end{enumerate}
