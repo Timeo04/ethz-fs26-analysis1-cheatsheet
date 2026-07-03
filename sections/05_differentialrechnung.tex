@@ -1,4 +1,3 @@
-% ----------- ------------------------------
 \subsection{Ableitung}
 
 \definition{Mittlere (durchschnittliche) Änderungsrate} von $f$ im Definitionsbereich zwischen $a$ und $a+h$: $\frac{\delta y}{\delta x} = \frac{f(a+h) - f(a)}{h}$ \definition{= Differenzenquotient}
@@ -114,9 +113,9 @@ $$(f+g)^{(n)}(x_0)=f^{(n)}(x_0)+g^{(n)}(x_0)$$
 
 \greenBox{\textbf{Produkteregel:}}
 Seien $f,g: D \rightarrow \mathbb{R}$ zwei an der Stelle $x_0$ $n$-fach differenzierbare Funktionen. Dann ist $f\cdot g$ an der Stelle $x_0$ ebenfalls $n$-fach differenzierbar und es gilt
-$$(f \cdot g)^{(n)}(x_0)=\sum_{k=0}^{n} {n \choose k} f^{(k)} (x_0) g^{(n-k)}(x_0)$$
+$$(f \cdot g)^{(n)}(x_0)=\sum_{k=0}^{n} \binom{n}{k} f^{(k)} (x_0) g^{(n-k)}(x_0)$$
 
-${n \choose k}=\frac{n!}{k!(n-k)!}$.
+$\binom{n}{k}=\frac{n!}{k!(n-k)!}$.
 \textit{Beweis: Für $n=1$: $(f \cdot g)'(x)= \lim_{h \rightarrow 0}\frac{f(x+h)\cdot g(x+h) - f(x) \cdot g(x)}{h}=\lim_{h \rightarrow 0}\frac{f(x+h) \cdot g(x+h) -f(x+h) \cdot g(x) + f(x+h) \cdot g(x) - f(x) \cdot g(x)}{h} = \lim_{h \rightarrow 0}f(x+h) \frac{g(x+h)-g(x)}{h}+ \lim_{h \rightarrow 0} g(x) \frac{f(x+h)-f(x)}{h}=f(x) \cdot g'(x) + g(x) \cdot f'(x)$, allgemeines $n$ via Induktion.}
 
 \greenBox{\textbf{Kettenregel:}}
