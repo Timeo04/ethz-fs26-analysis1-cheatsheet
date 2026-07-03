@@ -40,6 +40,17 @@ $f(g(x))+C = \int \frac{d}{dx} (f(g(x)))\,dx = \int f'(g(x)) \cdot g'(x)\,dx = \
 
 $$\int f'(g(x))\cdot g'(x)\,dx = \int \frac{df}{dy}\, dy = f(g(x))+C$$
 
+\begin{enumerate}
+    \item Geeignete Substitution $u=g(x)$ wählen.\\
+    \textit{"innerer Ausdruck", kommt mehrfach vor, Ableitung davon kommt auch vor}
+    \item Ableiten ($du = g'(x) dx$ berechnen), nach $dx$ umstellen
+    \item Alles ersetzen ($g(x)$ durch $u$, $dx$ durch den Ausdruck mit $du$, verbleibende $x$-Terme ebenfalls mit $u$ ausdrücken)
+    \item Integral vereinfachen und \textbf{integrieren}
+    \item Rücksubstitution\\
+     \textit{(oder Integrationsgrenzen anpassen bei bestimmter Integration)}
+    \item Integrationskonstante $+C, C \in \mathbb{R}$ hinzufügen
+\end{enumerate}
+
 \textbf{Trigonometrische Substitution}
 Für Integrale der Form $\int (a \pm x^2)^\alpha \, dx$, $\alpha = \pm 1, \pm \frac{1}{2}$
 
