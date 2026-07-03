@@ -70,7 +70,7 @@ Diese Lösungen werden \definition{Fundamentallösungen} genannt.
 \definition{Eulerscher Ansatz} $u(x)=e^{\lambda x}$
 
 \definition{Charakteristische Gleichung} $a_n \lambda^n + a_{n-1} \lambda^{n-1}+ \dots + a_1 \lambda + a_0 =0$
-\textit{(folgt aus dem eulerschen Ansatz)} 
+\textit{(folgt durch Einsetzen des Eulerschen Ansatzes in Gleichung (und dann Ausklammern von $e^{\lambda x}$))} 
 
 \definition{Charakteristisches Polynom} $p(\lambda) = a_n \lambda^n + a_{n-1} \lambda^{n-1}+ \dots + a_1 \lambda + a_0$.
 
@@ -170,6 +170,19 @@ $$(y')^2+y=x$$
     Rücksubstituieren: $z(x)=(3 \ln|x|+C)^{\frac{1}{3}}=\frac{y(x)}{x} \implies y(x)=x(3 \ln|x|+C)^{\frac{1}{3}}, C \in \mathbb{R}$
 \end{exercise}
 
+\begin{exercise}
+    Logistische Differentialgleichung $\frac{dP}{dt}=P'=kP(1-\frac{P}{L}), k,L\in \mathbb{R}, P,L\neq0$
+
+    Lösungsansatz: Substitution mit $u:=\frac{1}{P}$.
+    $u'=-\frac{1}{P^2}P'=-\frac{1}{P^2}kP(1-\frac{P}{L})=-k(\frac{1}{P}-\frac{1}{L})$
+
+    $\iff \frac{du}{dt}=u'=-k(u-\frac{1}{L})$. Lösen mit Trennung der Variablen.
+
+    $\implies P(t)=\frac{1}{u(t)}=\frac{L}{Ae^{-kt}+1}, A \in \mathbb{R}$
+
+    Relevanz: Modelliert beschränktes Wachstum.
+\end{exercise}
+
 \greenBox{Variation der Konstanten} (lineare, inhomogene Differentialgleichung): siehe unten
 
 \subsection{Lineare, inhomogene Diff.-gleichungen}
@@ -195,7 +208,7 @@ die allgemeine Lösung der linearen, inhomogenen Differentialgleichung.
     {\color{gray} \item Für allgemeine Lösung die allgemeine Lösung der dazugehörigen homogenen Differentialgleichung addieren.}
 \end{enumerate}
 
-\textbf{Geeignete Ansätze für partikuläre Lösung}\\
+\greenBox{\textbf{Geeignete Ansätze für partikuläre Lösung}}\\ (auch für Differentialgleichungen höherer Ordnung anwendbar)\\
 \textit{Partikuläre Lösung sieht ähnlich aus wie Störfunktion. Wir können einen "besseren" Ansatz nehmen, um uns Rechenaufwand zu sparen.}
 
 Nullstellen des charakteristischen Polynoms müssen beachtet werden!
