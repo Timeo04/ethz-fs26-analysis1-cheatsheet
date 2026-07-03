@@ -3,13 +3,13 @@ $$ax^2 + bx + c = 0 \Rightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 $$b^n- a^n = (b-a)(b^{n-1}+b^{n-2}\cdot a + \dots + a^{n-2}\cdot b + a^{n-1})$$
 $$\binom{n}{k} = \frac{n!}{(n-k)!k!}; \quad \sqrt{a_k\cdot a_{k+1}} \leq \frac{a_k + a_{k+1}}{2}$$
 
-\subsection{Bernoulli Ungleichung}
+\subsubsection{Bernoulli Ungleichung}
 $$(1+x)^{n} \geq 1 + n*x \quad \forall n \in \mathbb{N}, x > -1$$
 
-\subsection{Young'sche Ungleichung}
+\subsubsection{Young'sche Ungleichung}
 $$\forall \epsilon > 0, \forall x, y \in \mathbb{R}: 2 |xy| \leq \epsilon x^2 + \frac{1}{\epsilon} y^2$$
 
-\subsection{Binomialsatz}
+\subsubsection{Binomialsatz}
 $$(x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k$$
 
 \subsection{Trigonometrischen Funktionen}
@@ -67,22 +67,40 @@ $$(x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k$$
 %----------------------------------------------------------------------------------------------------
 
 \subsection{Bekannte Taylorreihen}
+
+\paragraph{Gültig für alle $x\in\mathbb{R}$}
 \begin{align*}
-        \mathrm{e}^x &= 1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\frac{x^4}{4!}+\mathcal{O}(x^5) \\
-        \sin{x} &= x-\frac{x^3}{3!}+\frac{x^5}{5!}+\mathcal{O}(x^7) \\
-        \sinh(x) &= x+\frac{x^3}{3!}+\frac{x^5}{5!}+\mathcal{O}(x^7) \\
-        \cos(x) &= 1-\frac{x^2}{2}+\frac{x^4}{4!}-\frac{x^6}{6!}+\mathcal{O}(x^8) \\
-        \cosh(x) &= 1+\frac{x^2}{2}+\frac{x^4}{4!}+\frac{x^6}{6!}+\mathcal{O}(x^8) \\
-        \tan(x) &= x+\frac{x^3}{3}+\frac{2x^5}{15}+\mathcal{O}(x^7) \\
-        \tanh(x) &= x-\frac{x^3}{3}+\frac{2x^5}{15}+\mathcal{O}(x^7) \\
-        \log(1+x) &= x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\mathcal{O}(x^5) \\
-        (1+x)^\alpha &= 1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+ \frac{\alpha(\alpha - 1)(\alpha - 2)}{3!}x^3 + \mathcal{O}(x^4) \\
-        \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - \mathcal{O}(x^4)
+        \mathrm{e}^x &= \sum_{n=0}^{\infty}\frac{x^n}{n!}
+        = 1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\frac{x^4}{4!}+\mathcal{O}(x^5) \\
+        \sin{x} &= \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}
+        = x-\frac{x^3}{3!}+\frac{x^5}{5!}+\mathcal{O}(x^7) \\
+        \sinh(x) &= \sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}
+        = x+\frac{x^3}{3!}+\frac{x^5}{5!}+\mathcal{O}(x^7) \\
+        \cos(x) &= \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
+        = 1-\frac{x^2}{2}+\frac{x^4}{4!}-\frac{x^6}{6!}+\mathcal{O}(x^8) \\
+        \cosh(x) &= \sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!}
+        = 1+\frac{x^2}{2}+\frac{x^4}{4!}+\frac{x^6}{6!}+\mathcal{O}(x^8)
+\end{align*}
+
+\paragraph{Gültig für $|x|<1$}
+\begin{align*}
+        \log(1+x) &= \sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{n}
+        = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\mathcal{O}(x^5) \\
+        (1+x)^\alpha &= \sum_{n=0}^{\infty}\binom{\alpha}{n}x^n
+        = 1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+ \frac{\alpha(\alpha - 1)(\alpha - 2)}{3!}x^3 + \mathcal{O}(x^4) \\
+        \sqrt{1+x} &= \sum_{n=0}^{\infty}\binom{1/2}{n}x^n
+        = 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - \mathcal{O}(x^4)
+\end{align*}
+
+\paragraph{Gültig für $|x|<\frac{\pi}{2}$}
+\begin{align*}
+        \tan(x) &= \sum_{n=1}^{\infty}\frac{(-1)^{n-1}2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1}
+        = x+\frac{x^3}{3}+\frac{2x^5}{15}+\mathcal{O}(x^7) \\
+        \tanh(x) &= \sum_{n=1}^{\infty}\frac{2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1}
+        = x-\frac{x^3}{3}+\frac{2x^5}{15}+\mathcal{O}(x^7)
 \end{align*}
 
 %----------------------------------------------------------------------------------------------------
-
-\newcolumn
 
 \subsection{Typische Grenzwerte / Folgen}
 
