@@ -2,6 +2,8 @@
 
 Ein Ausdruck der Form \definition{$a_0 + a_1 + a_2 + ... = \sum_{i=0}^{\infty}$} ist eine \definition{Reihe} und die $a_n$ heissen \definition{Glieder, Elemente} oder \definition{Summanden} der Reihe.
 
+\textit{Reihe ist quasi eine spezielle Folge.}
+
 \subsection{Konvergenz, ...}
 
 Falls Folge der \definition{Teilsummen (Partialsummen)} $s_n:=a_0+a_1 + ... + a_n = \sum_{k=0}^{N}a_k$ gegen Grenzwert $L < \infty$ konvergiert, \definition{konvergiert} die Reihe: $a_0 + a_1 + ... = \lim_{n \rightarrow \infty} s_n = \sum_{k=0}^{\infty} a_k = L$
@@ -13,7 +15,6 @@ Eine Reihe, die nicht konvergiert, nennt man \definition{divergent}
 \theorem{Notwendiges Kriterium für Konvergenz:} Falls eine Reihe konvergiert, muss gelten $\lim_{n \rightarrow \infty} a_n = 0$, d.h. $(a_n)_{n \in \mathbb{N}_0}$ ist eine \definition{Nullfolge}. \textit{(Notwendig, aber nicht hinreichend!)}
 
 
-\textit{Reihe ist quasi eine spezielle Folge.}
 
 Seien $\sum_{n=0}^{\infty} a_n$ und $\sum_{n=0}^{\infty}b_n$ konvergente Reihen.\\ \lemma{Dann gilt}
 
@@ -22,31 +23,27 @@ Seien $\sum_{n=0}^{\infty} a_n$ und $\sum_{n=0}^{\infty}b_n$ konvergente Reihen.
     \item $\sum_{n=0}^{\infty} C \cdot a_n = C \sum_{n=0}^{\infty} a_n$ ($C \in \mathbb{R}$)
 \end{itemize}
 
+Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe. Für $N \in \mathbb{N}_0$ ist $\sum_{n=N}^{\infty} a_n$ \lemma{genau dann konvergent} wenn $\sum_{n=0}^{\infty} a_n$ konvergiert, und dann gilt: $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N -1} a_n + \sum_{n=N}^{\infty} a_n$.
+
 Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe \textbf{nicht-negativer} Elemente. 
-Dann ist die Folge der Partialsummen $s_n = \sum_{k=0}{n} a_k$ monoton wachsend.
+Dann ist die Folge der Partialsummen \greenBox{$s_n = \sum_{k=0}{n} a_k$ monoton wachsend.}
 Falls die Folge $(s_n)_{n\in\mathbb{N}_0}$ beschränkt ist, konvergiert die Reihe $\sum_{n=0}^{\infty} a_n$, andernfalls divergiert sie.
-
-\theorem{Vergleichskriterium} Seien $\sum_{n=0}^{\infty} a_n$, $\sum_{n=0}^{\infty} b_n$ und $\sum_{n=0}^{\infty} c_n$ Reihen mit \textbf{nicht-negativen} Gliedern und für $N \in \mathbb{N}$ gilt: $c_n \leq b_n \leq a_n \forall n \geq N$
-Dann gilt:
-\begin{itemize}
-    \item Falls $\sum_{n=0}^{\infty} a_n$ konvergiert, konvergiert auch $\sum_{n=0}^{\infty} b_n$ (Majorantenkriterium)
-    \item Falls $\sum_{n=0}^{\infty} c_n$ divergiert, divergiert auch $\sum_{n=0}^{\infty} b_n$ (Minorantenkriterium)
-\end{itemize}
-
-\textit{Bew.-Idee: Wir wissen $\forall n \geq N$ gilt $b_n \leq a_n$ $\implies$ $\sum_{k=N}^{m} b_k \leq \sum_{k=N}^{m} a_n \forall m > N$ und $\lim_{m \rightarrow \infty} \sum_{k=N}^{m} b_k = \sum_{k=N}^{\infty} b_k = \sup \{ \sum_{k=N}^{l} b_k | l > N\} \leq \sup \{\sum_{k=N}^{l} | (l>N)\} = \sum_{k=N}^{\infty} a_k = \infty$}
 
 \subsubsection{Absolute / Bedingte Konvergenz}
 
 Reihe $\sum_{n=0}^{\infty} a_n$ ist \definition{absolut konvergent,} falls $\sum_{n=0}^{\infty} |a_n|$ konvergiert.
 Reihe $\sum_{n=0}^{\infty} a_n$ ist \definition{bedingt konvergent,} falls $\sum_{n=0}^{\infty} a_n$ konvergiert, aber nicht absolut konvergiert.
 
-Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemeinerte Dreiecksungleichung} $|\sum_{n=0}^{\infty} a_n | \leq \sum_{n=0}^{\infty} |a_n|$
+\yellowBox{Jede absolut konvergente Reihe konvergiert} und es gilt die \greenBox{verallgemeinerte Dreiecksungleichung} $|\sum_{n=0}^{\infty} a_n | \leq \sum_{n=0}^{\infty} |a_n|$
 
 \begin{exercise}
     Wenn $\forall n \in \mathbb{N}: a_n \geq 0$ ist absolute Konvergenz äquivalent zu Konvergenz.
 \end{exercise}
 
 \theorem{Riemannscher Umordnungssatz:} Es sei $\sum_{n=0}^{\infty} a_n$ eine bedingt konvergente Reihe reeller Summaneden und es sei $L \in \mathbb{R}$. Dann gibt es eine bijektive Abbildung $\varphi : \mathbb{N}_0 \rightarrow \mathbb{N}_0$, so dass gilt $L= \sum_{n=0}^{\infty} a_{\varphi(n)}$.
+
+\textit{Der Riemannsche Umordnungssatz besagt insbesondere, dass die alternierende harmonische Reihe
+so umgeordnet werden kann, dass der dazugehörige Grenzwert jede beliebige reellen Zahl ist!}
 
 \theorem{Umordnungssatz für absolut konvergente Reihen:} Es sei $\sum_{n=0}^{\infty} a_n$ eine absolut konvergente Reihe reeller Summaneden und es sei $\varphi : \mathbb{N}_0 \rightarrow \mathbb{N}_0$ eine Bijektion. Dann konvergiert $\sum_{n=0}^{\infty} a_{\varphi (n)}$ absolut, und es gilt $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{\infty}a_{\varphi (n)}$. \textit{(Jede mögliche Umordnung liefert eine neue Reihe, welche ebenfalls zum gleichen Wert konvergiert.)}
 
@@ -56,7 +53,37 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
 
 \subsubsection{Kriterien für Konvergenz}
 
+\theorem{Vergleichskriterium} Seien $\sum_{n=0}^{\infty} a_n$, $\sum_{n=0}^{\infty} b_n$ und $\sum_{n=0}^{\infty} c_n$ Reihen mit \textbf{nicht-negativen} Gliedern und für $N \in \mathbb{N}$ gilt: $c_n \leq b_n \leq a_n \forall n \geq N$
+Dann gilt:
+\begin{itemize}
+    \item Falls $\sum_{n=0}^{\infty} a_n$ konvergiert, konvergiert auch $\sum_{n=0}^{\infty} b_n$ \yellowBox{(Majorantenkriterium)}
+    \item Falls $\sum_{n=0}^{\infty} c_n$ divergiert, divergiert auch $\sum_{n=0}^{\infty} b_n$ \yellowBox{(Minorantenkriterium)}
+\end{itemize}
+
+\textit{Bew.-Idee: Wir wissen $\forall n \geq N$ gilt $b_n \leq a_n$ $\implies$ $\sum_{k=N}^{m} b_k \leq \sum_{k=N}^{m} a_n \forall m > N$ und $\lim_{m \rightarrow \infty} \sum_{k=N}^{m} b_k = \sum_{k=N}^{\infty} b_k = \sup \{ \sum_{k=N}^{l} b_k | l > N\} \leq \sup \{\sum_{k=N}^{l} | (l>N)\} = \sum_{k=N}^{\infty} a_k = \infty$}
+
+{\color{gray}
+\greenBox{Cauchy Verdichtungssatz} Sei $(a_n)_{n \in \mathbb{N}_0}$ eine monoton fallende Folge nicht-negativer Elemente. Dann gilt:
+$\sum_{n=0}^{\infty}a_n \text{ konvergiert }\iff\sum_{n=0}^{\infty}2^na_{2^n}\text{ konvergiert}$.
+}
+
 \theorem{Leibnitz Kriterium:} Sei $(a_n)_{n \in \mathbb{N}_0}$ monoton fallende Folge nicht-negativer reller Zahlen, welche gegen null konvergiert. Dann konvergiert die \textbf{alternierende Reihe} $\sum_{n=0}^{\infty} (-1)^n a_n$ und es gilt $\sum_{n=0}^{2m+1}(-1)^na_n \leq \sum_{n=0}^{\infty}(-1)^n a_n \leq \sum_{n=0}^{2m} (-1)^n a_n \forall m \in \mathbb{N}_0$.
+
+\begin{exercise}
+    Leibnitz-Kriterium anwenden:
+
+    \begin{itemize}
+        \item \textbf{Form:} $\sum_{n=0}^{\infty} (-1)^n a_n$ oder $\sum_{n=1}^{\infty} (-1)^{n-1}a_n$
+        \item $a_n \geq 0$
+        \item $a_n$ ist monoton fallend
+        \item $\lim_{n\rightarrow\infty} a_n = 0$
+    \end{itemize}
+    Wenn alles erfüllt, konvergiert die Reihe.
+\end{exercise}
+
+\theorem{Cauchy-Kriterium:} $\sum_{n=0}^{\infty}$ konvergiert $\iff \forall \epsilon >0 \exists N \in \mathbb{N}_0$ sodass für $n>m\geq N$ gilt $|\sum_{k=m+1}^{n}a_k|\leq \epsilon$.
+
+\textit{\textbf{Anwendung:} Partialsummen $S_n-S_m$ bilden, Betrag abschätzen.\\ Kann für Beweise verwendet werden.}
 
 \theorem{Wurzel-Kriterium:} Sei $(a_n)_{n \in \mathbb{N}_0}$ Folge reeller Zahlen und sei $\rho = \limsup_{n \rightarrow \infty} (|a_n|)^{1/n} \in \mathbb{R} \cup \{\infty\}$. Dann gilt:
 \begin{itemize}
@@ -64,16 +91,25 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
     \item Falls $\rho > 1$, konvergiert $\sum_{n=0}^{\infty} a_n$ nicht.
 \end{itemize}
 
+\begin{exercise}
+    \begin{itemize}
+        \item Typische Vereinfachungen: $\sqrt[n]{n} \to 1$, $\sqrt[n]{c} \to 1$ für konstante $c > 0$, $\sqrt[n]{n^k} \to 1$ (Polynome stören nicht).
+        \item Für $\rho=1$ anderes Kriterium \textit{(nicht Quotientenkriterium!)} verwenden.
+    \end{itemize}
+\end{exercise}
+
 \theorem{Quotienten-Kriterium:} Sei $(a_n)_{n \in \mathbb{N}_0}$ Folge reeller Zaheln mit $a_n \neq 0 \forall n \in \mathbb{N}_0$ und sei $\rho = \lim_{n \rightarrow \infty}\frac{|a_{n+1}|}{|a_n|}$. Dann gilt:
 \begin{itemize}
     \item Falls $\rho < 1$, konvergiert $\sum_{n=0}^{\infty} a_n$ absolut.
     \item Falls $\rho > 1$, konvergiert $\sum_{n=0}^{\infty} a_n$ nicht.
+    \item Für $\rho = 1$ andere Strategie anwenden.
 \end{itemize}
+
 
 \begin{exercise}
     \textbf{Strategie:} Überprüfen, ob Reihe konvergiert:
     \begin{itemize}
-        \item Zuerst: Falls $\lim_{n\rightarrow \infty} \neq 0$ divergiert die Reihe $\sum a_n$.
+        \item Zuerst: Falls $\lim_{n\rightarrow \infty} a_n \neq 0$ divergiert die Reihe $\sum a_n$.
         \item Spezielle Reihe? (Geometrische Reihe $\sum q^n$, verallgemeinerte harmonische Reihe $\sum \frac{1}{n^p}$)
         \item Quotienten- \textit{(insb. bei Fakultät, Bruchterme, "Rekursive" Terme, ...)} / Wurzelkriterium \textit{(insb. bei Potenzen miz $n$ im Exponenten, kann nicht gekürzt werden bei Quotientenkriterium)}
         \item Alternierende Reihen: Leibnitz-Kriterium
@@ -81,8 +117,6 @@ Jede absolut konvergente Reihe konvergiert und es gilt die \greenBox{verallgemei
         \item Potenzreihe: Siehe Konvergenzradius
     \end{itemize}
 \end{exercise}
-
-Sei $\sum_{n=0}^{\infty} a_n$ eine Reihe. Für $N \in \mathbb{N}_0$ ist $\sum_{n=N}^{\infty} a_n$ \lemma{genau dann konvergent} wenn $\sum_{n=0}^{\infty} a_n$ konvergiert, und dann gilt: $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N -1} a_n + \sum_{n=N}^{\infty} a_n$.
 
 % TODO: Wert von Reihen berechnen
 

@@ -13,11 +13,14 @@ x \mapsto y = f(x)$
 Der Input heisst \definition{unabhängige Variable (Argument)}.
 Der Output heisst \definition{abhängige Variable}.
 
+\subsubsection{Restriktion, Verknüpfung, Identität}
+
 Es sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$ mit $\mathbb{D}(f) \neq \emptyset$ und es sei weiters $D' \subset \mathbb{D}(f)$.
 Dann kann man die \definition{Einschränkung/Restriktion} von $f$ auf $D'$ betrachten, die Funktion $f|_{D'} : D' \rightarrow \mathbb{R}$ mit $f|_{D'}(x)=f(x) \forall x \in D'$
 \textit{($f$ und $f|_{D'}$ sind zwei verschiedene Funktionen.)}
 
-Es seien $\overbrace{f : X \rightarrow Y}^{\text{\small{innere Funktion}}}$ und $\overbrace{g: Y \rightarrow Z}^{\text{\small{äussere Funktion}}}$ zwei Funktionen. Dann ist die \definition{Verknüpfung} von $f$ und $g$ die Funktion $g \circ f : X \rightarrow Z$ mit $g \circ f(x) = g(f(x)) \forall x \in X$
+Es seien $\overbrace{f : X \rightarrow Y}^{\text{\small{innere Funktion}}}$ und $\overbrace{g: Y \rightarrow Z}^{\text{\small{äussere Funktion}}}$ zwei Funktionen. 
+Dann ist die \definition{Verknüpfung/Komposition} von $f$ und $g$ die Funktion $g \circ f : X \rightarrow Z$ mit $g \circ f(x) = g(f(x)) \forall x \in X$
 
 Sei $X$ eine beliebige (nicht leere) Menge. Dann ist die \definition{Identitätsfunktion / Identität} $id_x (x) = x \forall x \in X$.
 
@@ -122,16 +125,20 @@ $f:\mathbb{R}\rightarrow \mathbb{R}$ nennen wir
 \subsection{Konvex / Konkav}
 Der \textbf{Graph} einer Funktion (Menge aller Punkte der From $(x, f(x))$) heisst \definition{linksgekrümmt (konvex)} / \definition{rechtsgekrümmt (konkav)}, falls der Graph beim Durchlaufen von links nach rechts eine Linkskurve \textit{(z.B. $f(x)=x^2$)} / Rechtskurve \textit{(z.B. $f(x)=-x^2$)} vollführt.
 
-\textit{Kann mit Vergleichssekante überprüft werden. Eine Funktion kann in gewissen Abschnitten konvex und in anderen konkav sein.}
+Kann mit Vergleichssekante überprüft werden. Ist der Graph unterhalb der Vergleichssekante, so ist die Funktion konvex. 
+
+\textit{Eine Funktion kann in gewissen Abschnitten konvex und in anderen konkav sein.}
 
 % -----------------------------------
 \subsection{Grenzwerte}
 
 Sei $f : \mathbb{D}(f) \rightarrow \mathbb{R}$, es sei $x_0 \in \mathbb{R}$ und es gelte $\mathbb{D}(f) \cap (x_0 - \delta, x_0 + \delta) \neq \emptyset \forall \delta > 0$.
-Dann ist $L \in \mathbb{R}$ der \definition{Grenzwert/Limes} von $f(x)$ an der Stelle $x_0$, falls gilt $\forall \epsilon > 0 \exists \delta >0$ sodass $x \in \mathbb{D}(f) \cup (x_0 - \delta, x_0 + \delta) \implies |f(x) - L | < \epsilon$. Der Grenzwert $L$ ist \textbf{eindeutig bestimmt}.\\
+Dann ist $L \in \mathbb{R}$ der \definition{Grenzwert/Limes} von $f(x)$ an der Stelle $x_0$, falls gilt 
+$$\forall \epsilon > 0 \exists \delta >0 \text{ sodass }x \in \mathbb{D}(f) \cup (x_0 - \delta, x_0 + \delta) \implies |f(x) - L | < \epsilon$$
+Der Grenzwert $L$ ist \textbf{eindeutig bestimmt}.\\
 \textit{(Falls für Argumente $x$, welche genügend nahe bei $x_0$ liegen (hier "Abstand" im Gegensatz zu Index bei Folgen) , der Wert $f(x)$ der Zahl $L$ beliebig nahe kommt, ist $L$ Limes/Grenzwert von $f(x)$ an der Stelle $x_0$.)}
 
-Existenz eines Grenzwertes impliziert nicht, dass $f$ an der Stelle $x_0$ definiert sein muss.
+Existenz eines Grenzwertes \textbf{impliziert nicht, dass $f$ an der Stelle $x_0$ definiert sein muss}.
 
 Wenn der Funktionswert $f(x_0)$ existiert, muss er gleich dem Grenzwert $L$ sein (nach unserer Definition).
 
@@ -212,7 +219,7 @@ Die Funktion nennen wir \definition{stetig} falls sie in jedem Punkt des Definit
 
 Sei $f: \mathbb{D}(f) \rightarrow \mathbb{R}$, und es sei $x_0 \in \mathbb{D}$. Falls gilt $\lim_{x \geq x_0\; x \rightarrow x_0} f(x) = f(x_0)$ nennen wir den Punkt $x_0$ \definition{rechtsstetig}. \definition{Linksstetigkeit} ist analog definiert.
 
-Sei $f: D \subset \mathbb{D}(f) \subset \mathbb{R}$ eine Funktion und $x_0 \in D$. Dann ist $f$ an der Stelle $x_0$ \greenBox{genau dann stetig, wenn} für jede Folge $(x_n)_{n \in \mathbb{N}_0}$ mit $x_n \rightarrow x_0$ die Folge $(f(x_n))_{n \in \mathbb{N}_0}$ gegen $f(x_0)$ konvergiert (Folgenstetigkeit).
+Sei $f: D \subset \mathbb{D}(f) \subset \mathbb{R}$ eine Funktion und $x_0 \in D$. Dann ist $f$ an der Stelle $x_0$ \greenBox{genau dann stetig, wenn} für jede Folge $(x_n)_{n \in \mathbb{N}_0}$ mit $x_n \rightarrow x_0$ die Folge $(f(x_n))_{n \in \mathbb{N}_0}$ gegen $f(x_0)$ konvergiert \greenBox{(Folgenstetigkeit)}.
 
 \textit{Alternativ kann Stetigkeit auch so definiert werden: $f: \mathbb{D} (f) \rightarrow \mathbb{R}$. Dann ist $f$ genau dann stetig, wenn die Urbilder $f^{-1}(A)$ von offenen Mengen ebenfalls wieder offen sind.\\
 $f^{-1}(A)= \{x \in \mathbb{D}(f)|f(x) \in A\}$}
@@ -224,7 +231,7 @@ $f^{-1}(A)= \{x \in \mathbb{D}(f)|f(x) \in A\}$}
 \subsubsection{Zwischenwertsatz}
 \theorem{Zwischenwertsatz:} Es sei $f: [a,b] \rightarrow \mathbb{R}$ eine stetige Funktion und es sei $c$ eine Zahl zwischen $f(a)$ und $f(b)$. Dann gibt es \textit{(mindestens)} ein $x \in [a,b]$ mit $f(x)=c$.
 
-\textit{\textbf{Spezialfall:} Es sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ eine stetige Funktion und es seien $a,b \in I$ mit $f(a) < 0$ und $f(b)>0$. Dann hat $f$ mindestens eine Nullstelle zwischen $a$ und $b$.}
+\textit{\textbf{Spezialfall:} \greenBox{Nullstellensatz von Bolzano} Es sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ eine stetige Funktion und es seien $a,b \in I$ mit $f(a) < 0$ und $f(b)>0$. Dann hat $f$ mindestens eine Nullstelle zwischen $a$ und $b$.}
 
 \begin{exercise}
 Kann oft auch auf abgewandelte Funktion angewandt werden:
@@ -238,13 +245,17 @@ Ein beschränktes und abgeschlossenes Intervall nennt man \definition{kompakt}.
 
 Es sei $[a,b]$ ein kompaktes Intervall und es sei $(x_n)_{n\in \mathbb{N}_0}$ in $[a,b]$. Dann \lemma{existiert eine Teilfolge} $(s_{n_k})_{k \in \mathbb{N}_0}$ mit $\lim_{k \rightarrow\infty} x_{n_k} = x_0$ mit $x_0 \in [a,b]$.
 
-\greenBox{Stetige Funktion auf kompaktem Intervall:} Sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ stetige Funktion und $I$ kompakt. Dann ist $f$ beschränkt und $f$ nimmt sein Maximum und Minimum auf $I$ an, d.h. es gibt ein $x_{min} \in I$ und ein $x_{max} \in I$ mit $\forall x \in I : f(x_{min}) \leq f(x) \leq f(x_{max})$.
+\greenBox{Stetige Funktion auf kompaktem Intervall:} Sei $f: I \subset \mathbb{R} \rightarrow \mathbb{R}$ stetige Funktion und $I$ kompakt. Dann ist \textbf{$f$ beschränkt und $f$ nimmt sein Maximum und Minimum auf $I$ an}, d.h. es gibt ein $x_{min} \in I$ und ein $x_{max} \in I$ mit $\forall x \in I : f(x_{min}) \leq f(x) \leq f(x_{max})$.
 
 {\color{gray}
 \subsubsection{Gleichmässige Stetigkeit}
 Sei $S \subset \mathbb{R}, f:S \rightarrow \mathbb{R}$ heisst \definition{gleichmässig stetig} $\iff \forall \epsilon>0 \exists \delta > 0$ sodass $\forall x,y \in S |x-y|<\delta \implies |f(x)-f(y)|<\epsilon$. \textit{($\delta$ hängt nicht von $x$ ab.)}
 
 Jede \lemma{stetige Funktion auf einem kompakten Intervall} ist \lemma{gleichmässig stetig.}
+
+$f:D\subset \mathbb{R} \to \mathbb{R}$ heisst \definition{Lipschitz stetig} falls $\exists L >geq 0\text{ s.d. }\forall x,y \in D:|f(x)-f(y)| \leq L|x-y|$. 
+
+Eine Lipschitz stetige Funktion ist insbesondere auch gleichmässig stetig.
 }
 
 \subsubsection{Rechenregeln}
@@ -273,6 +284,8 @@ $$y=f(x)=mx+1\text{, resp. }x \mapsto mx + q$$
 \subsubsection{\definition{Exponentialfunktion $exp:\mathbb{R}\rightarrow\mathbb{R}^+$}}
 $$\exp(x)=e^x=\lim_{n\rightarrow\infty}(1+\dfrac{x}{n})^n=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1 + x + \frac{x^2}{2}+\frac{x^3}{6}+ \dots$$
 \greenBox{$\exp$ ist bijektiv, streng monoton wachsend und stetig.}
+
+Für $n \in \mathbb{N}$ mit $n>1$ gilt $\exp(x)\geq(1+\frac{x}{n})^n \forall x>-n$.
 
 \begin{itemize}
     \item $\exp(0)=1$

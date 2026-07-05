@@ -29,7 +29,10 @@ Eine Folge ist \definition{(streng) monoton wachsend} falls gilt $\forall n, m \
 % ------------------------------
 \subsection{Konvergenz / Divergenz}
 
-Eine Folge ist \definition{konvergent} falls ein $L \in \mathbb{R}$ existiert, so dass $\forall \epsilon > 0 \exists N > 0$ so dass $\forall n > N : |a_n -L| < \epsilon$.
+Eine Folge ist \definition{konvergent} falls ein $L \in \mathbb{R}$ existiert, so dass 
+$$\forall \epsilon > 0 \exists N > 0 \text{ so dass }\forall n > N : |a_n -L| < \epsilon$$
+
+\textit{\textbf{Beweis:} Widerspruchsbeweis durch Annahme zweier Grenzwerte $A \neq B$, dann gibt es auch ein $N_A$ und $N_B$. Sei $N=\max\{N_A,N_B\}$. Dann zeigen dass $|A-B|<\epsilon$.}
 
 Eine konvergente Folge besitzt\\ \theorem{genau einen eindeutigen Grenzwert}.
 
@@ -37,24 +40,35 @@ $L$ ist der \definition{Grenzwert} $\lim_{n \rightarrow \infty} a_n = L$.
 
 Falls kein $L$ existiert, nennt man die Folge \definition{divergent}.
 
-$A \in \mathbb{R}$ ist \definition{Häufungspunkt} einer Folge $(a_n)_n\in\mathbb{N}_0$, falls $\forall \epsilon > 0 \forall N \in \mathbb{N}_0 \exists n \geq N$ so dass $|a_n - A | < \epsilon$.
-\textit{Jedes Intervall der Form $(A- \epsilon, A+ \epsilon)$ enthält $a_n$ für unendlich viele $n$.}
+\subsubsection{Häufungspunkte}
+
+$A \in \mathbb{R}$ ist \definition{Häufungspunkt} einer Folge $(a_n)_n\in\mathbb{N}_0$, falls 
+$$\forall \epsilon > 0 \forall N \in \mathbb{N}_0 \exists n \geq N\text{ so dass }|a_n - A | < \epsilon$$
+\textit{Jedes Intervall der Form $(A- \epsilon, A+ \epsilon)$ enthält $a_n$ für unendlich viele $n$; Werte der Folgeglieder kommen immer wieder in die Nähe von $A$.}
 
 $A\in \mathbb{R}$ ist Häufungspunkt von $(a_n)_n\in\mathbb{N}_0$ \lemma{$\Leftrightarrow$} es existiert eine konvergente Teilfolge mit $\lim_{k \rightarrow \infty} a_{n_k} = A$.
 
 \greenBox{Konvergente Folge hat genau einen Häufungspunkt} (ist identisch mit Grenzwert).
 
-\greenBox{Jede beschränkte und monotone Folge konvergiert.}
+Für $A$ Häufungspunkt von $(a_n)_{n \in \mathbb{N}_0}$: Es gibt für jedes $\epsilon>0$ \greenBox{unendlich viele Folgeglieder} im Intervall $(A-\epsilon, A + \epsilon)$.
+
+\subsubsection{Beschränktheit/Monotonie und Konvergenz}
+
+\theorem{Jede beschränkte und monotone Folge konvergiert.}
 
 \lemma{Jede konvergente Folge ist beschränkt.}
 
 \begin{enumerate}
     \item Eine monotone Folge reeller Zahlen $(a_n)_{n \in \mathbb{N}_0}$ konvergiert genau dann, wenn sie beschränkt ist.
     \item Falls $(a_n)_{n \in \mathbb{N}_0}$ monoton wachsend ist, gilt $\lim_{n \rightarrow \infty} a_n = \sup\{a_n | n \in \mathbb{N}_0\}$
-    \item Falls $(a_n)_{n \in \mathbb{N}_0}$ monoton fallen ist, gilt $\lim_{n \rightarrow \infty} a_n = \inf\{a_n | n \in \mathbb{N}_0\}$
+    \item Falls $(a_n)_{n \in \mathbb{N}_0}$ monoton fallend ist, gilt $\lim_{n \rightarrow \infty} a_n = \inf\{a_n | n \in \mathbb{N}_0\}$
 \end{enumerate}
 
+\greenBox{Eine monotone Folge mit einer beschränkten Teilfolge konvergiert.}
+
 \subsubsection{Spezialfälle divergenter Folgen}
+\definition{Uneigentliche Grenzwerte}
+
 $\lim_{n\rightarrow \infty} a_n = \infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n > M$
 \par
 $\lim_{n\rightarrow \infty} a_n = -\infty$ falls $\forall M > 0 \exists N>0 \text{ so dass } \forall n>N : a_n <- M$
@@ -139,7 +153,7 @@ $c_n=1 + \frac{1}{2} + \frac{1}{3} + ... + \frac{1}{n} = \sum_{k=1}^n \frac{1}{k
 
     \begin{enumerate}[label=(\arabic*)]
         \item Suche einen divergenten Minoranten
-        \item Für alternierende Folgen zeige, dass $\lim_{n \rightarrow \infty} a_{p_1(n)} \neq \lim_{n \rightarrow \infty} a_{p_2(n)}$.
+        \item Für alternierende Folgen zeige, dass zwei Teilfolgen (z.B. $2n$ und $2n+1$) unterschiedliche Grenzwerte haben: $\lim_{n \rightarrow \infty} a_{p_1(n)} \neq \lim_{n \rightarrow \infty} a_{p_2(n)}$.
     \end{enumerate}
 \end{exercise}
 
@@ -165,8 +179,22 @@ Limes superior (inferior) gibt den grössten (kleinsten) möglichen Häufungspun
 
 \includegraphics[width=0.75\columnwidth]{02_folgen/lim_sup_inf.png}
 
+Sei $(a_n)_{n\in \mathbb{N}_0}$ eine beschränkte Folge mit $A=\limsup_{n \to \infty}a_n$.
+Dann \theorem{ist $A$ ein Häufungspunkt} und \theorem{für alle $\epsilon > 0$ gilt:}
+\begin{itemize}
+    \item dass es nur endlich viele Elemente $a_n$ gibt, für welche gilt $a_n \geq A + \epsilon$.
+    \item dass für unendlich viele Elemente gilt $A-\epsilon<a_n<A+\epsilon$.
+\end{itemize}
+\textit{und analog für Limes inferior.}
+
 % ------------------------------
 \subsection{Teilfolgen}
 \definition{Teilfolge} ist Folge $(a_{n_k})_{k\in \mathbb{N}_0}$, wobei $(n_k)_{k\in \mathbb{N}_0}$ Folge nicht-negativer ganzer Zahlen ist mit $\forall k\in \mathbb{N}_0: n_{k+1}>n_k$.
 
 Für konvergente Folge $(a_n)_{n \in \mathbb{N}_0}$ \textbf{mit Grenzwert $L$} konvergiert jede Teilfolge \lemma{gegen den gleichen Grenzwert $L$}.
+
+\subsection{Folgen in $\mathbb{C}$}
+
+Eine Folge komplexer Zahlen $(z_n)_{n \in \mathbb{N}_0}=(x_n+iy_n)_{n \in \mathbb{N}_0}$ nennen wir \definition{konvergent mit Grenzwert $A+iB \in \mathbb{C}$}, falls beide Folgen reller Zahlen $(x_n)_{n \in \mathbb{N}_0}$ und $(y_n)_{n \in \mathbb{N}_0}$ konvergieren mit Grenzwerten $A$, resp. $B$.
+
+Sei $(z_n)_{n=0}^\infty$ eine konvergente Folge in $\mathbb{C}$. Dann \lemma{konvergiert $(|z_n|)_{n=0}^\infty$ gegen $|z|$.}
