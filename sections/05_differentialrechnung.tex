@@ -12,7 +12,7 @@ Ausgehend von einer gegebenen Funktion $f: domain(f) \rightarrow \mathbb{R}, x \
 
 \textit{Bsp.: $f(x)=|x|$. Für $x=0$ existiert keine Ableitung (Knickstelle). \textbf{Punkte, an welchen keine Ableitung erwartet werden kann:} Definitionslücken / Unstetigkeitsstellen, insb. Sprungstellen / Knickstellen.}
 
-\subsubsection{Einsetige Ableitungen}
+\subsubsection{Einseitige Ableitungen}
 
 Falls der Grenzwert 
 $$\lim_{h>0\; h \rightarrow 0}\frac{f(a+h)-f(a)}{h}$$
@@ -231,7 +231,7 @@ Wir definieren neue Funktion $g:[a,b]\rightarrow \mathbb{R}, g(x):= f(x)-\frac{f
 Seien $a<b, f:[a,b]\rightarrow\mathbb{R}$ stetig und auf $(a,b)$ differenzierbar. Dann $\exists \xi \in (a,b) :g'(\xi)(f(b)-f(a))=f'(\xi)(g(b)-g(a))$.\\
 Falls zusätzlig gilt $\forall x \in (a,b): g'(x) \neq 0$, dann ist aug $g(b)\neq g(a)$ und $\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}$.
 
-\subsection{Monotonie, Konvexität}
+\subsection{Monotonie}
 
 Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$ differenzierbar. Dann gilt:
 
@@ -243,7 +243,7 @@ Seien $I$ Intervall, $f: I \rightarrow \mathbb{R}$: \greenBox{$f$ ist konstant $
 
 \textit{\textbf{Beweis:} "$\implies$" offensichtlich, "$\Leftarrow$": Dann $f'\geq 0$. $\implies$ $f$ wachsend. Dasselbe mit $(-f)'=-f' \geq 0$ $\implies$ $f$ fallend. $\implies$ $f$ konstant.}
 
-\subsubsection{Konvex / Konkav}
+\subsection{Konvex / Konkav}
 
 $f: I \rightarrow \mathbb{R}$ \definition{konvex (linksgekrümmt)} $\Leftrightarrow \forall a,b \in I$ mit $a<b, t \in (0,1): f((1-t)a+tb)\leq (1-t)f(a)+tf(b)$ \textit{(Graph ist unterhalb Verbindungsgerade; konstante Funktion ist auch konvex.)}
 
@@ -266,6 +266,51 @@ Folgerung aus Konvexität (Legendre-Transformation): Youngsche Ungleichung:
 $$\forall p \in (1,\infty), x,y \in (0,\infty); xy \leq \frac{|x|^p}{p}+\frac{|y|^{p'}}{p'}, \frac{1}{p}+\frac{1}{p'}=1$$
 
 Eine konvexe Funktion hat höchstens eine Minimalstelle. (Relevant für konvexe Optimierung.)
+
+\subsection{Extremalstellen}
+
+\greenBox{Lokale Extremalstellen und erste Ableitung:}
+Es sei $f: D \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ sei an der lokalen Extremalstelle \small{(lokales Maximum oder Minimum)} $x_0 \in D$ differenzierbar, und $x_0$ sei sowohl ein Häufungspunkt von $D \cap (x_0, \infty)$ als auch von $D \cap (-\infty, x_0)$. Dann gilt $f'(x_0)=0$.
+
+\textit{Aber nicht beide Richtungen sind äquivalent. "$\implies$" hält, aber $f'(x_0)=0$ kann bspw. auch konstant oder Sattelstelle sein.}
+
+\begin{itemize}
+    \item Falls $f''(x)<0$ hat $f$ an dieser Stelle ein lokales Maximum.
+    \item Falls $f''(x)>0$ hat $f$ an dieser Stelle ein lokales Minimum.
+    \item Falls $f''(x)=0$ sagt dieses Kriterium nichts aus.
+    \textit{($f'(x)$ überprüfen auf Vorzeichenwechsel: positiv $\rightarrow$ negativ: Hochpunkt, negativ $\rightarrow$ positiv: Tiefpunkt, sonst kein Extrempunkt)}
+\end{itemize}
+
+% (Siehe Serie10.6 https://claude.ai/share/47dca5fc-933c-484a-b786-442896875427 )
+\begin{exercise}
+    Beweise mit dem Satz von Taylor dass wenn $f'(x_0) = 0$ und $f''(x_0) > 0$, dann ist $x_0$ ein lokales Minimum.
+
+    \textit{Bemerke: $x_0$ ist lokales Minimum, wenn alle Punkte in der Nähe einen grösseren Funktionswert haben: $f(x)-f(x_0)>0$.}
+    \textit{Da $f''(x)$ stetig ist und $f''(x_0)>0$, gibt es ein Intervall um $x_0$, indem $f''(x)$ überall $>0$ ist.}
+    \textit{Mit dem Satz von Taylor lässt sich $f(x)$ für Punkte nahe an $x_0$ schreiben als: $f(x)=f(x_0)+\underbrace{f'(x_0)(x-x_0)}_{>0} + \frac{1}{2}f''(c_x)(x-x_0)^2$.}
+    \textit{Es bleibt $f(x)-f(x_0)=\frac{1}{2}\underbrace{f''(c_x)}_{>0} \cdot \underbrace{(x-x_0)^2}_{>0}$. Damit ist es gezeigt.}
+\end{exercise}
+
+\greenBox{Lokale Extremalstellen auf einem Intervall:}
+Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und es sei $x_0$ eine lokale Extremalstelle von $f$. Dann ist mindestens eine der folgenden Tatsachen zutreffend:
+\begin{enumerate}
+    \item $x_0 \in I$ ist ein Endpunkt des Intervalls $I$
+    \item $f$ ist an der Stelle $x_0$ nicht differenzierbar
+    \item $f$ ist an der Stelle $x_0$ differenzierbar und es gilt $f'(x_0)=0$
+\end{enumerate}
+
+\textit{Aus der Tatsache, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
+
+\textit{D.h. Bedingung $f'(x_0)=0$ liefert \textbf{Kandidaten} für Extremalstellen.}
+
+\greenBox{beschränktes und abgeschlossenes Intervall} $\implies$ $f$ nimmt Maximum/Minimum an.
+\textit{für offenes Intervall würde es nicht gelten.}
+
+\begin{exercise}
+    Optimierung
+
+    \textit{Gleichung $f(x)$ aufstellen (ggf. mit Nebenbedingungen), nach der gesuchten Grösse $x$ ableiten, Ableitung $f'(x)=0$ nullsetzen (Extremalstellen berechnen), Gleichung auflösen. Verifizieren, dass $x$ das Maximum (oder Minimum) ist.}
+\end{exercise}
 
 \subsection{Approximation durch (Taylor-)Polynome}
 \subsubsection{Lokale Approximation durch Polynome}
@@ -384,48 +429,3 @@ Dann gilt: $|p(x)-p_n(x)|=|\sum_{k=0}^{\infty}a_kx^k - \sum_{k=0}^{n-1}a_kx^k|=|
 Insbesondere gilt die Abschätzung für alle $x$ im Konvergenzintervall!
 Diese Konvergenzeigenschaft von $p_n$ gegen $p$ nennt man auch gleichmässige Konvergenz. (egal welches $x$ ich anschaue, es konvergiert immer gegen $0$.)
 Aus der Stetigkeit der Polynome $p_n(x)$ folgt: \greenBox{Alle Potenzreihen (insb. Taylorreihen) sind stetig} (innerhalb des Konvergenzradius).
-
-\subsection{Extremalstellen}
-
-\greenBox{Lokale Extremalstellen und erste Ableitung:}
-Es sei $f: D \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ sei an der lokalen Extremalstelle \small{(lokales Maximum oder Minimum)} $x_0 \in D$ differenzierbar, und $x_0$ sei sowohl ein Häufungspunkt von $D \cap (x_0, \infty)$ als auch von $D \cap (-\infty, x_0)$. Dann gilt $f'(x_0)=0$.
-
-\textit{Aber nicht beide Richtungen sind äquivalent. "$\implies$" hält, aber $f'(x_0)=0$ kann bspw. auch konstant oder Sattelstelle sein.}
-
-\begin{itemize}
-    \item Falls $f''(x)<0$ hat $f$ an dieser Stelle ein lokales Maximum.
-    \item Falls $f''(x)>0$ hat $f$ an dieser Stelle ein lokales Minimum.
-    \item Falls $f''(x)=0$ sagt dieses Kriterium nichts aus.
-    \textit{($f'(x)$ überprüfen auf Vorzeichenwechsel: positiv $\rightarrow$ negativ: Hochpunkt, negativ $\rightarrow$ positiv: Tiefpunkt, sonst kein Extrempunkt)}
-\end{itemize}
-
-% (Siehe Serie10.6 https://claude.ai/share/47dca5fc-933c-484a-b786-442896875427 )
-\begin{exercise}
-    Beweise mit dem Satz von Taylor dass wenn $f'(x_0) = 0$ und $f''(x_0) > 0$, dann ist $x_0$ ein lokales Minimum.
-
-    \textit{Bemerke: $x_0$ ist lokales Minimum, wenn alle Punkte in der Nähe einen grösseren Funktionswert haben: $f(x)-f(x_0)>0$.}
-    \textit{Da $f''(x)$ stetig ist und $f''(x_0)>0$, gibt es ein Intervall um $x_0$, indem $f''(x)$ überall $>0$ ist.}
-    \textit{Mit dem Satz von Taylor lässt sich $f(x)$ für Punkte nahe an $x_0$ schreiben als: $f(x)=f(x_0)+\underbrace{f'(x_0)(x-x_0)}_{>0} + \frac{1}{2}f''(c_x)(x-x_0)^2$.}
-    \textit{Es bleibt $f(x)-f(x_0)=\frac{1}{2}\underbrace{f''(c_x)}_{>0} \cdot \underbrace{(x-x_0)^2}_{>0}$. Damit ist es gezeigt.}
-\end{exercise}
-
-\greenBox{Lokale Extremalstellen auf einem Intervall:}
-Es sei $I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$, und es sei $x_0$ eine lokale Extremalstelle von $f$. Dann ist mindestens eine der folgenden Tatsachen zutreffend:
-\begin{enumerate}
-    \item $x_0 \in I$ ist ein Endpunkt des Intervalls $I$
-    \item $f$ ist an der Stelle $x_0$ nicht differenzierbar
-    \item $f$ ist an der Stelle $x_0$ differenzierbar und es gilt $f'(x_0)=0$
-\end{enumerate}
-
-\textit{Aus der Tatsache, dass $f'(x_0)=0$ gilt, können wir \textbf{nicht} schliessen, dass an der Stelle $x_0$ eine Extremalstelle vorliegt.}
-
-\textit{D.h. Bedingung $f'(x_0)=0$ liefert \textbf{Kandidaten} für Extremalstellen.}
-
-\greenBox{beschränktes und abgeschlossenes Intervall} $\implies$ $f$ nimmt Maximum/Minimum an.
-\textit{für offenes Intervall würde es nicht gelten.}
-
-\begin{exercise}
-    Optimierung
-
-    \textit{Gleichung $f(x)$ aufstellen (ggf. mit Nebenbedingungen), nach der gesuchten Grösse $x$ ableiten, Ableitung $f'(x)=0$ nullsetzen (Extremalstellen berechnen), Gleichung auflösen. Verifizieren, dass $x$ das Maximum (oder Minimum) ist.}
-\end{exercise}
