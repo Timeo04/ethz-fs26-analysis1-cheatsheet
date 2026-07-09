@@ -1,16 +1,18 @@
 \subsection{Nützliche Formeln}
-$$ax^2 + bx + c = 0 \Rightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
-$$b^n- a^n = (b-a)(b^{n-1}+b^{n-2}\cdot a + \dots + a^{n-2}\cdot b + a^{n-1})$$
-$$\binom{n}{k} = \frac{n!}{(n-k)!k!}; \quad \sqrt{a_k\cdot a_{k+1}} \leq \frac{a_k + a_{k+1}}{2}$$
+$ax^2 + bx + c = 0 \Rightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+$b^n- a^n = (b-a)(b^{n-1}+b^{n-2}\cdot a + \dots + a^{n-2}\cdot b + a^{n-1})$
+
+$\binom{n}{k} = \frac{n!}{(n-k)!k!}; \quad \sqrt{a_k\cdot a_{k+1}} \leq \frac{a_k + a_{k+1}}{2}$
 
 \subsubsection{Bernoulli Ungleichung}
-$$(1+x)^{n} \geq 1 + n*x \quad \forall n \in \mathbb{N}, x > -1$$
+$(1+x)^{n} \geq 1 + n*x \quad \forall n \in \mathbb{N}, x > -1$
 
 \subsubsection{Young'sche Ungleichung}
-$$\forall \epsilon > 0, \forall x, y \in \mathbb{R}: 2 |xy| \leq \epsilon x^2 + \frac{1}{\epsilon} y^2$$
+$\forall \epsilon > 0, \forall x, y \in \mathbb{R}: 2 |xy| \leq \epsilon x^2 + \frac{1}{\epsilon} y^2$
 
 \subsubsection{Binomialsatz}
-$$(x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k$$
+$(x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k$
 
 \subsection{Trigonometrischen Funktionen}
 
@@ -34,34 +36,15 @@ $$(x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k$$
 \end{center}
 
 \begin{center}
-\begin{tabular}{c|c|c|c|c|c|c|c}
-     & \rotatebox{90}{\(-\alpha\)}& \rotatebox{90}{90\(^{\circ}\) \(-\alpha\)}& \rotatebox{90}{90\(^{\circ}\) \(+\alpha\)}& \rotatebox{90}{180\(^{\circ}\) \(-\alpha\)}& \rotatebox{90}{180\(^{\circ}\) \(+\alpha\)}& \rotatebox{90}{k*360\(^{\circ}\) \(-\alpha\)}&\rotatebox{90}{k*360\(^{\circ}\) \(+\alpha\)}\\
-     \hline
-     \(\sin\)&
-     \(-\sin{\alpha}\)& \(\cos{ }\)& \(\cos{ }\)& \(\sin{ }\)&
-     \(-\sin{ }\)& 
-     \(-\sin{ }\)&
-     \(\sin{ }\)\\
-     \hline
-     \(\cos\)&
-     \(\cos{ }\)&
-     \(\sin{ }\)&
-     \(-\sin{ }\)&
-     \(-\cos{ }\)&
-     \(-\cos{ }\)&
-     \(\cos{ }\)&
-     \(\cos{ }\)\\
-     \hline
-     \(\tan\)&
-     \(-\tan{ }\)&
-     \(\cot{ }\)&
-     \(-\cot{ }\)&
-     \(-\tan{ }\)&
-     \(\tan{ }\)&
-     \(-\tan{ }\)&
-     \(\tan{ }\)\\
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	& \textbf{in terms of $\sin\theta$} & \textbf{in terms of $\cos\theta$} & \textbf{in terms of $\tan\theta$} \\ \hline
+	$\sin\theta =$ & $\sin\theta$ & $\pm\sqrt{1-\cos^2\theta}$ & $\pm\dfrac{\tan\theta}{\sqrt{1+\tan^2\theta}}$ \\ \hline
+	$\cos\theta =$ & $\pm\sqrt{1-\sin^2\theta}$ & $\cos\theta$ & $\pm\dfrac{1}{\sqrt{1+\tan^2\theta}}$ \\ \hline
+	$\tan\theta =$ & $\pm\dfrac{\sin\theta}{\sqrt{1-\sin^2\theta}}$ & $\pm\dfrac{\sqrt{1-\cos^2\theta}}{\cos\theta}$ & $\tan\theta$ \\ \hline
 \end{tabular}
 \end{center}
+
 \egroup
 
 %----------------------------------------------------------------------------------------------------
