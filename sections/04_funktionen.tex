@@ -32,10 +32,12 @@ Falls $f: X \rightarrow Y$ bijektiv ist, gibt es eine eindutige Funktion (Abbild
 $f: X \rightarrow Y$ ist
 \begin{itemize}
     \item \definition{injektiv} falls gilt: $\forall x_1, x_2 \in X (f(x_1) = f(x_2) \implies x_1 = x_2)$\\ \textit{("verschiedene Argumente generieren verschiedene Outputs")}\\
-        \textit{\greenBox{injektiv und stetig $\implies$ streng monoton}}
+        \textit{\greenBox{injektiv und stetig $\implies$ streng monoton}. 
+        \textbf{Beweis:} Sei $f(a)<f(b)$ und $f(b)>f(c)$. Dann $\exists x_1 \in [a,b], x_2 \in [b,c]$ mit $f(x_1)=f(x_2)$ (Zwischenwertsatz). Widerspruch.}
     \item \definition{surjektiv} falls gilt: $\forall y \in Y \exists x \in X : f(x) = y$\\ \textit{("Zielbereich = Wertebereich")}
     \item \definition{bijektiv} falls sie injektiv und surjektiv ist.\\
         \textit{Sei $f:D\rightarrow E$ injektiv und $g:E\rightarrow D$ surjektiv, so ist $g \circ f$ bijektiv.}
+        \textit{bijektiv und stetig $\implies$ streng monoton}
 \end{itemize}
 
 \begin{exercise}
