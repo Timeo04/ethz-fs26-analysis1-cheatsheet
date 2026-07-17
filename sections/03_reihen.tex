@@ -199,6 +199,11 @@ Potenzreihe ist \greenBox{innerhalb ihres Konvergenzradius stetig.}
 
 Potenzreihe \greenBox{konvergiert auf kompakten Teilintervallen} \greenBox{gleichmässig.}
 
+{\color{gray}
+Potenzreihe $\sum_{n\geq 0}a_nx^n$ mit Konvergenzradius $p>0$ stellt eine stetige Funktion $f:(-p,p)\to \mathbb{R}$ dar. 
+\textit{Funktion muss nicht beschränkt sein (z.B. für $a_n=1$ $\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}$ für $x \to -1$ gilt $f \to + \infty$)}
+}
+
 \begin{exercise}
 \textit{$R:= \frac{1}{\limsup_{k \rightarrow \infty}\sqrt[k]{|c_k|}} = \frac{1}{\lim_{k \rightarrow \infty} |\frac{c_{k+1}}{c_k}|}=\lim_{k \rightarrow \infty}|\frac{c_k}{c_{k+1}}|$ (falls letzterer Grenzwert existiert)}    
 \end{exercise}
@@ -206,6 +211,16 @@ Potenzreihe \greenBox{konvergiert auf kompakten Teilintervallen} \greenBox{gleic
 \begin{exercise}
     Absolut konvergente (Potenz-)Reihen multiplizieren:
 \textit{\textbf{Cauchy-Produkt} Für $\sum_{i=0}^{\infty}a_i$, $\sum_{j=0}^{\infty}b_j$ absolut konvergent $\implies (\sum_{i=0}^{\infty} a_k)(\sum_{j=0}^{\infty}b_j)=\sum_{n=0}^{\infty}\sum_{j=0}^{n}a_{n-j}b_j$}    
+\end{exercise}
+
+\begin{exercise}
+    Bestimme den Konvergenzradius von $\sum_{n\geq 1}\frac{1}{n2^n}\cdot x^{2n}$
+
+    \textit{
+        Um eine Potenzreihe der Form $\sum_{n=1}^{\infty} a_nx^n$ zu erhalten, definieren wir $y=x^2$ und $a_n=\frac{1}{n 2^n}$.
+    }
+
+    \textit{Wir erhalten $R_y=2$, also ist der Konvergenzradius $R=\sqrt{2}$.}
 \end{exercise}
 
 $e^x = \sum_{n=0}^{\infty} \frac{1}{n!}x^n$

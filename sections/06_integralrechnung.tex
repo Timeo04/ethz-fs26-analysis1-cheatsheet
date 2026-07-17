@@ -20,6 +20,12 @@ $f(x)$ hat eine ganze Familie von Stammfunktionen: \definition{unbestimmtes Inte
 
 $$\int \ln(x)\,dx = x \cdot \ln(x) - x + C$$
 
+\begin{exercise}
+    Berechne $\int \frac{x^3 + 1}{x^2 + x}\,dx$.
+
+    \textit{$=\int \frac{(x+1)(x^2 - x + 1)}{x(x+1)}\,dx=\int \frac{x^2 - x + 1}{x}\,dx=\int x-1+ \frac{1}{x}\,dx=\frac{1}{2}x^2-x+\ln|x|+C$}
+\end{exercise}
+
 \theorem{Partielle Integration}
 
 \textbf{Herleitung:} 
@@ -162,6 +168,13 @@ $$\int_{a}^{b}g(f(x))f'(x)\,dx = \int_{f(a)}^{f(b)}g(y)\,dy$$
 \textit{Weil wir nicht mehr nach $x$ integrieren sondern nach $y$ müssen wir auch die Integrationsgrenzen anpassen und "schauen, wie wir die $x$ in $y$ übersetzen können".}
 
 \textit{Ggf. muss es etwas angepasst werden wenn bspw. eine Faktor als Abweichung bei der Ableitung besteht.}
+
+\begin{exercise}
+    $\int_{0}^{45}\frac{1}{2025+x^2}\,dx$
+
+    \textit{Substitution $x=25u \implies dx = 45 du$
+    $=\frac{1}{45}\int_{0}^{1}\frac{1}{1+u^2}\,du=\frac{1}{45}[\arctan(u)]^1_0=\frac{\pi}{180}$}
+\end{exercise}
 
 {\color{gray}
 \theorem{Substitution, Version 2}
