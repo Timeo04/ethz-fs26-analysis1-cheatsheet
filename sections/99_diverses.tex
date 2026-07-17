@@ -230,3 +230,13 @@ $\int \operatorname{arcosh}(x)\,dx = x \cdot \operatorname{arcosh}(x) - \sqrt{x^
 TODO: Physikalische Formeln?
 
 $lim_{n \rightarrow \infty}(1 + \frac{x}{n})^n = e^x$
+
+\subsection{Partialbruchzerlegung}
+
+Jede rationale Funktion $R(s)=\frac{Z(s)}{N(s)}$, wobei $Z(s)$ und $N(s)\neq 0$ Polynome sind (reelle Koeffizienten) kann umgeschrieben werden als $R(s)=\frac{Z(s)}{(s-s_1)\dots(s-s_m)}=\frac{a_1}{s-s_1}+\dots+\frac{a_m}{s-s_m}$, wobei $s_1, \dots, s_m$ Polstellen von $R(s)$ sind.
+
+Weben dem Fundamentalsatz der Algebra können wir $N(s)$ immer schreiben als $(s-s_1)\dots(s-s_m)$.
+
+\theorem{Partialbruchzerlegung: Umsetzung} (alle Polstellen einfach reell)
+Für jede Nulstelle $s_i$ setzen wir Summanden $\frac{a_i}{s-s_i}$ an, also $R(s)=\frac{a_1}{s-s_1}+\frac{a_2}{s-s_2}+ \dots + \frac{a_m}{s-s_m}$.
+Koeffizienten $a_i$ berechnet mit Formel $a_i=(R(s)(s-s_i))|_{s=s_i}$ oder über Koeffizientenvergleich.
